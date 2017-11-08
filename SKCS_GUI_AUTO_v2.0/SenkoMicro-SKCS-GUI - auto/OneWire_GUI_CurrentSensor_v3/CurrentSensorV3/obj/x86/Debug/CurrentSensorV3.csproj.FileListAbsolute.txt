@@ -1,0 +1,30 @@
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\DMY2.dll
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\DMY2.pdb
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.csprojResolveAssemblyReference.cache
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.CurrentSensorConsole.resources
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.Properties.Resources.resources
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.csproj.GenerateResource.Cache
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\SKCS v4.x.x.exe
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\SKCS v4.x.x.pdb
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\SKCS v4.x.x.exe
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\SKCS v4.x.x.pdb
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\SKCS v4.x.x.exe
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\SKCS v4.x.x.pdb
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\SKCS v4.x.x.exe
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\SKCS v4.x.x.pdb
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\DMY2.dll
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\DMY2.pdb
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.csprojResolveAssemblyReference.cache
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.CurrentSensorConsole.resources
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.Properties.Resources.resources
+C:\Users\IBM-201\Documents\GitHub\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.csproj.GenerateResource.Cache
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\SKCS v4.x.x.exe
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\SKCS v4.x.x.pdb
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\DMY2.dll
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Debug\DMY2.pdb
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.csprojResolveAssemblyReference.cache
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.CurrentSensorConsole.resources
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.Properties.Resources.resources
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\CurrentSensorV3.csproj.GenerateResource.Cache
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\SKCS v4.x.x.exe
+C:\Users\hding\Documents\GitHub\SKCS_GUI_AUTO\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Debug\SKCS v4.x.x.pdb

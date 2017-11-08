@@ -1,0 +1,9 @@
+﻿1. Use GUI update to do ADCSigPathSet, currently both have, should del one.
+2. 加减按钮 index 自动关联，Disable 控件。		
+3. Update Register value on the GUI once reg value changed.				H
+4. cmb_PolaritySelect_EngT_SelectedIndexChanged
+
+5. AutoTrim btn-> 1. 注释写power on, 但代码写repower  ？？？？
+
+6.        private void txt_reg80_TextChanged(object sender, EventArgs e) 函数空的
+7. Offset 表A（粗调） 没有用或
