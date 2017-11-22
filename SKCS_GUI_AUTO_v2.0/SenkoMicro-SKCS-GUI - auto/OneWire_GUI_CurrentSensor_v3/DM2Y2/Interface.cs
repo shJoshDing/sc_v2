@@ -3500,7 +3500,7 @@ namespace ADI.DMY2
             Array.Copy(buffer_byte, readBackData, 32);
 
             //if (readBackData[0] == 0x5A)
-            if (readBackData[2] == 0x20)
+            if ( (readBackData[2] & 0x20) != 0)
                 return true;
             else
                 return false;

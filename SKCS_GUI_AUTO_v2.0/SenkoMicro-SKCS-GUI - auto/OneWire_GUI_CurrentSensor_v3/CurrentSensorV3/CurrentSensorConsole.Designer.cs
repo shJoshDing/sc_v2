@@ -42,6 +42,78 @@
             this.printPreviewToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.AutoTrimTab = new System.Windows.Forms.TabPage();
+            this.btn_ReTest_AutoT = new System.Windows.Forms.Button();
+            this.btn_Fuse_AutoT = new System.Windows.Forms.Button();
+            this.btn_WandT_AutoT = new System.Windows.Forms.Button();
+            this.btn_V0AMinus_AutoT = new System.Windows.Forms.Button();
+            this.btn_Ft_AutoT = new System.Windows.Forms.Button();
+            this.btn_V0APlus_AutoT = new System.Windows.Forms.Button();
+            this.txt_ModuleType_AutoT = new System.Windows.Forms.TextBox();
+            this.btn_SenMinus_AutoT = new System.Windows.Forms.Button();
+            this.txt_SensitivityAdapt_AutoT = new System.Windows.Forms.TextBox();
+            this.btn_SenPlus_AutoT = new System.Windows.Forms.Button();
+            this.txt_IPRange_AutoT = new System.Windows.Forms.TextBox();
+            this.txt_ChosenGain_AutoT = new System.Windows.Forms.TextBox();
+            this.btn_CommunicationTest = new System.Windows.Forms.Button();
+            this.txt_TempComp_AutoT = new System.Windows.Forms.TextBox();
+            this.btn_PowerOff_AutoT = new System.Windows.Forms.Button();
+            this.numUD_TargetGain_Customer = new System.Windows.Forms.NumericUpDown();
+            this.numUD_IPxForCalc_Customer = new System.Windows.Forms.NumericUpDown();
+            this.autoTrimResultIndicator = new System.Windows.Forms.RichTextBox();
+            this.btn_AutomaticaTrim15V = new System.Windows.Forms.Button();
+            this.btn_AutomaticaTrim5V = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cb_FastStart_AutoTab = new System.Windows.Forms.CheckBox();
+            this.cb_BigCap_AutoTab = new System.Windows.Forms.CheckBox();
+            this.cb_8xHalls_AutoTab = new System.Windows.Forms.CheckBox();
+            this.Vout0A = new System.Windows.Forms.Label();
+            this.txt_BinError_AutoT = new System.Windows.Forms.TextBox();
+            this.Sensitivity = new System.Windows.Forms.Label();
+            this.eee = new System.Windows.Forms.Label();
+            this.btn_PowerOnTest_AutoT = new System.Windows.Forms.Button();
+            this.txt_IpDelay_AutoT = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.btn_AutoSet_AutoT = new System.Windows.Forms.Button();
+            this.txt_Status_AutoTab = new System.Windows.Forms.TextBox();
+            this.cb_iHallOption_AutoTab = new System.Windows.Forms.ComboBox();
+            this.btn_Vout_AutoT = new System.Windows.Forms.Button();
+            this.cb_InvertSens_AutoTab = new System.Windows.Forms.CheckBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btn_SaveConfig_AutoT = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cb_V0AOption_AutoTab = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lb_ProductName_AutoTab = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cb_SelectedDut_AutoTab = new System.Windows.Forms.ComboBox();
+            this.cb_BypFuse_AutoTab = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cb_s3drv_autoTab = new System.Windows.Forms.CheckBox();
+            this.txt_SL620TC_AutoTab = new System.Windows.Forms.TextBox();
+            this.cb_s2double_AutoTab = new System.Windows.Forms.CheckBox();
+            this.txt_IP_AutoT = new System.Windows.Forms.TextBox();
+            this.cb_ProductSeries_AutoTab = new System.Windows.Forms.ComboBox();
+            this.cb_AutoTab_Retest = new System.Windows.Forms.ComboBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.cb_CustTc_AutoTab = new System.Windows.Forms.CheckBox();
+            this.btn_AutomaticaTrim = new System.Windows.Forms.Button();
+            this.btn_loadconfig_AutoT = new System.Windows.Forms.Button();
+            this.cb_ChopCkDis_AutoTab = new System.Windows.Forms.CheckBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.cb_MeasureiQ_AutoTab = new System.Windows.Forms.CheckBox();
+            this.txt_VoutOffset_AutoT = new System.Windows.Forms.TextBox();
+            this.txt_TargertVoltage_AutoT = new System.Windows.Forms.TextBox();
+            this.cmb_ProgramMode_AutoT = new System.Windows.Forms.ComboBox();
+            this.txt_AdcOffset_AutoT = new System.Windows.Forms.TextBox();
+            this.txt_TargetGain_AutoT = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
             this.EngineeringTab = new System.Windows.Forms.TabPage();
             this.btn_EngTab_FT = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -222,7 +294,7 @@
             this.txt_SerialNum_PreT = new System.Windows.Forms.TextBox();
             this.btn_PowerOff_PreT = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.BrakeTab = new System.Windows.Forms.TabPage();
+            this.TunningTab = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txt_DynamicRange_BrakeT = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
@@ -244,6 +316,8 @@
             this.txt_TargetStopPoint_BrakeT = new System.Windows.Forms.TextBox();
             this.label83 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.cmb_Test_TunningTab = new System.Windows.Forms.ComboBox();
+            this.btn_Test_TunningTab = new System.Windows.Forms.Button();
             this.btn_FineOffsetDown_BrakeT = new System.Windows.Forms.Button();
             this.btn_FineOffsetUp_BrakeT = new System.Windows.Forms.Button();
             this.btn_FineDRDown_BrakeT = new System.Windows.Forms.Button();
@@ -254,71 +328,6 @@
             this.btn_DRUp_BrakeT = new System.Windows.Forms.Button();
             this.btn_OffsetUp_BrakeT = new System.Windows.Forms.Button();
             this.btn_UpdateStartPoint_BrakeT = new System.Windows.Forms.Button();
-            this.AutoTrimTab = new System.Windows.Forms.TabPage();
-            this.btn_Ft_AutoT = new System.Windows.Forms.Button();
-            this.txt_ModuleType_AutoT = new System.Windows.Forms.TextBox();
-            this.txt_SensitivityAdapt_AutoT = new System.Windows.Forms.TextBox();
-            this.txt_IPRange_AutoT = new System.Windows.Forms.TextBox();
-            this.txt_ChosenGain_AutoT = new System.Windows.Forms.TextBox();
-            this.btn_CommunicationTest = new System.Windows.Forms.Button();
-            this.txt_TempComp_AutoT = new System.Windows.Forms.TextBox();
-            this.btn_PowerOff_AutoT = new System.Windows.Forms.Button();
-            this.numUD_TargetGain_Customer = new System.Windows.Forms.NumericUpDown();
-            this.numUD_IPxForCalc_Customer = new System.Windows.Forms.NumericUpDown();
-            this.autoTrimResultIndicator = new System.Windows.Forms.RichTextBox();
-            this.btn_AutomaticaTrim15V = new System.Windows.Forms.Button();
-            this.btn_AutomaticaTrim5V = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cb_FastStart_AutoTab = new System.Windows.Forms.CheckBox();
-            this.cb_BigCap_AutoTab = new System.Windows.Forms.CheckBox();
-            this.cb_8xHalls_AutoTab = new System.Windows.Forms.CheckBox();
-            this.txt_BinError_AutoT = new System.Windows.Forms.TextBox();
-            this.eee = new System.Windows.Forms.Label();
-            this.btn_PowerOnTest_AutoT = new System.Windows.Forms.Button();
-            this.txt_IpDelay_AutoT = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.btn_AutoSet_AutoT = new System.Windows.Forms.Button();
-            this.txt_Status_AutoTab = new System.Windows.Forms.TextBox();
-            this.cb_iHallOption_AutoTab = new System.Windows.Forms.ComboBox();
-            this.btn_Vout_AutoT = new System.Windows.Forms.Button();
-            this.cb_InvertSens_AutoTab = new System.Windows.Forms.CheckBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btn_SaveConfig_AutoT = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cb_V0AOption_AutoTab = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lb_ProductName_AutoTab = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cb_SelectedDut_AutoTab = new System.Windows.Forms.ComboBox();
-            this.cb_BypFuse_AutoTab = new System.Windows.Forms.CheckBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cb_s3drv_autoTab = new System.Windows.Forms.CheckBox();
-            this.txt_SL620TC_AutoTab = new System.Windows.Forms.TextBox();
-            this.cb_s2double_AutoTab = new System.Windows.Forms.CheckBox();
-            this.txt_IP_AutoT = new System.Windows.Forms.TextBox();
-            this.cb_ProductSeries_AutoTab = new System.Windows.Forms.ComboBox();
-            this.cb_AutoTab_Retest = new System.Windows.Forms.ComboBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.cb_CustTc_AutoTab = new System.Windows.Forms.CheckBox();
-            this.btn_AutomaticaTrim = new System.Windows.Forms.Button();
-            this.btn_loadconfig_AutoT = new System.Windows.Forms.Button();
-            this.cb_ChopCkDis_AutoTab = new System.Windows.Forms.CheckBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.cb_MeasureiQ_AutoTab = new System.Windows.Forms.CheckBox();
-            this.txt_VoutOffset_AutoT = new System.Windows.Forms.TextBox();
-            this.txt_TargertVoltage_AutoT = new System.Windows.Forms.TextBox();
-            this.cmb_ProgramMode_AutoT = new System.Windows.Forms.ComboBox();
-            this.txt_AdcOffset_AutoT = new System.Windows.Forms.TextBox();
-            this.txt_TargetGain_AutoT = new System.Windows.Forms.TextBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip_SelAll = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Copy = new System.Windows.Forms.ToolStripMenuItem();
@@ -328,11 +337,13 @@
             this.keyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txt_OutputLogInfo = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.AutoTrimTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_TargetGain_Customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_IPxForCalc_Customer)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.EngineeringTab.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -357,14 +368,10 @@
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.BrakeTab.SuspendLayout();
+            this.TunningTab.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.AutoTrimTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUD_TargetGain_Customer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUD_IPxForCalc_Customer)).BeginInit();
-            this.groupBox8.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -478,10 +485,10 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.AutoTrimTab);
             this.tabControl1.Controls.Add(this.EngineeringTab);
             this.tabControl1.Controls.Add(this.PriTrimTab);
-            this.tabControl1.Controls.Add(this.BrakeTab);
-            this.tabControl1.Controls.Add(this.AutoTrimTab);
+            this.tabControl1.Controls.Add(this.TunningTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.MaximumSize = new System.Drawing.Size(1000, 600);
@@ -490,6 +497,961 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(811, 600);
             this.tabControl1.TabIndex = 5;
+            // 
+            // AutoTrimTab
+            // 
+            this.AutoTrimTab.Controls.Add(this.btn_ReTest_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_Fuse_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_WandT_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_V0AMinus_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_Ft_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_V0APlus_AutoT);
+            this.AutoTrimTab.Controls.Add(this.txt_ModuleType_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_SenMinus_AutoT);
+            this.AutoTrimTab.Controls.Add(this.txt_SensitivityAdapt_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_SenPlus_AutoT);
+            this.AutoTrimTab.Controls.Add(this.txt_IPRange_AutoT);
+            this.AutoTrimTab.Controls.Add(this.txt_ChosenGain_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_CommunicationTest);
+            this.AutoTrimTab.Controls.Add(this.txt_TempComp_AutoT);
+            this.AutoTrimTab.Controls.Add(this.btn_PowerOff_AutoT);
+            this.AutoTrimTab.Controls.Add(this.numUD_TargetGain_Customer);
+            this.AutoTrimTab.Controls.Add(this.numUD_IPxForCalc_Customer);
+            this.AutoTrimTab.Controls.Add(this.autoTrimResultIndicator);
+            this.AutoTrimTab.Controls.Add(this.btn_AutomaticaTrim15V);
+            this.AutoTrimTab.Controls.Add(this.btn_AutomaticaTrim5V);
+            this.AutoTrimTab.Controls.Add(this.groupBox8);
+            this.AutoTrimTab.Location = new System.Drawing.Point(4, 22);
+            this.AutoTrimTab.Name = "AutoTrimTab";
+            this.AutoTrimTab.Padding = new System.Windows.Forms.Padding(3);
+            this.AutoTrimTab.Size = new System.Drawing.Size(803, 574);
+            this.AutoTrimTab.TabIndex = 1;
+            this.AutoTrimTab.Text = "AutoTrim";
+            this.AutoTrimTab.UseVisualStyleBackColor = true;
+            this.AutoTrimTab.Enter += new System.EventHandler(this.AutoTrimTab_Enter);
+            // 
+            // btn_ReTest_AutoT
+            // 
+            this.btn_ReTest_AutoT.Location = new System.Drawing.Point(102, 508);
+            this.btn_ReTest_AutoT.Name = "btn_ReTest_AutoT";
+            this.btn_ReTest_AutoT.Size = new System.Drawing.Size(89, 32);
+            this.btn_ReTest_AutoT.TabIndex = 158;
+            this.btn_ReTest_AutoT.Text = "Re-Test";
+            this.btn_ReTest_AutoT.UseVisualStyleBackColor = true;
+            this.btn_ReTest_AutoT.Click += new System.EventHandler(this.btn_ReTest_AutoT_Click);
+            // 
+            // btn_Fuse_AutoT
+            // 
+            this.btn_Fuse_AutoT.Location = new System.Drawing.Point(545, 508);
+            this.btn_Fuse_AutoT.Name = "btn_Fuse_AutoT";
+            this.btn_Fuse_AutoT.Size = new System.Drawing.Size(70, 32);
+            this.btn_Fuse_AutoT.TabIndex = 157;
+            this.btn_Fuse_AutoT.Text = "Fuse";
+            this.btn_Fuse_AutoT.UseVisualStyleBackColor = true;
+            this.btn_Fuse_AutoT.Visible = false;
+            this.btn_Fuse_AutoT.Click += new System.EventHandler(this.btn_Fuse_AutoT_Click);
+            // 
+            // btn_WandT_AutoT
+            // 
+            this.btn_WandT_AutoT.Location = new System.Drawing.Point(333, 508);
+            this.btn_WandT_AutoT.Name = "btn_WandT_AutoT";
+            this.btn_WandT_AutoT.Size = new System.Drawing.Size(91, 32);
+            this.btn_WandT_AutoT.TabIndex = 156;
+            this.btn_WandT_AutoT.Text = "WriteTest";
+            this.btn_WandT_AutoT.UseVisualStyleBackColor = true;
+            this.btn_WandT_AutoT.Visible = false;
+            this.btn_WandT_AutoT.Click += new System.EventHandler(this.btn_WandT_AutoT_Click);
+            // 
+            // btn_V0AMinus_AutoT
+            // 
+            this.btn_V0AMinus_AutoT.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Minus;
+            this.btn_V0AMinus_AutoT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btn_V0AMinus_AutoT.Location = new System.Drawing.Point(491, 508);
+            this.btn_V0AMinus_AutoT.Name = "btn_V0AMinus_AutoT";
+            this.btn_V0AMinus_AutoT.Size = new System.Drawing.Size(32, 32);
+            this.btn_V0AMinus_AutoT.TabIndex = 153;
+            this.btn_V0AMinus_AutoT.UseVisualStyleBackColor = true;
+            this.btn_V0AMinus_AutoT.Visible = false;
+            this.btn_V0AMinus_AutoT.Click += new System.EventHandler(this.btn_V0AMinus_AutoT_Click);
+            // 
+            // btn_Ft_AutoT
+            // 
+            this.btn_Ft_AutoT.Location = new System.Drawing.Point(7, 508);
+            this.btn_Ft_AutoT.Name = "btn_Ft_AutoT";
+            this.btn_Ft_AutoT.Size = new System.Drawing.Size(89, 32);
+            this.btn_Ft_AutoT.TabIndex = 152;
+            this.btn_Ft_AutoT.Text = "Final Test";
+            this.btn_Ft_AutoT.UseVisualStyleBackColor = true;
+            this.btn_Ft_AutoT.Click += new System.EventHandler(this.btn_Ft_AutoT_Click);
+            // 
+            // btn_V0APlus_AutoT
+            // 
+            this.btn_V0APlus_AutoT.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Plus;
+            this.btn_V0APlus_AutoT.Location = new System.Drawing.Point(442, 508);
+            this.btn_V0APlus_AutoT.Name = "btn_V0APlus_AutoT";
+            this.btn_V0APlus_AutoT.Size = new System.Drawing.Size(32, 32);
+            this.btn_V0APlus_AutoT.TabIndex = 152;
+            this.btn_V0APlus_AutoT.UseVisualStyleBackColor = true;
+            this.btn_V0APlus_AutoT.Visible = false;
+            this.btn_V0APlus_AutoT.Click += new System.EventHandler(this.btn_V0APlus_AutoT_Click);
+            // 
+            // txt_ModuleType_AutoT
+            // 
+            this.txt_ModuleType_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_ModuleType_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ModuleType_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_ModuleType_AutoT.Location = new System.Drawing.Point(10, 253);
+            this.txt_ModuleType_AutoT.Name = "txt_ModuleType_AutoT";
+            this.txt_ModuleType_AutoT.ReadOnly = true;
+            this.txt_ModuleType_AutoT.Size = new System.Drawing.Size(21, 23);
+            this.txt_ModuleType_AutoT.TabIndex = 113;
+            this.txt_ModuleType_AutoT.Text = "5V";
+            this.txt_ModuleType_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ModuleType_AutoT.Visible = false;
+            // 
+            // btn_SenMinus_AutoT
+            // 
+            this.btn_SenMinus_AutoT.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Minus;
+            this.btn_SenMinus_AutoT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btn_SenMinus_AutoT.Location = new System.Drawing.Point(283, 508);
+            this.btn_SenMinus_AutoT.Name = "btn_SenMinus_AutoT";
+            this.btn_SenMinus_AutoT.Size = new System.Drawing.Size(32, 32);
+            this.btn_SenMinus_AutoT.TabIndex = 151;
+            this.btn_SenMinus_AutoT.UseVisualStyleBackColor = true;
+            this.btn_SenMinus_AutoT.Visible = false;
+            this.btn_SenMinus_AutoT.Click += new System.EventHandler(this.btn_SenMinus_AutoT_Click);
+            // 
+            // txt_SensitivityAdapt_AutoT
+            // 
+            this.txt_SensitivityAdapt_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_SensitivityAdapt_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SensitivityAdapt_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_SensitivityAdapt_AutoT.Location = new System.Drawing.Point(10, 203);
+            this.txt_SensitivityAdapt_AutoT.Name = "txt_SensitivityAdapt_AutoT";
+            this.txt_SensitivityAdapt_AutoT.ReadOnly = true;
+            this.txt_SensitivityAdapt_AutoT.Size = new System.Drawing.Size(21, 23);
+            this.txt_SensitivityAdapt_AutoT.TabIndex = 103;
+            this.txt_SensitivityAdapt_AutoT.Text = "Default";
+            this.txt_SensitivityAdapt_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SensitivityAdapt_AutoT.Visible = false;
+            // 
+            // btn_SenPlus_AutoT
+            // 
+            this.btn_SenPlus_AutoT.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Plus;
+            this.btn_SenPlus_AutoT.Location = new System.Drawing.Point(236, 508);
+            this.btn_SenPlus_AutoT.Name = "btn_SenPlus_AutoT";
+            this.btn_SenPlus_AutoT.Size = new System.Drawing.Size(32, 32);
+            this.btn_SenPlus_AutoT.TabIndex = 150;
+            this.btn_SenPlus_AutoT.UseVisualStyleBackColor = true;
+            this.btn_SenPlus_AutoT.Visible = false;
+            this.btn_SenPlus_AutoT.Click += new System.EventHandler(this.btn_SenPlus_AutoT_Click);
+            // 
+            // txt_IPRange_AutoT
+            // 
+            this.txt_IPRange_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_IPRange_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IPRange_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_IPRange_AutoT.Location = new System.Drawing.Point(10, 228);
+            this.txt_IPRange_AutoT.Name = "txt_IPRange_AutoT";
+            this.txt_IPRange_AutoT.ReadOnly = true;
+            this.txt_IPRange_AutoT.Size = new System.Drawing.Size(21, 23);
+            this.txt_IPRange_AutoT.TabIndex = 105;
+            this.txt_IPRange_AutoT.Text = "Default";
+            this.txt_IPRange_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_IPRange_AutoT.Visible = false;
+            // 
+            // txt_ChosenGain_AutoT
+            // 
+            this.txt_ChosenGain_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_ChosenGain_AutoT.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ChosenGain_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_ChosenGain_AutoT.Location = new System.Drawing.Point(10, 157);
+            this.txt_ChosenGain_AutoT.Name = "txt_ChosenGain_AutoT";
+            this.txt_ChosenGain_AutoT.ReadOnly = true;
+            this.txt_ChosenGain_AutoT.Size = new System.Drawing.Size(21, 21);
+            this.txt_ChosenGain_AutoT.TabIndex = 111;
+            this.txt_ChosenGain_AutoT.Text = "100";
+            this.txt_ChosenGain_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ChosenGain_AutoT.Visible = false;
+            // 
+            // btn_CommunicationTest
+            // 
+            this.btn_CommunicationTest.Location = new System.Drawing.Point(670, 508);
+            this.btn_CommunicationTest.Name = "btn_CommunicationTest";
+            this.btn_CommunicationTest.Size = new System.Drawing.Size(91, 32);
+            this.btn_CommunicationTest.TabIndex = 116;
+            this.btn_CommunicationTest.Text = "Com Test";
+            this.btn_CommunicationTest.UseVisualStyleBackColor = true;
+            this.btn_CommunicationTest.Click += new System.EventHandler(this.btn_CommunicationTest_Click);
+            // 
+            // txt_TempComp_AutoT
+            // 
+            this.txt_TempComp_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_TempComp_AutoT.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TempComp_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_TempComp_AutoT.Location = new System.Drawing.Point(10, 180);
+            this.txt_TempComp_AutoT.Name = "txt_TempComp_AutoT";
+            this.txt_TempComp_AutoT.ReadOnly = true;
+            this.txt_TempComp_AutoT.Size = new System.Drawing.Size(21, 21);
+            this.txt_TempComp_AutoT.TabIndex = 104;
+            this.txt_TempComp_AutoT.Text = "-350ppm";
+            this.txt_TempComp_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_TempComp_AutoT.Visible = false;
+            // 
+            // btn_PowerOff_AutoT
+            // 
+            this.btn_PowerOff_AutoT.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PowerOff_AutoT.ForeColor = System.Drawing.Color.Red;
+            this.btn_PowerOff_AutoT.Location = new System.Drawing.Point(10, 82);
+            this.btn_PowerOff_AutoT.Name = "btn_PowerOff_AutoT";
+            this.btn_PowerOff_AutoT.Size = new System.Drawing.Size(21, 23);
+            this.btn_PowerOff_AutoT.TabIndex = 110;
+            this.btn_PowerOff_AutoT.Text = "STOP";
+            this.btn_PowerOff_AutoT.UseVisualStyleBackColor = true;
+            this.btn_PowerOff_AutoT.Visible = false;
+            this.btn_PowerOff_AutoT.Click += new System.EventHandler(this.btn_PowerOff_OWCI_ADC_Click);
+            // 
+            // numUD_TargetGain_Customer
+            // 
+            this.numUD_TargetGain_Customer.DecimalPlaces = 4;
+            this.numUD_TargetGain_Customer.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUD_TargetGain_Customer.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numUD_TargetGain_Customer.Location = new System.Drawing.Point(10, 36);
+            this.numUD_TargetGain_Customer.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numUD_TargetGain_Customer.Name = "numUD_TargetGain_Customer";
+            this.numUD_TargetGain_Customer.Size = new System.Drawing.Size(21, 21);
+            this.numUD_TargetGain_Customer.TabIndex = 85;
+            this.numUD_TargetGain_Customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numUD_TargetGain_Customer.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.numUD_TargetGain_Customer.Visible = false;
+            this.numUD_TargetGain_Customer.ValueChanged += new System.EventHandler(this.numUD_TargetGain_Customer_ValueChanged);
+            // 
+            // numUD_IPxForCalc_Customer
+            // 
+            this.numUD_IPxForCalc_Customer.DecimalPlaces = 1;
+            this.numUD_IPxForCalc_Customer.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUD_IPxForCalc_Customer.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numUD_IPxForCalc_Customer.Location = new System.Drawing.Point(10, 59);
+            this.numUD_IPxForCalc_Customer.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUD_IPxForCalc_Customer.Name = "numUD_IPxForCalc_Customer";
+            this.numUD_IPxForCalc_Customer.Size = new System.Drawing.Size(21, 21);
+            this.numUD_IPxForCalc_Customer.TabIndex = 84;
+            this.numUD_IPxForCalc_Customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numUD_IPxForCalc_Customer.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numUD_IPxForCalc_Customer.Visible = false;
+            this.numUD_IPxForCalc_Customer.ValueChanged += new System.EventHandler(this.numUD_IPxForCalc_Customer_ValueChanged);
+            // 
+            // autoTrimResultIndicator
+            // 
+            this.autoTrimResultIndicator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.autoTrimResultIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoTrimResultIndicator.Location = new System.Drawing.Point(3, 544);
+            this.autoTrimResultIndicator.Name = "autoTrimResultIndicator";
+            this.autoTrimResultIndicator.ReadOnly = true;
+            this.autoTrimResultIndicator.Size = new System.Drawing.Size(797, 27);
+            this.autoTrimResultIndicator.TabIndex = 80;
+            this.autoTrimResultIndicator.Text = "";
+            this.autoTrimResultIndicator.Visible = false;
+            // 
+            // btn_AutomaticaTrim15V
+            // 
+            this.btn_AutomaticaTrim15V.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AutomaticaTrim15V.Location = new System.Drawing.Point(10, 132);
+            this.btn_AutomaticaTrim15V.Name = "btn_AutomaticaTrim15V";
+            this.btn_AutomaticaTrim15V.Size = new System.Drawing.Size(21, 23);
+            this.btn_AutomaticaTrim15V.TabIndex = 57;
+            this.btn_AutomaticaTrim15V.Text = "15V Auto-Trim";
+            this.btn_AutomaticaTrim15V.UseVisualStyleBackColor = true;
+            this.btn_AutomaticaTrim15V.Visible = false;
+            // 
+            // btn_AutomaticaTrim5V
+            // 
+            this.btn_AutomaticaTrim5V.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AutomaticaTrim5V.Location = new System.Drawing.Point(10, 107);
+            this.btn_AutomaticaTrim5V.Name = "btn_AutomaticaTrim5V";
+            this.btn_AutomaticaTrim5V.Size = new System.Drawing.Size(21, 23);
+            this.btn_AutomaticaTrim5V.TabIndex = 57;
+            this.btn_AutomaticaTrim5V.Text = "5V Auto-Trim";
+            this.btn_AutomaticaTrim5V.UseVisualStyleBackColor = true;
+            this.btn_AutomaticaTrim5V.Visible = false;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.cb_FastStart_AutoTab);
+            this.groupBox8.Controls.Add(this.cb_BigCap_AutoTab);
+            this.groupBox8.Controls.Add(this.cb_8xHalls_AutoTab);
+            this.groupBox8.Controls.Add(this.Vout0A);
+            this.groupBox8.Controls.Add(this.txt_BinError_AutoT);
+            this.groupBox8.Controls.Add(this.Sensitivity);
+            this.groupBox8.Controls.Add(this.eee);
+            this.groupBox8.Controls.Add(this.btn_PowerOnTest_AutoT);
+            this.groupBox8.Controls.Add(this.txt_IpDelay_AutoT);
+            this.groupBox8.Controls.Add(this.label30);
+            this.groupBox8.Controls.Add(this.btn_AutoSet_AutoT);
+            this.groupBox8.Controls.Add(this.txt_Status_AutoTab);
+            this.groupBox8.Controls.Add(this.cb_iHallOption_AutoTab);
+            this.groupBox8.Controls.Add(this.btn_Vout_AutoT);
+            this.groupBox8.Controls.Add(this.cb_InvertSens_AutoTab);
+            this.groupBox8.Controls.Add(this.label46);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.btn_SaveConfig_AutoT);
+            this.groupBox8.Controls.Add(this.button1);
+            this.groupBox8.Controls.Add(this.cb_V0AOption_AutoTab);
+            this.groupBox8.Controls.Add(this.label22);
+            this.groupBox8.Controls.Add(this.lb_ProductName_AutoTab);
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.Controls.Add(this.cb_SelectedDut_AutoTab);
+            this.groupBox8.Controls.Add(this.cb_BypFuse_AutoTab);
+            this.groupBox8.Controls.Add(this.label19);
+            this.groupBox8.Controls.Add(this.cb_s3drv_autoTab);
+            this.groupBox8.Controls.Add(this.txt_SL620TC_AutoTab);
+            this.groupBox8.Controls.Add(this.cb_s2double_AutoTab);
+            this.groupBox8.Controls.Add(this.txt_IP_AutoT);
+            this.groupBox8.Controls.Add(this.cb_ProductSeries_AutoTab);
+            this.groupBox8.Controls.Add(this.cb_AutoTab_Retest);
+            this.groupBox8.Controls.Add(this.label78);
+            this.groupBox8.Controls.Add(this.cb_CustTc_AutoTab);
+            this.groupBox8.Controls.Add(this.btn_AutomaticaTrim);
+            this.groupBox8.Controls.Add(this.btn_loadconfig_AutoT);
+            this.groupBox8.Controls.Add(this.cb_ChopCkDis_AutoTab);
+            this.groupBox8.Controls.Add(this.label58);
+            this.groupBox8.Controls.Add(this.cb_MeasureiQ_AutoTab);
+            this.groupBox8.Controls.Add(this.txt_VoutOffset_AutoT);
+            this.groupBox8.Controls.Add(this.txt_TargertVoltage_AutoT);
+            this.groupBox8.Controls.Add(this.cmb_ProgramMode_AutoT);
+            this.groupBox8.Controls.Add(this.txt_AdcOffset_AutoT);
+            this.groupBox8.Controls.Add(this.txt_TargetGain_AutoT);
+            this.groupBox8.Controls.Add(this.label71);
+            this.groupBox8.Controls.Add(this.label77);
+            this.groupBox8.Controls.Add(this.label68);
+            this.groupBox8.Controls.Add(this.label49);
+            this.groupBox8.Controls.Add(this.label48);
+            this.groupBox8.Controls.Add(this.label61);
+            this.groupBox8.Location = new System.Drawing.Point(8, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(789, 496);
+            this.groupBox8.TabIndex = 109;
+            this.groupBox8.TabStop = false;
+            // 
+            // cb_FastStart_AutoTab
+            // 
+            this.cb_FastStart_AutoTab.AutoSize = true;
+            this.cb_FastStart_AutoTab.Enabled = false;
+            this.cb_FastStart_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_FastStart_AutoTab.Location = new System.Drawing.Point(516, 282);
+            this.cb_FastStart_AutoTab.Name = "cb_FastStart_AutoTab";
+            this.cb_FastStart_AutoTab.Size = new System.Drawing.Size(41, 22);
+            this.cb_FastStart_AutoTab.TabIndex = 149;
+            this.cb_FastStart_AutoTab.Text = "FS";
+            this.cb_FastStart_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // cb_BigCap_AutoTab
+            // 
+            this.cb_BigCap_AutoTab.AutoSize = true;
+            this.cb_BigCap_AutoTab.Enabled = false;
+            this.cb_BigCap_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_BigCap_AutoTab.Location = new System.Drawing.Point(516, 260);
+            this.cb_BigCap_AutoTab.Name = "cb_BigCap_AutoTab";
+            this.cb_BigCap_AutoTab.Size = new System.Drawing.Size(43, 22);
+            this.cb_BigCap_AutoTab.TabIndex = 148;
+            this.cb_BigCap_AutoTab.Text = "BC";
+            this.cb_BigCap_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // cb_8xHalls_AutoTab
+            // 
+            this.cb_8xHalls_AutoTab.AutoSize = true;
+            this.cb_8xHalls_AutoTab.Enabled = false;
+            this.cb_8xHalls_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_8xHalls_AutoTab.Location = new System.Drawing.Point(516, 238);
+            this.cb_8xHalls_AutoTab.Name = "cb_8xHalls_AutoTab";
+            this.cb_8xHalls_AutoTab.Size = new System.Drawing.Size(41, 22);
+            this.cb_8xHalls_AutoTab.TabIndex = 147;
+            this.cb_8xHalls_AutoTab.Text = "8x";
+            this.cb_8xHalls_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // Vout0A
+            // 
+            this.Vout0A.AutoSize = true;
+            this.Vout0A.Location = new System.Drawing.Point(453, 483);
+            this.Vout0A.Name = "Vout0A";
+            this.Vout0A.Size = new System.Drawing.Size(42, 13);
+            this.Vout0A.TabIndex = 155;
+            this.Vout0A.Text = "Vout0A";
+            this.Vout0A.Visible = false;
+            // 
+            // txt_BinError_AutoT
+            // 
+            this.txt_BinError_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_BinError_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_BinError_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_BinError_AutoT.Location = new System.Drawing.Point(388, 281);
+            this.txt_BinError_AutoT.Name = "txt_BinError_AutoT";
+            this.txt_BinError_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_BinError_AutoT.TabIndex = 146;
+            this.txt_BinError_AutoT.Text = "1";
+            this.txt_BinError_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Sensitivity
+            // 
+            this.Sensitivity.AutoSize = true;
+            this.Sensitivity.Location = new System.Drawing.Point(242, 480);
+            this.Sensitivity.Name = "Sensitivity";
+            this.Sensitivity.Size = new System.Drawing.Size(54, 13);
+            this.Sensitivity.TabIndex = 154;
+            this.Sensitivity.Text = "Sensitivity";
+            this.Sensitivity.Visible = false;
+            // 
+            // eee
+            // 
+            this.eee.AutoSize = true;
+            this.eee.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eee.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.eee.Location = new System.Drawing.Point(294, 285);
+            this.eee.Name = "eee";
+            this.eee.Size = new System.Drawing.Size(84, 15);
+            this.eee.TabIndex = 145;
+            this.eee.Text = "Vout Error (%)";
+            // 
+            // btn_PowerOnTest_AutoT
+            // 
+            this.btn_PowerOnTest_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PowerOnTest_AutoT.Location = new System.Drawing.Point(662, 84);
+            this.btn_PowerOnTest_AutoT.Name = "btn_PowerOnTest_AutoT";
+            this.btn_PowerOnTest_AutoT.Size = new System.Drawing.Size(91, 38);
+            this.btn_PowerOnTest_AutoT.TabIndex = 144;
+            this.btn_PowerOnTest_AutoT.Text = "PowerOnTest";
+            this.btn_PowerOnTest_AutoT.UseVisualStyleBackColor = true;
+            this.btn_PowerOnTest_AutoT.Click += new System.EventHandler(this.btn_PowerOnTest_AutoT_Click);
+            // 
+            // txt_IpDelay_AutoT
+            // 
+            this.txt_IpDelay_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_IpDelay_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IpDelay_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_IpDelay_AutoT.Location = new System.Drawing.Point(388, 253);
+            this.txt_IpDelay_AutoT.Name = "txt_IpDelay_AutoT";
+            this.txt_IpDelay_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_IpDelay_AutoT.TabIndex = 143;
+            this.txt_IpDelay_AutoT.Text = "500";
+            this.txt_IpDelay_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label30.Location = new System.Drawing.Point(294, 257);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(77, 15);
+            this.label30.TabIndex = 142;
+            this.label30.Text = "IP Delay (ms)";
+            // 
+            // btn_AutoSet_AutoT
+            // 
+            this.btn_AutoSet_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AutoSet_AutoT.Location = new System.Drawing.Point(662, 219);
+            this.btn_AutoSet_AutoT.Name = "btn_AutoSet_AutoT";
+            this.btn_AutoSet_AutoT.Size = new System.Drawing.Size(91, 38);
+            this.btn_AutoSet_AutoT.TabIndex = 141;
+            this.btn_AutoSet_AutoT.Text = "Auto Config";
+            this.btn_AutoSet_AutoT.UseVisualStyleBackColor = true;
+            this.btn_AutoSet_AutoT.Click += new System.EventHandler(this.btn_AutoSet_AutoT_Click);
+            // 
+            // txt_Status_AutoTab
+            // 
+            this.txt_Status_AutoTab.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Status_AutoTab.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Status_AutoTab.ForeColor = System.Drawing.Color.Olive;
+            this.txt_Status_AutoTab.Location = new System.Drawing.Point(325, 362);
+            this.txt_Status_AutoTab.Name = "txt_Status_AutoTab";
+            this.txt_Status_AutoTab.Size = new System.Drawing.Size(190, 61);
+            this.txt_Status_AutoTab.TabIndex = 117;
+            this.txt_Status_AutoTab.Text = "Ready";
+            // 
+            // cb_iHallOption_AutoTab
+            // 
+            this.cb_iHallOption_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_iHallOption_AutoTab.FormattingEnabled = true;
+            this.cb_iHallOption_AutoTab.Items.AddRange(new object[] {
+            "Default",
+            "+17%",
+            "-33%",
+            "-17%"});
+            this.cb_iHallOption_AutoTab.Location = new System.Drawing.Point(156, 252);
+            this.cb_iHallOption_AutoTab.Name = "cb_iHallOption_AutoTab";
+            this.cb_iHallOption_AutoTab.Size = new System.Drawing.Size(92, 26);
+            this.cb_iHallOption_AutoTab.TabIndex = 140;
+            // 
+            // btn_Vout_AutoT
+            // 
+            this.btn_Vout_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Vout_AutoT.Location = new System.Drawing.Point(662, 264);
+            this.btn_Vout_AutoT.Name = "btn_Vout_AutoT";
+            this.btn_Vout_AutoT.Size = new System.Drawing.Size(91, 38);
+            this.btn_Vout_AutoT.TabIndex = 111;
+            this.btn_Vout_AutoT.Text = "Vout";
+            this.btn_Vout_AutoT.UseVisualStyleBackColor = true;
+            this.btn_Vout_AutoT.Click += new System.EventHandler(this.btn_Vout_AutoT_Click);
+            // 
+            // cb_InvertSens_AutoTab
+            // 
+            this.cb_InvertSens_AutoTab.AutoSize = true;
+            this.cb_InvertSens_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_InvertSens_AutoTab.Location = new System.Drawing.Point(516, 194);
+            this.cb_InvertSens_AutoTab.Name = "cb_InvertSens_AutoTab";
+            this.cb_InvertSens_AutoTab.Size = new System.Drawing.Size(109, 22);
+            this.cb_InvertSens_AutoTab.TabIndex = 139;
+            this.cb_InvertSens_AutoTab.Text = "Invert Sensor";
+            this.cb_InvertSens_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label46.Location = new System.Drawing.Point(52, 255);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(82, 18);
+            this.label46.TabIndex = 138;
+            this.label46.Text = "iHall Option";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label21.Location = new System.Drawing.Point(52, 91);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(97, 18);
+            this.label21.TabIndex = 135;
+            this.label21.Text = "Product Series";
+            // 
+            // btn_SaveConfig_AutoT
+            // 
+            this.btn_SaveConfig_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveConfig_AutoT.Location = new System.Drawing.Point(662, 174);
+            this.btn_SaveConfig_AutoT.Name = "btn_SaveConfig_AutoT";
+            this.btn_SaveConfig_AutoT.Size = new System.Drawing.Size(91, 38);
+            this.btn_SaveConfig_AutoT.TabIndex = 134;
+            this.btn_SaveConfig_AutoT.Text = "Save Config";
+            this.btn_SaveConfig_AutoT.UseVisualStyleBackColor = true;
+            this.btn_SaveConfig_AutoT.Click += new System.EventHandler(this.btn_SaveConfig_AutoT_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(53, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(700, 2);
+            this.button1.TabIndex = 133;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cb_V0AOption_AutoTab
+            // 
+            this.cb_V0AOption_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_V0AOption_AutoTab.FormattingEnabled = true;
+            this.cb_V0AOption_AutoTab.Items.AddRange(new object[] {
+            "2.5V",
+            "0.5 VCC",
+            "1.65V",
+            "0.1 VCC"});
+            this.cb_V0AOption_AutoTab.Location = new System.Drawing.Point(156, 120);
+            this.cb_V0AOption_AutoTab.Name = "cb_V0AOption_AutoTab";
+            this.cb_V0AOption_AutoTab.Size = new System.Drawing.Size(92, 26);
+            this.cb_V0AOption_AutoTab.TabIndex = 132;
+            this.cb_V0AOption_AutoTab.SelectedIndexChanged += new System.EventHandler(this.cb_V0AOption_AutoTab_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label22.Location = new System.Drawing.Point(52, 124);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(99, 18);
+            this.label22.TabIndex = 131;
+            this.label22.Text = "Vout0A Option";
+            // 
+            // lb_ProductName_AutoTab
+            // 
+            this.lb_ProductName_AutoTab.AutoSize = true;
+            this.lb_ProductName_AutoTab.Font = new System.Drawing.Font("微软雅黑", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ProductName_AutoTab.ForeColor = System.Drawing.Color.Red;
+            this.lb_ProductName_AutoTab.Location = new System.Drawing.Point(214, 34);
+            this.lb_ProductName_AutoTab.Name = "lb_ProductName_AutoTab";
+            this.lb_ProductName_AutoTab.Size = new System.Drawing.Size(281, 28);
+            this.lb_ProductName_AutoTab.TabIndex = 117;
+            this.lb_ProductName_AutoTab.Text = "!!! Please Load Config File";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label20.Location = new System.Drawing.Point(52, 34);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(155, 26);
+            this.label20.TabIndex = 129;
+            this.label20.Text = "Prodcut Name:";
+            // 
+            // cb_SelectedDut_AutoTab
+            // 
+            this.cb_SelectedDut_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_SelectedDut_AutoTab.FormattingEnabled = true;
+            this.cb_SelectedDut_AutoTab.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.cb_SelectedDut_AutoTab.Location = new System.Drawing.Point(156, 219);
+            this.cb_SelectedDut_AutoTab.Name = "cb_SelectedDut_AutoTab";
+            this.cb_SelectedDut_AutoTab.Size = new System.Drawing.Size(92, 26);
+            this.cb_SelectedDut_AutoTab.TabIndex = 127;
+            this.cb_SelectedDut_AutoTab.SelectedIndexChanged += new System.EventHandler(this.cb_SelectedDut_AutoTab_SelectedIndexChanged);
+            // 
+            // cb_BypFuse_AutoTab
+            // 
+            this.cb_BypFuse_AutoTab.AutoSize = true;
+            this.cb_BypFuse_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_BypFuse_AutoTab.Location = new System.Drawing.Point(516, 172);
+            this.cb_BypFuse_AutoTab.Name = "cb_BypFuse_AutoTab";
+            this.cb_BypFuse_AutoTab.Size = new System.Drawing.Size(82, 22);
+            this.cb_BypFuse_AutoTab.TabIndex = 125;
+            this.cb_BypFuse_AutoTab.Text = "BYP Fuse";
+            this.cb_BypFuse_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label19.Location = new System.Drawing.Point(52, 222);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(91, 18);
+            this.label19.TabIndex = 126;
+            this.label19.Text = "Selected DUT";
+            // 
+            // cb_s3drv_autoTab
+            // 
+            this.cb_s3drv_autoTab.AutoSize = true;
+            this.cb_s3drv_autoTab.Enabled = false;
+            this.cb_s3drv_autoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_s3drv_autoTab.Location = new System.Drawing.Point(516, 128);
+            this.cb_s3drv_autoTab.Name = "cb_s3drv_autoTab";
+            this.cb_s3drv_autoTab.Size = new System.Drawing.Size(88, 22);
+            this.cb_s3drv_autoTab.TabIndex = 122;
+            this.cb_s3drv_autoTab.Text = "Gain*1.25";
+            this.cb_s3drv_autoTab.UseVisualStyleBackColor = true;
+            // 
+            // txt_SL620TC_AutoTab
+            // 
+            this.txt_SL620TC_AutoTab.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_SL620TC_AutoTab.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SL620TC_AutoTab.ForeColor = System.Drawing.Color.White;
+            this.txt_SL620TC_AutoTab.Location = new System.Drawing.Point(388, 85);
+            this.txt_SL620TC_AutoTab.Name = "txt_SL620TC_AutoTab";
+            this.txt_SL620TC_AutoTab.Size = new System.Drawing.Size(77, 23);
+            this.txt_SL620TC_AutoTab.TabIndex = 119;
+            this.txt_SL620TC_AutoTab.Text = "57";
+            this.txt_SL620TC_AutoTab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cb_s2double_AutoTab
+            // 
+            this.cb_s2double_AutoTab.AutoSize = true;
+            this.cb_s2double_AutoTab.Enabled = false;
+            this.cb_s2double_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_s2double_AutoTab.Location = new System.Drawing.Point(516, 106);
+            this.cb_s2double_AutoTab.Name = "cb_s2double_AutoTab";
+            this.cb_s2double_AutoTab.Size = new System.Drawing.Size(70, 22);
+            this.cb_s2double_AutoTab.TabIndex = 121;
+            this.cb_s2double_AutoTab.Text = "Gain*2";
+            this.cb_s2double_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // txt_IP_AutoT
+            // 
+            this.txt_IP_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_IP_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IP_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_IP_AutoT.Location = new System.Drawing.Point(388, 169);
+            this.txt_IP_AutoT.Name = "txt_IP_AutoT";
+            this.txt_IP_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_IP_AutoT.TabIndex = 108;
+            this.txt_IP_AutoT.Text = "20";
+            this.txt_IP_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_IP_AutoT.TextChanged += new System.EventHandler(this.txt_IP_AutoT_TextChanged);
+            // 
+            // cb_ProductSeries_AutoTab
+            // 
+            this.cb_ProductSeries_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_ProductSeries_AutoTab.FormattingEnabled = true;
+            this.cb_ProductSeries_AutoTab.Items.AddRange(new object[] {
+            "SE_A",
+            "SE_B",
+            "AEM",
+            "DIFF"});
+            this.cb_ProductSeries_AutoTab.Location = new System.Drawing.Point(157, 84);
+            this.cb_ProductSeries_AutoTab.Name = "cb_ProductSeries_AutoTab";
+            this.cb_ProductSeries_AutoTab.Size = new System.Drawing.Size(92, 26);
+            this.cb_ProductSeries_AutoTab.TabIndex = 115;
+            this.cb_ProductSeries_AutoTab.SelectedIndexChanged += new System.EventHandler(this.cmb_SocketType_AutoT_SelectedIndexChanged);
+            // 
+            // cb_AutoTab_Retest
+            // 
+            this.cb_AutoTab_Retest.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_AutoTab_Retest.FormattingEnabled = true;
+            this.cb_AutoTab_Retest.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.cb_AutoTab_Retest.Location = new System.Drawing.Point(156, 186);
+            this.cb_AutoTab_Retest.Name = "cb_AutoTab_Retest";
+            this.cb_AutoTab_Retest.Size = new System.Drawing.Size(92, 26);
+            this.cb_AutoTab_Retest.TabIndex = 118;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label78.Location = new System.Drawing.Point(52, 189);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(96, 18);
+            this.label78.TabIndex = 117;
+            this.label78.Text = "Test after Trim";
+            // 
+            // cb_CustTc_AutoTab
+            // 
+            this.cb_CustTc_AutoTab.AutoSize = true;
+            this.cb_CustTc_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_CustTc_AutoTab.Location = new System.Drawing.Point(516, 216);
+            this.cb_CustTc_AutoTab.Name = "cb_CustTc_AutoTab";
+            this.cb_CustTc_AutoTab.Size = new System.Drawing.Size(69, 22);
+            this.cb_CustTc_AutoTab.TabIndex = 124;
+            this.cb_CustTc_AutoTab.Text = "Cust Tc";
+            this.cb_CustTc_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // btn_AutomaticaTrim
+            // 
+            this.btn_AutomaticaTrim.BackColor = System.Drawing.Color.YellowGreen;
+            this.btn_AutomaticaTrim.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AutomaticaTrim.Location = new System.Drawing.Point(58, 352);
+            this.btn_AutomaticaTrim.Name = "btn_AutomaticaTrim";
+            this.btn_AutomaticaTrim.Size = new System.Drawing.Size(191, 85);
+            this.btn_AutomaticaTrim.TabIndex = 57;
+            this.btn_AutomaticaTrim.Text = "PROGRAM";
+            this.btn_AutomaticaTrim.UseVisualStyleBackColor = false;
+            this.btn_AutomaticaTrim.Click += new System.EventHandler(this.btn_NewAutomaticaTrim_Click);
+            // 
+            // btn_loadconfig_AutoT
+            // 
+            this.btn_loadconfig_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_loadconfig_AutoT.Location = new System.Drawing.Point(662, 129);
+            this.btn_loadconfig_AutoT.Name = "btn_loadconfig_AutoT";
+            this.btn_loadconfig_AutoT.Size = new System.Drawing.Size(91, 38);
+            this.btn_loadconfig_AutoT.TabIndex = 106;
+            this.btn_loadconfig_AutoT.Text = "Load Config";
+            this.btn_loadconfig_AutoT.UseVisualStyleBackColor = true;
+            this.btn_loadconfig_AutoT.Click += new System.EventHandler(this.btn_loadconfig_AutoT_Click);
+            // 
+            // cb_ChopCkDis_AutoTab
+            // 
+            this.cb_ChopCkDis_AutoTab.AutoSize = true;
+            this.cb_ChopCkDis_AutoTab.Enabled = false;
+            this.cb_ChopCkDis_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_ChopCkDis_AutoTab.Location = new System.Drawing.Point(516, 84);
+            this.cb_ChopCkDis_AutoTab.Name = "cb_ChopCkDis_AutoTab";
+            this.cb_ChopCkDis_AutoTab.Size = new System.Drawing.Size(89, 22);
+            this.cb_ChopCkDis_AutoTab.TabIndex = 119;
+            this.cb_ChopCkDis_AutoTab.Text = "Gain -50%";
+            this.cb_ChopCkDis_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label58.Location = new System.Drawing.Point(294, 89);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(52, 15);
+            this.label58.TabIndex = 109;
+            this.label58.Text = "TC (Hex)";
+            // 
+            // cb_MeasureiQ_AutoTab
+            // 
+            this.cb_MeasureiQ_AutoTab.AutoSize = true;
+            this.cb_MeasureiQ_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_MeasureiQ_AutoTab.Location = new System.Drawing.Point(516, 150);
+            this.cb_MeasureiQ_AutoTab.Name = "cb_MeasureiQ_AutoTab";
+            this.cb_MeasureiQ_AutoTab.Size = new System.Drawing.Size(97, 22);
+            this.cb_MeasureiQ_AutoTab.TabIndex = 123;
+            this.cb_MeasureiQ_AutoTab.Text = "BYP  iQ test";
+            this.cb_MeasureiQ_AutoTab.UseVisualStyleBackColor = true;
+            // 
+            // txt_VoutOffset_AutoT
+            // 
+            this.txt_VoutOffset_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_VoutOffset_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_VoutOffset_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_VoutOffset_AutoT.Location = new System.Drawing.Point(388, 113);
+            this.txt_VoutOffset_AutoT.Name = "txt_VoutOffset_AutoT";
+            this.txt_VoutOffset_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_VoutOffset_AutoT.TabIndex = 107;
+            this.txt_VoutOffset_AutoT.Text = "2.5";
+            this.txt_VoutOffset_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_TargertVoltage_AutoT
+            // 
+            this.txt_TargertVoltage_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_TargertVoltage_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TargertVoltage_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_TargertVoltage_AutoT.Location = new System.Drawing.Point(388, 141);
+            this.txt_TargertVoltage_AutoT.Name = "txt_TargertVoltage_AutoT";
+            this.txt_TargertVoltage_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_TargertVoltage_AutoT.TabIndex = 107;
+            this.txt_TargertVoltage_AutoT.Text = "2";
+            this.txt_TargertVoltage_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_TargertVoltage_AutoT.TextChanged += new System.EventHandler(this.txt_TargertVoltage_AutoT_TextChanged);
+            // 
+            // cmb_ProgramMode_AutoT
+            // 
+            this.cmb_ProgramMode_AutoT.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProgramMode_AutoT.FormattingEnabled = true;
+            this.cmb_ProgramMode_AutoT.Items.AddRange(new object[] {
+            "Automatic",
+            "Manual",
+            "DualRelay"});
+            this.cmb_ProgramMode_AutoT.Location = new System.Drawing.Point(156, 153);
+            this.cmb_ProgramMode_AutoT.Name = "cmb_ProgramMode_AutoT";
+            this.cmb_ProgramMode_AutoT.Size = new System.Drawing.Size(92, 26);
+            this.cmb_ProgramMode_AutoT.TabIndex = 115;
+            this.cmb_ProgramMode_AutoT.SelectedIndexChanged += new System.EventHandler(this.cmb_ProgramMode_AutoT_SelectedIndexChanged);
+            // 
+            // txt_AdcOffset_AutoT
+            // 
+            this.txt_AdcOffset_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_AdcOffset_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AdcOffset_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_AdcOffset_AutoT.Location = new System.Drawing.Point(388, 225);
+            this.txt_AdcOffset_AutoT.Name = "txt_AdcOffset_AutoT";
+            this.txt_AdcOffset_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_AdcOffset_AutoT.TabIndex = 107;
+            this.txt_AdcOffset_AutoT.Text = "0";
+            this.txt_AdcOffset_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_AdcOffset_AutoT.TextChanged += new System.EventHandler(this.txt_AdcOffset_AutoT_TextChanged);
+            // 
+            // txt_TargetGain_AutoT
+            // 
+            this.txt_TargetGain_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_TargetGain_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TargetGain_AutoT.ForeColor = System.Drawing.Color.White;
+            this.txt_TargetGain_AutoT.Location = new System.Drawing.Point(388, 197);
+            this.txt_TargetGain_AutoT.Name = "txt_TargetGain_AutoT";
+            this.txt_TargetGain_AutoT.ReadOnly = true;
+            this.txt_TargetGain_AutoT.Size = new System.Drawing.Size(77, 23);
+            this.txt_TargetGain_AutoT.TabIndex = 107;
+            this.txt_TargetGain_AutoT.Text = "100";
+            this.txt_TargetGain_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label71.Location = new System.Drawing.Point(294, 117);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(67, 15);
+            this.label71.TabIndex = 97;
+            this.label71.Text = "Vout0A (V)";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label77.Location = new System.Drawing.Point(52, 156);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(100, 18);
+            this.label77.TabIndex = 114;
+            this.label77.Text = "Program Mode";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label68.Location = new System.Drawing.Point(294, 229);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(90, 15);
+            this.label68.TabIndex = 91;
+            this.label68.Text = "AD Offset (mV)";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label49.Location = new System.Drawing.Point(294, 201);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(73, 15);
+            this.label49.TabIndex = 91;
+            this.label49.Text = "Gain (mV/A)";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label48.Location = new System.Drawing.Point(294, 173);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(36, 15);
+            this.label48.TabIndex = 93;
+            this.label48.Text = "IP (A)";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label61.Location = new System.Drawing.Point(294, 145);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(71, 15);
+            this.label61.TabIndex = 91;
+            this.label61.Text = "VIP-V0A (V)";
             // 
             // EngineeringTab
             // 
@@ -1737,7 +2699,7 @@
             this.numUD_pilotwidth_ow_EngT.TabIndex = 47;
             this.numUD_pilotwidth_ow_EngT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numUD_pilotwidth_ow_EngT.Value = new decimal(new int[] {
-            8000,
+            80000,
             0,
             0,
             0});
@@ -2743,25 +3705,25 @@
             this.label31.TabIndex = 82;
             this.label31.Text = "Serial Num:";
             // 
-            // BrakeTab
+            // TunningTab
             // 
-            this.BrakeTab.Controls.Add(this.groupBox10);
-            this.BrakeTab.Controls.Add(this.btn_BrakeTab_InitializeUart);
-            this.BrakeTab.Controls.Add(this.btn_BrakeTab_PowerOff);
-            this.BrakeTab.Controls.Add(this.btn_BrakeTab_PowerOn);
-            this.BrakeTab.Controls.Add(this.btn_Fuse_BrakeT);
-            this.BrakeTab.Controls.Add(this.btn_StopPoint_BrakeT);
-            this.BrakeTab.Controls.Add(this.btn_StartPoint_BrakeT);
-            this.BrakeTab.Controls.Add(this.groupBox9);
-            this.BrakeTab.Controls.Add(this.groupBox11);
-            this.BrakeTab.Location = new System.Drawing.Point(4, 22);
-            this.BrakeTab.Name = "BrakeTab";
-            this.BrakeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BrakeTab.Size = new System.Drawing.Size(803, 574);
-            this.BrakeTab.TabIndex = 3;
-            this.BrakeTab.Text = "Brake";
-            this.BrakeTab.UseVisualStyleBackColor = true;
-            this.BrakeTab.Click += new System.EventHandler(this.BrakeTab_Click);
+            this.TunningTab.Controls.Add(this.groupBox10);
+            this.TunningTab.Controls.Add(this.btn_BrakeTab_InitializeUart);
+            this.TunningTab.Controls.Add(this.btn_BrakeTab_PowerOff);
+            this.TunningTab.Controls.Add(this.btn_BrakeTab_PowerOn);
+            this.TunningTab.Controls.Add(this.btn_Fuse_BrakeT);
+            this.TunningTab.Controls.Add(this.btn_StopPoint_BrakeT);
+            this.TunningTab.Controls.Add(this.btn_StartPoint_BrakeT);
+            this.TunningTab.Controls.Add(this.groupBox9);
+            this.TunningTab.Controls.Add(this.groupBox11);
+            this.TunningTab.Location = new System.Drawing.Point(4, 22);
+            this.TunningTab.Name = "TunningTab";
+            this.TunningTab.Padding = new System.Windows.Forms.Padding(3);
+            this.TunningTab.Size = new System.Drawing.Size(803, 574);
+            this.TunningTab.TabIndex = 3;
+            this.TunningTab.Text = "Tunning";
+            this.TunningTab.UseVisualStyleBackColor = true;
+            this.TunningTab.Click += new System.EventHandler(this.BrakeTab_Click);
             // 
             // groupBox10
             // 
@@ -2982,6 +3944,8 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.cmb_Test_TunningTab);
+            this.groupBox11.Controls.Add(this.btn_Test_TunningTab);
             this.groupBox11.Controls.Add(this.btn_FineOffsetDown_BrakeT);
             this.groupBox11.Controls.Add(this.btn_FineOffsetUp_BrakeT);
             this.groupBox11.Controls.Add(this.btn_FineDRDown_BrakeT);
@@ -3000,13 +3964,37 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Tunning";
             // 
+            // cmb_Test_TunningTab
+            // 
+            this.cmb_Test_TunningTab.FormattingEnabled = true;
+            this.cmb_Test_TunningTab.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "fail",
+            "recycle",
+            "eot"});
+            this.cmb_Test_TunningTab.Location = new System.Drawing.Point(565, 34);
+            this.cmb_Test_TunningTab.Name = "cmb_Test_TunningTab";
+            this.cmb_Test_TunningTab.Size = new System.Drawing.Size(75, 24);
+            this.cmb_Test_TunningTab.TabIndex = 20;
+            // 
+            // btn_Test_TunningTab
+            // 
+            this.btn_Test_TunningTab.Location = new System.Drawing.Point(565, 64);
+            this.btn_Test_TunningTab.Name = "btn_Test_TunningTab";
+            this.btn_Test_TunningTab.Size = new System.Drawing.Size(75, 31);
+            this.btn_Test_TunningTab.TabIndex = 19;
+            this.btn_Test_TunningTab.Text = "Bin X";
+            this.btn_Test_TunningTab.UseVisualStyleBackColor = true;
+            this.btn_Test_TunningTab.Click += new System.EventHandler(this.btn_Test_TunningTab_Click);
+            // 
             // btn_FineOffsetDown_BrakeT
             // 
             this.btn_FineOffsetDown_BrakeT.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btn_FineOffsetDown_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_FineOffsetDown_BrakeT.Location = new System.Drawing.Point(506, 207);
+            this.btn_FineOffsetDown_BrakeT.Location = new System.Drawing.Point(192, 207);
             this.btn_FineOffsetDown_BrakeT.Name = "btn_FineOffsetDown_BrakeT";
-            this.btn_FineOffsetDown_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_FineOffsetDown_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_FineOffsetDown_BrakeT.TabIndex = 18;
             this.btn_FineOffsetDown_BrakeT.Text = "Fine Offset -";
             this.btn_FineOffsetDown_BrakeT.UseVisualStyleBackColor = false;
@@ -3016,9 +4004,9 @@
             // 
             this.btn_FineOffsetUp_BrakeT.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btn_FineOffsetUp_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_FineOffsetUp_BrakeT.Location = new System.Drawing.Point(506, 157);
+            this.btn_FineOffsetUp_BrakeT.Location = new System.Drawing.Point(192, 157);
             this.btn_FineOffsetUp_BrakeT.Name = "btn_FineOffsetUp_BrakeT";
-            this.btn_FineOffsetUp_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_FineOffsetUp_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_FineOffsetUp_BrakeT.TabIndex = 17;
             this.btn_FineOffsetUp_BrakeT.Text = "Fine Offset +";
             this.btn_FineOffsetUp_BrakeT.UseVisualStyleBackColor = false;
@@ -3030,7 +4018,7 @@
             this.btn_FineDRDown_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FineDRDown_BrakeT.Location = new System.Drawing.Point(61, 207);
             this.btn_FineDRDown_BrakeT.Name = "btn_FineDRDown_BrakeT";
-            this.btn_FineDRDown_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_FineDRDown_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_FineDRDown_BrakeT.TabIndex = 16;
             this.btn_FineDRDown_BrakeT.Text = "Fine DR -";
             this.btn_FineDRDown_BrakeT.UseVisualStyleBackColor = false;
@@ -3042,7 +4030,7 @@
             this.btn_FineDRUp_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FineDRUp_BrakeT.Location = new System.Drawing.Point(61, 157);
             this.btn_FineDRUp_BrakeT.Name = "btn_FineDRUp_BrakeT";
-            this.btn_FineDRUp_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_FineDRUp_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_FineDRUp_BrakeT.TabIndex = 15;
             this.btn_FineDRUp_BrakeT.Text = "Fine  DR +";
             this.btn_FineDRUp_BrakeT.UseVisualStyleBackColor = false;
@@ -3052,9 +4040,9 @@
             // 
             this.btn_OffsetDown_BrakeT.BackColor = System.Drawing.Color.Peru;
             this.btn_OffsetDown_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OffsetDown_BrakeT.Location = new System.Drawing.Point(506, 84);
+            this.btn_OffsetDown_BrakeT.Location = new System.Drawing.Point(192, 84);
             this.btn_OffsetDown_BrakeT.Name = "btn_OffsetDown_BrakeT";
-            this.btn_OffsetDown_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_OffsetDown_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_OffsetDown_BrakeT.TabIndex = 13;
             this.btn_OffsetDown_BrakeT.Text = "Coarse Offset -";
             this.btn_OffsetDown_BrakeT.UseVisualStyleBackColor = false;
@@ -3063,9 +4051,9 @@
             // btn_UpdateStopPoint_BrakeT
             // 
             this.btn_UpdateStopPoint_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateStopPoint_BrakeT.Location = new System.Drawing.Point(251, 143);
+            this.btn_UpdateStopPoint_BrakeT.Location = new System.Drawing.Point(337, 84);
             this.btn_UpdateStopPoint_BrakeT.Name = "btn_UpdateStopPoint_BrakeT";
-            this.btn_UpdateStopPoint_BrakeT.Size = new System.Drawing.Size(193, 44);
+            this.btn_UpdateStopPoint_BrakeT.Size = new System.Drawing.Size(167, 44);
             this.btn_UpdateStopPoint_BrakeT.TabIndex = 14;
             this.btn_UpdateStopPoint_BrakeT.Text = "Update Stop Point";
             this.btn_UpdateStopPoint_BrakeT.UseVisualStyleBackColor = true;
@@ -3077,7 +4065,7 @@
             this.btn_DRDown_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DRDown_BrakeT.Location = new System.Drawing.Point(61, 84);
             this.btn_DRDown_BrakeT.Name = "btn_DRDown_BrakeT";
-            this.btn_DRDown_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_DRDown_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_DRDown_BrakeT.TabIndex = 11;
             this.btn_DRDown_BrakeT.Text = "Coarse DR -";
             this.btn_DRDown_BrakeT.UseVisualStyleBackColor = false;
@@ -3089,7 +4077,7 @@
             this.btn_DRUp_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DRUp_BrakeT.Location = new System.Drawing.Point(61, 34);
             this.btn_DRUp_BrakeT.Name = "btn_DRUp_BrakeT";
-            this.btn_DRUp_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_DRUp_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_DRUp_BrakeT.TabIndex = 10;
             this.btn_DRUp_BrakeT.Text = "Coarse DR +";
             this.btn_DRUp_BrakeT.UseVisualStyleBackColor = false;
@@ -3099,9 +4087,9 @@
             // 
             this.btn_OffsetUp_BrakeT.BackColor = System.Drawing.Color.Peru;
             this.btn_OffsetUp_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OffsetUp_BrakeT.Location = new System.Drawing.Point(506, 34);
+            this.btn_OffsetUp_BrakeT.Location = new System.Drawing.Point(192, 34);
             this.btn_OffsetUp_BrakeT.Name = "btn_OffsetUp_BrakeT";
-            this.btn_OffsetUp_BrakeT.Size = new System.Drawing.Size(122, 44);
+            this.btn_OffsetUp_BrakeT.Size = new System.Drawing.Size(128, 44);
             this.btn_OffsetUp_BrakeT.TabIndex = 12;
             this.btn_OffsetUp_BrakeT.Text = "Coarse Offset +";
             this.btn_OffsetUp_BrakeT.UseVisualStyleBackColor = false;
@@ -3110,888 +4098,13 @@
             // btn_UpdateStartPoint_BrakeT
             // 
             this.btn_UpdateStartPoint_BrakeT.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateStartPoint_BrakeT.Location = new System.Drawing.Point(251, 75);
+            this.btn_UpdateStartPoint_BrakeT.Location = new System.Drawing.Point(337, 34);
             this.btn_UpdateStartPoint_BrakeT.Name = "btn_UpdateStartPoint_BrakeT";
-            this.btn_UpdateStartPoint_BrakeT.Size = new System.Drawing.Size(193, 44);
+            this.btn_UpdateStartPoint_BrakeT.Size = new System.Drawing.Size(167, 44);
             this.btn_UpdateStartPoint_BrakeT.TabIndex = 9;
             this.btn_UpdateStartPoint_BrakeT.Text = "Update Start Point";
             this.btn_UpdateStartPoint_BrakeT.UseVisualStyleBackColor = true;
             this.btn_UpdateStartPoint_BrakeT.Click += new System.EventHandler(this.btn_UpdateStartPoint_BrakeT_Click);
-            // 
-            // AutoTrimTab
-            // 
-            this.AutoTrimTab.Controls.Add(this.btn_Ft_AutoT);
-            this.AutoTrimTab.Controls.Add(this.txt_ModuleType_AutoT);
-            this.AutoTrimTab.Controls.Add(this.txt_SensitivityAdapt_AutoT);
-            this.AutoTrimTab.Controls.Add(this.txt_IPRange_AutoT);
-            this.AutoTrimTab.Controls.Add(this.txt_ChosenGain_AutoT);
-            this.AutoTrimTab.Controls.Add(this.btn_CommunicationTest);
-            this.AutoTrimTab.Controls.Add(this.txt_TempComp_AutoT);
-            this.AutoTrimTab.Controls.Add(this.btn_PowerOff_AutoT);
-            this.AutoTrimTab.Controls.Add(this.numUD_TargetGain_Customer);
-            this.AutoTrimTab.Controls.Add(this.numUD_IPxForCalc_Customer);
-            this.AutoTrimTab.Controls.Add(this.autoTrimResultIndicator);
-            this.AutoTrimTab.Controls.Add(this.btn_AutomaticaTrim15V);
-            this.AutoTrimTab.Controls.Add(this.btn_AutomaticaTrim5V);
-            this.AutoTrimTab.Controls.Add(this.groupBox8);
-            this.AutoTrimTab.Location = new System.Drawing.Point(4, 22);
-            this.AutoTrimTab.Name = "AutoTrimTab";
-            this.AutoTrimTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AutoTrimTab.Size = new System.Drawing.Size(803, 574);
-            this.AutoTrimTab.TabIndex = 1;
-            this.AutoTrimTab.Text = "AutoTrim";
-            this.AutoTrimTab.UseVisualStyleBackColor = true;
-            this.AutoTrimTab.Enter += new System.EventHandler(this.AutoTrimTab_Enter);
-            // 
-            // btn_Ft_AutoT
-            // 
-            this.btn_Ft_AutoT.Location = new System.Drawing.Point(10, 473);
-            this.btn_Ft_AutoT.Name = "btn_Ft_AutoT";
-            this.btn_Ft_AutoT.Size = new System.Drawing.Size(89, 24);
-            this.btn_Ft_AutoT.TabIndex = 152;
-            this.btn_Ft_AutoT.Text = "Final Test";
-            this.btn_Ft_AutoT.UseVisualStyleBackColor = true;
-            this.btn_Ft_AutoT.Click += new System.EventHandler(this.btn_Ft_AutoT_Click);
-            // 
-            // txt_ModuleType_AutoT
-            // 
-            this.txt_ModuleType_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_ModuleType_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ModuleType_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_ModuleType_AutoT.Location = new System.Drawing.Point(10, 253);
-            this.txt_ModuleType_AutoT.Name = "txt_ModuleType_AutoT";
-            this.txt_ModuleType_AutoT.ReadOnly = true;
-            this.txt_ModuleType_AutoT.Size = new System.Drawing.Size(21, 23);
-            this.txt_ModuleType_AutoT.TabIndex = 113;
-            this.txt_ModuleType_AutoT.Text = "5V";
-            this.txt_ModuleType_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_ModuleType_AutoT.Visible = false;
-            // 
-            // txt_SensitivityAdapt_AutoT
-            // 
-            this.txt_SensitivityAdapt_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_SensitivityAdapt_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SensitivityAdapt_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_SensitivityAdapt_AutoT.Location = new System.Drawing.Point(10, 203);
-            this.txt_SensitivityAdapt_AutoT.Name = "txt_SensitivityAdapt_AutoT";
-            this.txt_SensitivityAdapt_AutoT.ReadOnly = true;
-            this.txt_SensitivityAdapt_AutoT.Size = new System.Drawing.Size(21, 23);
-            this.txt_SensitivityAdapt_AutoT.TabIndex = 103;
-            this.txt_SensitivityAdapt_AutoT.Text = "Default";
-            this.txt_SensitivityAdapt_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_SensitivityAdapt_AutoT.Visible = false;
-            // 
-            // txt_IPRange_AutoT
-            // 
-            this.txt_IPRange_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_IPRange_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IPRange_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_IPRange_AutoT.Location = new System.Drawing.Point(10, 228);
-            this.txt_IPRange_AutoT.Name = "txt_IPRange_AutoT";
-            this.txt_IPRange_AutoT.ReadOnly = true;
-            this.txt_IPRange_AutoT.Size = new System.Drawing.Size(21, 23);
-            this.txt_IPRange_AutoT.TabIndex = 105;
-            this.txt_IPRange_AutoT.Text = "Default";
-            this.txt_IPRange_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_IPRange_AutoT.Visible = false;
-            // 
-            // txt_ChosenGain_AutoT
-            // 
-            this.txt_ChosenGain_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_ChosenGain_AutoT.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ChosenGain_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_ChosenGain_AutoT.Location = new System.Drawing.Point(10, 157);
-            this.txt_ChosenGain_AutoT.Name = "txt_ChosenGain_AutoT";
-            this.txt_ChosenGain_AutoT.ReadOnly = true;
-            this.txt_ChosenGain_AutoT.Size = new System.Drawing.Size(21, 21);
-            this.txt_ChosenGain_AutoT.TabIndex = 111;
-            this.txt_ChosenGain_AutoT.Text = "100";
-            this.txt_ChosenGain_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_ChosenGain_AutoT.Visible = false;
-            // 
-            // btn_CommunicationTest
-            // 
-            this.btn_CommunicationTest.Location = new System.Drawing.Point(672, 473);
-            this.btn_CommunicationTest.Name = "btn_CommunicationTest";
-            this.btn_CommunicationTest.Size = new System.Drawing.Size(89, 24);
-            this.btn_CommunicationTest.TabIndex = 116;
-            this.btn_CommunicationTest.Text = "Com Test";
-            this.btn_CommunicationTest.UseVisualStyleBackColor = true;
-            this.btn_CommunicationTest.Click += new System.EventHandler(this.btn_CommunicationTest_Click);
-            // 
-            // txt_TempComp_AutoT
-            // 
-            this.txt_TempComp_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_TempComp_AutoT.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TempComp_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_TempComp_AutoT.Location = new System.Drawing.Point(10, 180);
-            this.txt_TempComp_AutoT.Name = "txt_TempComp_AutoT";
-            this.txt_TempComp_AutoT.ReadOnly = true;
-            this.txt_TempComp_AutoT.Size = new System.Drawing.Size(21, 21);
-            this.txt_TempComp_AutoT.TabIndex = 104;
-            this.txt_TempComp_AutoT.Text = "-350ppm";
-            this.txt_TempComp_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_TempComp_AutoT.Visible = false;
-            // 
-            // btn_PowerOff_AutoT
-            // 
-            this.btn_PowerOff_AutoT.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PowerOff_AutoT.ForeColor = System.Drawing.Color.Red;
-            this.btn_PowerOff_AutoT.Location = new System.Drawing.Point(10, 82);
-            this.btn_PowerOff_AutoT.Name = "btn_PowerOff_AutoT";
-            this.btn_PowerOff_AutoT.Size = new System.Drawing.Size(21, 23);
-            this.btn_PowerOff_AutoT.TabIndex = 110;
-            this.btn_PowerOff_AutoT.Text = "STOP";
-            this.btn_PowerOff_AutoT.UseVisualStyleBackColor = true;
-            this.btn_PowerOff_AutoT.Visible = false;
-            this.btn_PowerOff_AutoT.Click += new System.EventHandler(this.btn_PowerOff_OWCI_ADC_Click);
-            // 
-            // numUD_TargetGain_Customer
-            // 
-            this.numUD_TargetGain_Customer.DecimalPlaces = 4;
-            this.numUD_TargetGain_Customer.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUD_TargetGain_Customer.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numUD_TargetGain_Customer.Location = new System.Drawing.Point(10, 36);
-            this.numUD_TargetGain_Customer.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.numUD_TargetGain_Customer.Name = "numUD_TargetGain_Customer";
-            this.numUD_TargetGain_Customer.Size = new System.Drawing.Size(21, 21);
-            this.numUD_TargetGain_Customer.TabIndex = 85;
-            this.numUD_TargetGain_Customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numUD_TargetGain_Customer.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            this.numUD_TargetGain_Customer.Visible = false;
-            this.numUD_TargetGain_Customer.ValueChanged += new System.EventHandler(this.numUD_TargetGain_Customer_ValueChanged);
-            // 
-            // numUD_IPxForCalc_Customer
-            // 
-            this.numUD_IPxForCalc_Customer.DecimalPlaces = 1;
-            this.numUD_IPxForCalc_Customer.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUD_IPxForCalc_Customer.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numUD_IPxForCalc_Customer.Location = new System.Drawing.Point(10, 59);
-            this.numUD_IPxForCalc_Customer.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numUD_IPxForCalc_Customer.Name = "numUD_IPxForCalc_Customer";
-            this.numUD_IPxForCalc_Customer.Size = new System.Drawing.Size(21, 21);
-            this.numUD_IPxForCalc_Customer.TabIndex = 84;
-            this.numUD_IPxForCalc_Customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numUD_IPxForCalc_Customer.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numUD_IPxForCalc_Customer.Visible = false;
-            this.numUD_IPxForCalc_Customer.ValueChanged += new System.EventHandler(this.numUD_IPxForCalc_Customer_ValueChanged);
-            // 
-            // autoTrimResultIndicator
-            // 
-            this.autoTrimResultIndicator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.autoTrimResultIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoTrimResultIndicator.Location = new System.Drawing.Point(3, 503);
-            this.autoTrimResultIndicator.Name = "autoTrimResultIndicator";
-            this.autoTrimResultIndicator.ReadOnly = true;
-            this.autoTrimResultIndicator.Size = new System.Drawing.Size(797, 68);
-            this.autoTrimResultIndicator.TabIndex = 80;
-            this.autoTrimResultIndicator.Text = "";
-            // 
-            // btn_AutomaticaTrim15V
-            // 
-            this.btn_AutomaticaTrim15V.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AutomaticaTrim15V.Location = new System.Drawing.Point(10, 132);
-            this.btn_AutomaticaTrim15V.Name = "btn_AutomaticaTrim15V";
-            this.btn_AutomaticaTrim15V.Size = new System.Drawing.Size(21, 23);
-            this.btn_AutomaticaTrim15V.TabIndex = 57;
-            this.btn_AutomaticaTrim15V.Text = "15V Auto-Trim";
-            this.btn_AutomaticaTrim15V.UseVisualStyleBackColor = true;
-            this.btn_AutomaticaTrim15V.Visible = false;
-            // 
-            // btn_AutomaticaTrim5V
-            // 
-            this.btn_AutomaticaTrim5V.Font = new System.Drawing.Font("Calibri Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AutomaticaTrim5V.Location = new System.Drawing.Point(10, 107);
-            this.btn_AutomaticaTrim5V.Name = "btn_AutomaticaTrim5V";
-            this.btn_AutomaticaTrim5V.Size = new System.Drawing.Size(21, 23);
-            this.btn_AutomaticaTrim5V.TabIndex = 57;
-            this.btn_AutomaticaTrim5V.Text = "5V Auto-Trim";
-            this.btn_AutomaticaTrim5V.UseVisualStyleBackColor = true;
-            this.btn_AutomaticaTrim5V.Visible = false;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.button5);
-            this.groupBox8.Controls.Add(this.button4);
-            this.groupBox8.Controls.Add(this.button3);
-            this.groupBox8.Controls.Add(this.button2);
-            this.groupBox8.Controls.Add(this.cb_FastStart_AutoTab);
-            this.groupBox8.Controls.Add(this.cb_BigCap_AutoTab);
-            this.groupBox8.Controls.Add(this.cb_8xHalls_AutoTab);
-            this.groupBox8.Controls.Add(this.txt_BinError_AutoT);
-            this.groupBox8.Controls.Add(this.eee);
-            this.groupBox8.Controls.Add(this.btn_PowerOnTest_AutoT);
-            this.groupBox8.Controls.Add(this.txt_IpDelay_AutoT);
-            this.groupBox8.Controls.Add(this.label30);
-            this.groupBox8.Controls.Add(this.btn_AutoSet_AutoT);
-            this.groupBox8.Controls.Add(this.txt_Status_AutoTab);
-            this.groupBox8.Controls.Add(this.cb_iHallOption_AutoTab);
-            this.groupBox8.Controls.Add(this.btn_Vout_AutoT);
-            this.groupBox8.Controls.Add(this.cb_InvertSens_AutoTab);
-            this.groupBox8.Controls.Add(this.label46);
-            this.groupBox8.Controls.Add(this.label21);
-            this.groupBox8.Controls.Add(this.btn_SaveConfig_AutoT);
-            this.groupBox8.Controls.Add(this.button1);
-            this.groupBox8.Controls.Add(this.cb_V0AOption_AutoTab);
-            this.groupBox8.Controls.Add(this.label22);
-            this.groupBox8.Controls.Add(this.lb_ProductName_AutoTab);
-            this.groupBox8.Controls.Add(this.label20);
-            this.groupBox8.Controls.Add(this.cb_SelectedDut_AutoTab);
-            this.groupBox8.Controls.Add(this.cb_BypFuse_AutoTab);
-            this.groupBox8.Controls.Add(this.label19);
-            this.groupBox8.Controls.Add(this.cb_s3drv_autoTab);
-            this.groupBox8.Controls.Add(this.txt_SL620TC_AutoTab);
-            this.groupBox8.Controls.Add(this.cb_s2double_AutoTab);
-            this.groupBox8.Controls.Add(this.txt_IP_AutoT);
-            this.groupBox8.Controls.Add(this.cb_ProductSeries_AutoTab);
-            this.groupBox8.Controls.Add(this.cb_AutoTab_Retest);
-            this.groupBox8.Controls.Add(this.label78);
-            this.groupBox8.Controls.Add(this.cb_CustTc_AutoTab);
-            this.groupBox8.Controls.Add(this.btn_AutomaticaTrim);
-            this.groupBox8.Controls.Add(this.btn_loadconfig_AutoT);
-            this.groupBox8.Controls.Add(this.cb_ChopCkDis_AutoTab);
-            this.groupBox8.Controls.Add(this.label58);
-            this.groupBox8.Controls.Add(this.cb_MeasureiQ_AutoTab);
-            this.groupBox8.Controls.Add(this.txt_VoutOffset_AutoT);
-            this.groupBox8.Controls.Add(this.txt_TargertVoltage_AutoT);
-            this.groupBox8.Controls.Add(this.cmb_ProgramMode_AutoT);
-            this.groupBox8.Controls.Add(this.txt_AdcOffset_AutoT);
-            this.groupBox8.Controls.Add(this.txt_TargetGain_AutoT);
-            this.groupBox8.Controls.Add(this.label71);
-            this.groupBox8.Controls.Add(this.label77);
-            this.groupBox8.Controls.Add(this.label68);
-            this.groupBox8.Controls.Add(this.label49);
-            this.groupBox8.Controls.Add(this.label48);
-            this.groupBox8.Controls.Add(this.label61);
-            this.groupBox8.Location = new System.Drawing.Point(8, 6);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(789, 461);
-            this.groupBox8.TabIndex = 109;
-            this.groupBox8.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Minus;
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button3.Location = new System.Drawing.Point(721, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 32);
-            this.button3.TabIndex = 151;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Plus;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(683, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
-            this.button2.TabIndex = 150;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // cb_FastStart_AutoTab
-            // 
-            this.cb_FastStart_AutoTab.AutoSize = true;
-            this.cb_FastStart_AutoTab.Enabled = false;
-            this.cb_FastStart_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_FastStart_AutoTab.Location = new System.Drawing.Point(516, 282);
-            this.cb_FastStart_AutoTab.Name = "cb_FastStart_AutoTab";
-            this.cb_FastStart_AutoTab.Size = new System.Drawing.Size(81, 22);
-            this.cb_FastStart_AutoTab.TabIndex = 149;
-            this.cb_FastStart_AutoTab.Text = "FastStart";
-            this.cb_FastStart_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // cb_BigCap_AutoTab
-            // 
-            this.cb_BigCap_AutoTab.AutoSize = true;
-            this.cb_BigCap_AutoTab.Enabled = false;
-            this.cb_BigCap_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_BigCap_AutoTab.Location = new System.Drawing.Point(516, 260);
-            this.cb_BigCap_AutoTab.Name = "cb_BigCap_AutoTab";
-            this.cb_BigCap_AutoTab.Size = new System.Drawing.Size(69, 22);
-            this.cb_BigCap_AutoTab.TabIndex = 148;
-            this.cb_BigCap_AutoTab.Text = "BigCap";
-            this.cb_BigCap_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // cb_8xHalls_AutoTab
-            // 
-            this.cb_8xHalls_AutoTab.AutoSize = true;
-            this.cb_8xHalls_AutoTab.Enabled = false;
-            this.cb_8xHalls_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_8xHalls_AutoTab.Location = new System.Drawing.Point(516, 238);
-            this.cb_8xHalls_AutoTab.Name = "cb_8xHalls_AutoTab";
-            this.cb_8xHalls_AutoTab.Size = new System.Drawing.Size(74, 22);
-            this.cb_8xHalls_AutoTab.TabIndex = 147;
-            this.cb_8xHalls_AutoTab.Text = "8x Halls";
-            this.cb_8xHalls_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // txt_BinError_AutoT
-            // 
-            this.txt_BinError_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_BinError_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BinError_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_BinError_AutoT.Location = new System.Drawing.Point(388, 281);
-            this.txt_BinError_AutoT.Name = "txt_BinError_AutoT";
-            this.txt_BinError_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_BinError_AutoT.TabIndex = 146;
-            this.txt_BinError_AutoT.Text = "1";
-            this.txt_BinError_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // eee
-            // 
-            this.eee.AutoSize = true;
-            this.eee.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eee.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.eee.Location = new System.Drawing.Point(294, 285);
-            this.eee.Name = "eee";
-            this.eee.Size = new System.Drawing.Size(84, 15);
-            this.eee.TabIndex = 145;
-            this.eee.Text = "Vout Error (%)";
-            // 
-            // btn_PowerOnTest_AutoT
-            // 
-            this.btn_PowerOnTest_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PowerOnTest_AutoT.Location = new System.Drawing.Point(662, 84);
-            this.btn_PowerOnTest_AutoT.Name = "btn_PowerOnTest_AutoT";
-            this.btn_PowerOnTest_AutoT.Size = new System.Drawing.Size(91, 38);
-            this.btn_PowerOnTest_AutoT.TabIndex = 144;
-            this.btn_PowerOnTest_AutoT.Text = "PowerOnTest";
-            this.btn_PowerOnTest_AutoT.UseVisualStyleBackColor = true;
-            this.btn_PowerOnTest_AutoT.Click += new System.EventHandler(this.btn_PowerOnTest_AutoT_Click);
-            // 
-            // txt_IpDelay_AutoT
-            // 
-            this.txt_IpDelay_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_IpDelay_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IpDelay_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_IpDelay_AutoT.Location = new System.Drawing.Point(388, 253);
-            this.txt_IpDelay_AutoT.Name = "txt_IpDelay_AutoT";
-            this.txt_IpDelay_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_IpDelay_AutoT.TabIndex = 143;
-            this.txt_IpDelay_AutoT.Text = "500";
-            this.txt_IpDelay_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label30.Location = new System.Drawing.Point(294, 257);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 15);
-            this.label30.TabIndex = 142;
-            this.label30.Text = "IP Delay (ms)";
-            // 
-            // btn_AutoSet_AutoT
-            // 
-            this.btn_AutoSet_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AutoSet_AutoT.Location = new System.Drawing.Point(662, 219);
-            this.btn_AutoSet_AutoT.Name = "btn_AutoSet_AutoT";
-            this.btn_AutoSet_AutoT.Size = new System.Drawing.Size(91, 38);
-            this.btn_AutoSet_AutoT.TabIndex = 141;
-            this.btn_AutoSet_AutoT.Text = "Auto Config";
-            this.btn_AutoSet_AutoT.UseVisualStyleBackColor = true;
-            this.btn_AutoSet_AutoT.Click += new System.EventHandler(this.btn_AutoSet_AutoT_Click);
-            // 
-            // txt_Status_AutoTab
-            // 
-            this.txt_Status_AutoTab.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Status_AutoTab.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Status_AutoTab.ForeColor = System.Drawing.Color.Olive;
-            this.txt_Status_AutoTab.Location = new System.Drawing.Point(316, 349);
-            this.txt_Status_AutoTab.Name = "txt_Status_AutoTab";
-            this.txt_Status_AutoTab.Size = new System.Drawing.Size(190, 61);
-            this.txt_Status_AutoTab.TabIndex = 117;
-            this.txt_Status_AutoTab.Text = "Ready";
-            // 
-            // cb_iHallOption_AutoTab
-            // 
-            this.cb_iHallOption_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_iHallOption_AutoTab.FormattingEnabled = true;
-            this.cb_iHallOption_AutoTab.Items.AddRange(new object[] {
-            "Default",
-            "+17%",
-            "-33%",
-            "-17%"});
-            this.cb_iHallOption_AutoTab.Location = new System.Drawing.Point(156, 252);
-            this.cb_iHallOption_AutoTab.Name = "cb_iHallOption_AutoTab";
-            this.cb_iHallOption_AutoTab.Size = new System.Drawing.Size(92, 26);
-            this.cb_iHallOption_AutoTab.TabIndex = 140;
-            // 
-            // btn_Vout_AutoT
-            // 
-            this.btn_Vout_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Vout_AutoT.Location = new System.Drawing.Point(662, 264);
-            this.btn_Vout_AutoT.Name = "btn_Vout_AutoT";
-            this.btn_Vout_AutoT.Size = new System.Drawing.Size(91, 38);
-            this.btn_Vout_AutoT.TabIndex = 111;
-            this.btn_Vout_AutoT.Text = "Vout";
-            this.btn_Vout_AutoT.UseVisualStyleBackColor = true;
-            this.btn_Vout_AutoT.Click += new System.EventHandler(this.btn_Vout_AutoT_Click);
-            // 
-            // cb_InvertSens_AutoTab
-            // 
-            this.cb_InvertSens_AutoTab.AutoSize = true;
-            this.cb_InvertSens_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_InvertSens_AutoTab.Location = new System.Drawing.Point(516, 194);
-            this.cb_InvertSens_AutoTab.Name = "cb_InvertSens_AutoTab";
-            this.cb_InvertSens_AutoTab.Size = new System.Drawing.Size(109, 22);
-            this.cb_InvertSens_AutoTab.TabIndex = 139;
-            this.cb_InvertSens_AutoTab.Text = "Invert Sensor";
-            this.cb_InvertSens_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label46.Location = new System.Drawing.Point(52, 255);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(82, 18);
-            this.label46.TabIndex = 138;
-            this.label46.Text = "iHall Option";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(52, 91);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(97, 18);
-            this.label21.TabIndex = 135;
-            this.label21.Text = "Product Series";
-            // 
-            // btn_SaveConfig_AutoT
-            // 
-            this.btn_SaveConfig_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SaveConfig_AutoT.Location = new System.Drawing.Point(662, 174);
-            this.btn_SaveConfig_AutoT.Name = "btn_SaveConfig_AutoT";
-            this.btn_SaveConfig_AutoT.Size = new System.Drawing.Size(91, 38);
-            this.btn_SaveConfig_AutoT.TabIndex = 134;
-            this.btn_SaveConfig_AutoT.Text = "Save Config";
-            this.btn_SaveConfig_AutoT.UseVisualStyleBackColor = true;
-            this.btn_SaveConfig_AutoT.Click += new System.EventHandler(this.btn_SaveConfig_AutoT_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(53, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(700, 2);
-            this.button1.TabIndex = 133;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cb_V0AOption_AutoTab
-            // 
-            this.cb_V0AOption_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_V0AOption_AutoTab.FormattingEnabled = true;
-            this.cb_V0AOption_AutoTab.Items.AddRange(new object[] {
-            "2.5V",
-            "0.5 VCC",
-            "1.65V",
-            "0.1 VCC"});
-            this.cb_V0AOption_AutoTab.Location = new System.Drawing.Point(156, 120);
-            this.cb_V0AOption_AutoTab.Name = "cb_V0AOption_AutoTab";
-            this.cb_V0AOption_AutoTab.Size = new System.Drawing.Size(92, 26);
-            this.cb_V0AOption_AutoTab.TabIndex = 132;
-            this.cb_V0AOption_AutoTab.SelectedIndexChanged += new System.EventHandler(this.cb_V0AOption_AutoTab_SelectedIndexChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label22.Location = new System.Drawing.Point(52, 124);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(99, 18);
-            this.label22.TabIndex = 131;
-            this.label22.Text = "Vout0A Option";
-            // 
-            // lb_ProductName_AutoTab
-            // 
-            this.lb_ProductName_AutoTab.AutoSize = true;
-            this.lb_ProductName_AutoTab.Font = new System.Drawing.Font("微软雅黑", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ProductName_AutoTab.ForeColor = System.Drawing.Color.Red;
-            this.lb_ProductName_AutoTab.Location = new System.Drawing.Point(214, 34);
-            this.lb_ProductName_AutoTab.Name = "lb_ProductName_AutoTab";
-            this.lb_ProductName_AutoTab.Size = new System.Drawing.Size(281, 28);
-            this.lb_ProductName_AutoTab.TabIndex = 117;
-            this.lb_ProductName_AutoTab.Text = "!!! Please Load Config File";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20.Location = new System.Drawing.Point(52, 34);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(155, 26);
-            this.label20.TabIndex = 129;
-            this.label20.Text = "Prodcut Name:";
-            // 
-            // cb_SelectedDut_AutoTab
-            // 
-            this.cb_SelectedDut_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_SelectedDut_AutoTab.FormattingEnabled = true;
-            this.cb_SelectedDut_AutoTab.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"});
-            this.cb_SelectedDut_AutoTab.Location = new System.Drawing.Point(156, 219);
-            this.cb_SelectedDut_AutoTab.Name = "cb_SelectedDut_AutoTab";
-            this.cb_SelectedDut_AutoTab.Size = new System.Drawing.Size(92, 26);
-            this.cb_SelectedDut_AutoTab.TabIndex = 127;
-            this.cb_SelectedDut_AutoTab.SelectedIndexChanged += new System.EventHandler(this.cb_SelectedDut_AutoTab_SelectedIndexChanged);
-            // 
-            // cb_BypFuse_AutoTab
-            // 
-            this.cb_BypFuse_AutoTab.AutoSize = true;
-            this.cb_BypFuse_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_BypFuse_AutoTab.Location = new System.Drawing.Point(516, 172);
-            this.cb_BypFuse_AutoTab.Name = "cb_BypFuse_AutoTab";
-            this.cb_BypFuse_AutoTab.Size = new System.Drawing.Size(82, 22);
-            this.cb_BypFuse_AutoTab.TabIndex = 125;
-            this.cb_BypFuse_AutoTab.Text = "BYP Fuse";
-            this.cb_BypFuse_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Location = new System.Drawing.Point(52, 222);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 18);
-            this.label19.TabIndex = 126;
-            this.label19.Text = "Selected DUT";
-            // 
-            // cb_s3drv_autoTab
-            // 
-            this.cb_s3drv_autoTab.AutoSize = true;
-            this.cb_s3drv_autoTab.Enabled = false;
-            this.cb_s3drv_autoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_s3drv_autoTab.Location = new System.Drawing.Point(516, 128);
-            this.cb_s3drv_autoTab.Name = "cb_s3drv_autoTab";
-            this.cb_s3drv_autoTab.Size = new System.Drawing.Size(88, 22);
-            this.cb_s3drv_autoTab.TabIndex = 122;
-            this.cb_s3drv_autoTab.Text = "Gain*1.25";
-            this.cb_s3drv_autoTab.UseVisualStyleBackColor = true;
-            // 
-            // txt_SL620TC_AutoTab
-            // 
-            this.txt_SL620TC_AutoTab.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_SL620TC_AutoTab.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SL620TC_AutoTab.ForeColor = System.Drawing.Color.White;
-            this.txt_SL620TC_AutoTab.Location = new System.Drawing.Point(388, 85);
-            this.txt_SL620TC_AutoTab.Name = "txt_SL620TC_AutoTab";
-            this.txt_SL620TC_AutoTab.Size = new System.Drawing.Size(77, 23);
-            this.txt_SL620TC_AutoTab.TabIndex = 119;
-            this.txt_SL620TC_AutoTab.Text = "57";
-            this.txt_SL620TC_AutoTab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cb_s2double_AutoTab
-            // 
-            this.cb_s2double_AutoTab.AutoSize = true;
-            this.cb_s2double_AutoTab.Enabled = false;
-            this.cb_s2double_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_s2double_AutoTab.Location = new System.Drawing.Point(516, 106);
-            this.cb_s2double_AutoTab.Name = "cb_s2double_AutoTab";
-            this.cb_s2double_AutoTab.Size = new System.Drawing.Size(70, 22);
-            this.cb_s2double_AutoTab.TabIndex = 121;
-            this.cb_s2double_AutoTab.Text = "Gain*2";
-            this.cb_s2double_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // txt_IP_AutoT
-            // 
-            this.txt_IP_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_IP_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IP_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_IP_AutoT.Location = new System.Drawing.Point(388, 169);
-            this.txt_IP_AutoT.Name = "txt_IP_AutoT";
-            this.txt_IP_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_IP_AutoT.TabIndex = 108;
-            this.txt_IP_AutoT.Text = "20";
-            this.txt_IP_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_IP_AutoT.TextChanged += new System.EventHandler(this.txt_IP_AutoT_TextChanged);
-            // 
-            // cb_ProductSeries_AutoTab
-            // 
-            this.cb_ProductSeries_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_ProductSeries_AutoTab.FormattingEnabled = true;
-            this.cb_ProductSeries_AutoTab.Items.AddRange(new object[] {
-            "SL62x_SE",
-            "SL62x_Diff",
-            "SC780",
-            "SC810",
-            "SC813",
-            "SC820",
-            "SL620a_SE"});
-            this.cb_ProductSeries_AutoTab.Location = new System.Drawing.Point(156, 87);
-            this.cb_ProductSeries_AutoTab.Name = "cb_ProductSeries_AutoTab";
-            this.cb_ProductSeries_AutoTab.Size = new System.Drawing.Size(92, 26);
-            this.cb_ProductSeries_AutoTab.TabIndex = 115;
-            this.cb_ProductSeries_AutoTab.SelectedIndexChanged += new System.EventHandler(this.cmb_SocketType_AutoT_SelectedIndexChanged);
-            // 
-            // cb_AutoTab_Retest
-            // 
-            this.cb_AutoTab_Retest.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_AutoTab_Retest.FormattingEnabled = true;
-            this.cb_AutoTab_Retest.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.cb_AutoTab_Retest.Location = new System.Drawing.Point(156, 186);
-            this.cb_AutoTab_Retest.Name = "cb_AutoTab_Retest";
-            this.cb_AutoTab_Retest.Size = new System.Drawing.Size(92, 26);
-            this.cb_AutoTab_Retest.TabIndex = 118;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label78.Location = new System.Drawing.Point(52, 189);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(96, 18);
-            this.label78.TabIndex = 117;
-            this.label78.Text = "Test after Trim";
-            // 
-            // cb_CustTc_AutoTab
-            // 
-            this.cb_CustTc_AutoTab.AutoSize = true;
-            this.cb_CustTc_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_CustTc_AutoTab.Location = new System.Drawing.Point(516, 216);
-            this.cb_CustTc_AutoTab.Name = "cb_CustTc_AutoTab";
-            this.cb_CustTc_AutoTab.Size = new System.Drawing.Size(69, 22);
-            this.cb_CustTc_AutoTab.TabIndex = 124;
-            this.cb_CustTc_AutoTab.Text = "Cust Tc";
-            this.cb_CustTc_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // btn_AutomaticaTrim
-            // 
-            this.btn_AutomaticaTrim.BackColor = System.Drawing.Color.YellowGreen;
-            this.btn_AutomaticaTrim.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AutomaticaTrim.Location = new System.Drawing.Point(58, 336);
-            this.btn_AutomaticaTrim.Name = "btn_AutomaticaTrim";
-            this.btn_AutomaticaTrim.Size = new System.Drawing.Size(191, 85);
-            this.btn_AutomaticaTrim.TabIndex = 57;
-            this.btn_AutomaticaTrim.Text = "PROGRAM";
-            this.btn_AutomaticaTrim.UseVisualStyleBackColor = false;
-            this.btn_AutomaticaTrim.Click += new System.EventHandler(this.btn_NewAutomaticaTrim_Click);
-            // 
-            // btn_loadconfig_AutoT
-            // 
-            this.btn_loadconfig_AutoT.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_loadconfig_AutoT.Location = new System.Drawing.Point(662, 129);
-            this.btn_loadconfig_AutoT.Name = "btn_loadconfig_AutoT";
-            this.btn_loadconfig_AutoT.Size = new System.Drawing.Size(91, 38);
-            this.btn_loadconfig_AutoT.TabIndex = 106;
-            this.btn_loadconfig_AutoT.Text = "Load Config";
-            this.btn_loadconfig_AutoT.UseVisualStyleBackColor = true;
-            this.btn_loadconfig_AutoT.Click += new System.EventHandler(this.btn_loadconfig_AutoT_Click);
-            // 
-            // cb_ChopCkDis_AutoTab
-            // 
-            this.cb_ChopCkDis_AutoTab.AutoSize = true;
-            this.cb_ChopCkDis_AutoTab.Enabled = false;
-            this.cb_ChopCkDis_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_ChopCkDis_AutoTab.Location = new System.Drawing.Point(516, 84);
-            this.cb_ChopCkDis_AutoTab.Name = "cb_ChopCkDis_AutoTab";
-            this.cb_ChopCkDis_AutoTab.Size = new System.Drawing.Size(89, 22);
-            this.cb_ChopCkDis_AutoTab.TabIndex = 119;
-            this.cb_ChopCkDis_AutoTab.Text = "Gain -50%";
-            this.cb_ChopCkDis_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label58.Location = new System.Drawing.Point(294, 89);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(52, 15);
-            this.label58.TabIndex = 109;
-            this.label58.Text = "TC (Hex)";
-            // 
-            // cb_MeasureiQ_AutoTab
-            // 
-            this.cb_MeasureiQ_AutoTab.AutoSize = true;
-            this.cb_MeasureiQ_AutoTab.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_MeasureiQ_AutoTab.Location = new System.Drawing.Point(516, 150);
-            this.cb_MeasureiQ_AutoTab.Name = "cb_MeasureiQ_AutoTab";
-            this.cb_MeasureiQ_AutoTab.Size = new System.Drawing.Size(97, 22);
-            this.cb_MeasureiQ_AutoTab.TabIndex = 123;
-            this.cb_MeasureiQ_AutoTab.Text = "BYP  iQ test";
-            this.cb_MeasureiQ_AutoTab.UseVisualStyleBackColor = true;
-            // 
-            // txt_VoutOffset_AutoT
-            // 
-            this.txt_VoutOffset_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_VoutOffset_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_VoutOffset_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_VoutOffset_AutoT.Location = new System.Drawing.Point(388, 113);
-            this.txt_VoutOffset_AutoT.Name = "txt_VoutOffset_AutoT";
-            this.txt_VoutOffset_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_VoutOffset_AutoT.TabIndex = 107;
-            this.txt_VoutOffset_AutoT.Text = "2.5";
-            this.txt_VoutOffset_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txt_TargertVoltage_AutoT
-            // 
-            this.txt_TargertVoltage_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_TargertVoltage_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TargertVoltage_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_TargertVoltage_AutoT.Location = new System.Drawing.Point(388, 141);
-            this.txt_TargertVoltage_AutoT.Name = "txt_TargertVoltage_AutoT";
-            this.txt_TargertVoltage_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_TargertVoltage_AutoT.TabIndex = 107;
-            this.txt_TargertVoltage_AutoT.Text = "2";
-            this.txt_TargertVoltage_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_TargertVoltage_AutoT.TextChanged += new System.EventHandler(this.txt_TargertVoltage_AutoT_TextChanged);
-            // 
-            // cmb_ProgramMode_AutoT
-            // 
-            this.cmb_ProgramMode_AutoT.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_ProgramMode_AutoT.FormattingEnabled = true;
-            this.cmb_ProgramMode_AutoT.Items.AddRange(new object[] {
-            "Automatic",
-            "Manual",
-            "DualRelay"});
-            this.cmb_ProgramMode_AutoT.Location = new System.Drawing.Point(156, 153);
-            this.cmb_ProgramMode_AutoT.Name = "cmb_ProgramMode_AutoT";
-            this.cmb_ProgramMode_AutoT.Size = new System.Drawing.Size(92, 26);
-            this.cmb_ProgramMode_AutoT.TabIndex = 115;
-            this.cmb_ProgramMode_AutoT.SelectedIndexChanged += new System.EventHandler(this.cmb_ProgramMode_AutoT_SelectedIndexChanged);
-            // 
-            // txt_AdcOffset_AutoT
-            // 
-            this.txt_AdcOffset_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_AdcOffset_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_AdcOffset_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_AdcOffset_AutoT.Location = new System.Drawing.Point(388, 225);
-            this.txt_AdcOffset_AutoT.Name = "txt_AdcOffset_AutoT";
-            this.txt_AdcOffset_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_AdcOffset_AutoT.TabIndex = 107;
-            this.txt_AdcOffset_AutoT.Text = "0";
-            this.txt_AdcOffset_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_AdcOffset_AutoT.TextChanged += new System.EventHandler(this.txt_AdcOffset_AutoT_TextChanged);
-            // 
-            // txt_TargetGain_AutoT
-            // 
-            this.txt_TargetGain_AutoT.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_TargetGain_AutoT.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TargetGain_AutoT.ForeColor = System.Drawing.Color.White;
-            this.txt_TargetGain_AutoT.Location = new System.Drawing.Point(388, 197);
-            this.txt_TargetGain_AutoT.Name = "txt_TargetGain_AutoT";
-            this.txt_TargetGain_AutoT.ReadOnly = true;
-            this.txt_TargetGain_AutoT.Size = new System.Drawing.Size(77, 23);
-            this.txt_TargetGain_AutoT.TabIndex = 107;
-            this.txt_TargetGain_AutoT.Text = "100";
-            this.txt_TargetGain_AutoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label71.Location = new System.Drawing.Point(294, 117);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(67, 15);
-            this.label71.TabIndex = 97;
-            this.label71.Text = "Vout0A (V)";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label77.Location = new System.Drawing.Point(52, 156);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(100, 18);
-            this.label77.TabIndex = 114;
-            this.label77.Text = "Program Mode";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label68.Location = new System.Drawing.Point(294, 229);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(90, 15);
-            this.label68.TabIndex = 91;
-            this.label68.Text = "AD Offset (mV)";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label49.Location = new System.Drawing.Point(294, 201);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(73, 15);
-            this.label49.TabIndex = 91;
-            this.label49.Text = "Gain (mV/A)";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label48.Location = new System.Drawing.Point(294, 173);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(36, 15);
-            this.label48.TabIndex = 93;
-            this.label48.Text = "IP (A)";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label61.Location = new System.Drawing.Point(294, 145);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(71, 15);
-            this.label61.TabIndex = 91;
-            this.label61.Text = "VIP-V0A (V)";
             // 
             // contextMenuStrip
             // 
@@ -4084,27 +4197,6 @@
             this.txt_OutputLogInfo.TabIndex = 88;
             this.txt_OutputLogInfo.Text = "";
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Plus;
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(683, 365);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 32);
-            this.button4.TabIndex = 152;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = global::CurrentSensorV3.Properties.Resources.Minus;
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button5.Location = new System.Drawing.Point(721, 365);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(32, 32);
-            this.button5.TabIndex = 153;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // CurrentSensorConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4117,13 +4209,19 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CurrentSensorConsole";
-            this.Text = "Senko Console v2.0.4 - CopyRight of SenkoMicro, Inc";
+            this.Text = "Senko Console v2.1.3 - CopyRight of SenkoMicro, Inc";
             this.Load += new System.EventHandler(this.CurrentSensorConsole_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.AutoTrimTab.ResumeLayout(false);
+            this.AutoTrimTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_TargetGain_Customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_IPxForCalc_Customer)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.EngineeringTab.ResumeLayout(false);
             this.EngineeringTab.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -4166,18 +4264,12 @@
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.BrakeTab.ResumeLayout(false);
+            this.TunningTab.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox11.ResumeLayout(false);
-            this.AutoTrimTab.ResumeLayout(false);
-            this.AutoTrimTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUD_TargetGain_Customer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUD_IPxForCalc_Customer)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.contextMenuStrip.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -4411,7 +4503,7 @@
         private System.Windows.Forms.Button btn_EngTab_Ipoff;
         private System.Windows.Forms.ComboBox cmb_ProgramMode_AutoT;
         private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.TabPage BrakeTab;
+        private System.Windows.Forms.TabPage TunningTab;
         private System.Windows.Forms.TextBox txt_StopPoint_BrakeT;
         private System.Windows.Forms.TextBox txt_StartPoint_BrakeT;
         private System.Windows.Forms.Button btn_StopPoint_BrakeT;
@@ -4484,10 +4576,17 @@
         private System.Windows.Forms.Label eee;
         private System.Windows.Forms.CheckBox cb_FastStart_AutoTab;
         private System.Windows.Forms.CheckBox cb_BigCap_AutoTab;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_SenMinus_AutoT;
+        private System.Windows.Forms.Button btn_SenPlus_AutoT;
         private System.Windows.Forms.Button btn_Ft_AutoT;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_V0AMinus_AutoT;
+        private System.Windows.Forms.Button btn_V0APlus_AutoT;
+        private System.Windows.Forms.Label Vout0A;
+        private System.Windows.Forms.Label Sensitivity;
+        private System.Windows.Forms.Button btn_WandT_AutoT;
+        private System.Windows.Forms.Button btn_Fuse_AutoT;
+        private System.Windows.Forms.Button btn_Test_TunningTab;
+        private System.Windows.Forms.ComboBox cmb_Test_TunningTab;
+        private System.Windows.Forms.Button btn_ReTest_AutoT;
     }
 }
