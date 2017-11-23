@@ -9812,6 +9812,7 @@ namespace CurrentSensorV3
             DisplayOperateMes("Start...");
             this.txt_Status_AutoTab.ForeColor = Color.Black;
             this.txt_Status_AutoTab.Text = "START!";
+            this.txt_Status_AutoTab.Refresh();
 
             for (uint i = 0; i < uDutCount; i++)
             {
@@ -9876,6 +9877,7 @@ namespace CurrentSensorV3
                     //MessageBox.Show(String.Format("电流异常，模块短路或损坏！"), "Error", MessageBoxButtons.OK);
                     this.txt_Status_AutoTab.ForeColor = Color.Yellow;
                     this.txt_Status_AutoTab.Text = "短路!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                     //updatedFtStatistic(3);
                     return;
@@ -9903,6 +9905,7 @@ namespace CurrentSensorV3
                 PrintDutAttribute(sDUT);
                 this.txt_Status_AutoTab.ForeColor = Color.Red;
                 this.txt_Status_AutoTab.Text = "已编程!";
+                this.txt_Status_AutoTab.Refresh();
                 setBin(6204);
                 //updatedFtStatistic(4);
                 return;
@@ -9941,6 +9944,7 @@ namespace CurrentSensorV3
                         //MessageBox.Show(String.Format("模组已编程，交至研发部！"), "Error", MessageBoxButtons.OK);
                         this.txt_Status_AutoTab.ForeColor = Color.Yellow;
                         this.txt_Status_AutoTab.Text = "混料!";
+                        this.txt_Status_AutoTab.Refresh();
                         setBin(6204);
                         return;
                     }
@@ -9955,6 +9959,7 @@ namespace CurrentSensorV3
                         //MessageBox.Show(String.Format("输出管脚短路！", Color.YellowGreen), "Warning", MessageBoxButtons.OK);
                         this.txt_Status_AutoTab.ForeColor = Color.Yellow;
                         this.txt_Status_AutoTab.Text = "短路!";
+                        this.txt_Status_AutoTab.Refresh();
                         setBin(6203);
                         return;
                     }
@@ -9970,6 +9975,7 @@ namespace CurrentSensorV3
                     //MessageBox.Show(String.Format("输出管脚短路！", Color.YellowGreen), "Warning", MessageBoxButtons.OK);
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "FAIL!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                     return;
                 }
@@ -10075,6 +10081,7 @@ namespace CurrentSensorV3
                     PrintDutAttribute(sDUT);
                     this.txt_Status_AutoTab.ForeColor = Color.Yellow;
                     this.txt_Status_AutoTab.Text = "短路!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                     return;
                 }
@@ -10087,6 +10094,7 @@ namespace CurrentSensorV3
                     PrintDutAttribute(sDUT);
                     this.txt_Status_AutoTab.ForeColor = Color.Yellow;
                     this.txt_Status_AutoTab.Text = "饱和!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6204);
                     return;
                 }
@@ -10171,6 +10179,7 @@ namespace CurrentSensorV3
                     PrintDutAttribute(sDUT);
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "FAIL!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                     return;
                 }
@@ -10185,6 +10194,7 @@ namespace CurrentSensorV3
                     PrintDutAttribute(sDUT);
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "FAIL!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                     return;
                 }
@@ -10270,6 +10280,7 @@ namespace CurrentSensorV3
                 sDUT.iErrorCode = uDutTrimResult[idut];
                 this.txt_Status_AutoTab.ForeColor = Color.Green;
                 this.txt_Status_AutoTab.Text = "PASS!";
+                this.txt_Status_AutoTab.Refresh();
                 DisplayOperateMes("Bin" + " = " + uDutTrimResult[idut].ToString());
                 DisplayOperateMes("Marginal Read ->" + bMarginal.ToString());
                 DisplayOperateMes("Safety REad ->" + bSafety.ToString());
@@ -10713,6 +10724,7 @@ namespace CurrentSensorV3
                     uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_1;
                     this.txt_Status_AutoTab.ForeColor = Color.Green;
                     this.txt_Status_AutoTab.Text = "PASS!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6201);
                 }
                 else if (TargetOffset * (1 - bin2accuracy / 100d) <= dMultiSiteVout0A[idut] &&
@@ -10723,6 +10735,7 @@ namespace CurrentSensorV3
                     uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_2;
                     this.txt_Status_AutoTab.ForeColor = Color.Green;
                     this.txt_Status_AutoTab.Text = "PASS!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6202);
                 }
                 else if (TargetOffset * (1 - bin2accuracy / 100d) <= dMultiSiteVout0A[idut] &&
@@ -10733,12 +10746,14 @@ namespace CurrentSensorV3
                     uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_3;
                     this.txt_Status_AutoTab.ForeColor = Color.Green;
                     this.txt_Status_AutoTab.Text = "PASS!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6201);
                 }
                 else
                 {
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "FAIL!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                 }
             }
@@ -10762,6 +10777,7 @@ namespace CurrentSensorV3
                     uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_1;
                     this.txt_Status_AutoTab.ForeColor = Color.Green;
                     this.txt_Status_AutoTab.Text = "PASS!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6201);
                 }
                 else if (TargetOffset * (1 - bin2accuracy / 100d) <= dMultiSiteVout0A[idut] &&
@@ -10770,12 +10786,14 @@ namespace CurrentSensorV3
                     uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_2;
                     this.txt_Status_AutoTab.ForeColor = Color.Green;
                     this.txt_Status_AutoTab.Text = "PASS!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6202);
                 }
                 else
                 {
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "FAIL!";
+                    this.txt_Status_AutoTab.Refresh();
                     setBin(6203);
                 }
             }
@@ -20056,6 +20074,12 @@ namespace CurrentSensorV3
             this.txt_BinFailCount_AutoTab.Text = FtBinFailNumber.ToString();
             this.txt_BinRecycleCount_AutoTab.Text = FtBinREcycleNumber.ToString();
             this.txt_BinTotalCount_AutoTab.Text = FtTotalNumber.ToString();
+
+            this.txt_BinTotalCount_AutoTab.Refresh();
+            this.txt_Bin1Count_AutoTab.Refresh();
+            this.txt_BinFailCount_AutoTab.Refresh();
+            this.txt_BinRecycleCount_AutoTab.Refresh();
+            this.txt_BinTotalCount_AutoTab.Refresh();
         }
 
         private void updatedFtStatistic(uint binID)
@@ -20076,6 +20100,12 @@ namespace CurrentSensorV3
             this.txt_BinFailCount_AutoTab.Text = FtBinFailNumber.ToString();
             this.txt_BinRecycleCount_AutoTab.Text = FtBinREcycleNumber.ToString();
             this.txt_BinTotalCount_AutoTab.Text = FtTotalNumber.ToString();
+
+            this.txt_BinTotalCount_AutoTab.Refresh();
+            this.txt_Bin1Count_AutoTab.Refresh();
+            this.txt_BinFailCount_AutoTab.Refresh();
+            this.txt_BinRecycleCount_AutoTab.Refresh();
+            this.txt_BinTotalCount_AutoTab.Refresh();
         }
 
     }
