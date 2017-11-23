@@ -4,3 +4,10 @@ C:\Users\Work\Documents\Github\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\One
 C:\Users\Work\Documents\Github\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.csproj.GenerateResource.Cache
 C:\Users\Work\Documents\Github\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.dll
 C:\Users\Work\Documents\Github\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.pdb
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\bin\Release\DMY2.dll
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\bin\Release\DMY2.pdb
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.csprojResolveAssemblyReference.cache
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\ADI.DMY2.Properties.Resources.resources
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.csproj.GenerateResource.Cache
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.dll
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\DM2Y2\obj\x86\Release\DMY2.pdb
