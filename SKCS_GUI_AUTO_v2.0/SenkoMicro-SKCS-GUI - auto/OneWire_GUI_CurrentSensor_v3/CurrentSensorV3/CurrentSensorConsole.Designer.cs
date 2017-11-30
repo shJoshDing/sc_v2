@@ -43,6 +43,16 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.AutoTrimTab = new System.Windows.Forms.TabPage();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.txt_BinTotalCount_AutoTab = new System.Windows.Forms.TextBox();
+            this.txt_BinRecycleCount_AutoTab = new System.Windows.Forms.TextBox();
+            this.txt_BinFailCount_AutoTab = new System.Windows.Forms.TextBox();
+            this.txt_Bin2Count_AutoTab = new System.Windows.Forms.TextBox();
+            this.txt_Bin1Count_AutoTab = new System.Windows.Forms.TextBox();
             this.btn_ReTest_AutoT = new System.Windows.Forms.Button();
             this.btn_Fuse_AutoT = new System.Windows.Forms.Button();
             this.btn_WandT_AutoT = new System.Windows.Forms.Button();
@@ -337,16 +347,6 @@
             this.keyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txt_OutputLogInfo = new System.Windows.Forms.RichTextBox();
-            this.txt_Bin1Count_AutoTab = new System.Windows.Forms.TextBox();
-            this.txt_Bin2Count_AutoTab = new System.Windows.Forms.TextBox();
-            this.txt_BinFailCount_AutoTab = new System.Windows.Forms.TextBox();
-            this.txt_BinRecycleCount_AutoTab = new System.Windows.Forms.TextBox();
-            this.txt_BinTotalCount_AutoTab = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -549,6 +549,91 @@
             this.AutoTrimTab.Text = "AutoTrim";
             this.AutoTrimTab.UseVisualStyleBackColor = true;
             this.AutoTrimTab.Enter += new System.EventHandler(this.AutoTrimTab_Enter);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(521, 552);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(64, 13);
+            this.label57.TabIndex = 168;
+            this.label57.Text = "BinRecycle:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(386, 552);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(41, 13);
+            this.label52.TabIndex = 167;
+            this.label52.Text = "BinFail:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(261, 552);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(31, 13);
+            this.label51.TabIndex = 166;
+            this.label51.Text = "Bin2:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(136, 552);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(31, 13);
+            this.label50.TabIndex = 165;
+            this.label50.Text = "Bin1:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(8, 552);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(34, 13);
+            this.label47.TabIndex = 164;
+            this.label47.Text = "Total:";
+            // 
+            // txt_BinTotalCount_AutoTab
+            // 
+            this.txt_BinTotalCount_AutoTab.Location = new System.Drawing.Point(45, 548);
+            this.txt_BinTotalCount_AutoTab.Name = "txt_BinTotalCount_AutoTab";
+            this.txt_BinTotalCount_AutoTab.Size = new System.Drawing.Size(64, 20);
+            this.txt_BinTotalCount_AutoTab.TabIndex = 163;
+            this.txt_BinTotalCount_AutoTab.Text = "0";
+            // 
+            // txt_BinRecycleCount_AutoTab
+            // 
+            this.txt_BinRecycleCount_AutoTab.Location = new System.Drawing.Point(588, 548);
+            this.txt_BinRecycleCount_AutoTab.Name = "txt_BinRecycleCount_AutoTab";
+            this.txt_BinRecycleCount_AutoTab.Size = new System.Drawing.Size(64, 20);
+            this.txt_BinRecycleCount_AutoTab.TabIndex = 162;
+            this.txt_BinRecycleCount_AutoTab.Text = "0";
+            // 
+            // txt_BinFailCount_AutoTab
+            // 
+            this.txt_BinFailCount_AutoTab.Location = new System.Drawing.Point(430, 548);
+            this.txt_BinFailCount_AutoTab.Name = "txt_BinFailCount_AutoTab";
+            this.txt_BinFailCount_AutoTab.Size = new System.Drawing.Size(64, 20);
+            this.txt_BinFailCount_AutoTab.TabIndex = 161;
+            this.txt_BinFailCount_AutoTab.Text = "0";
+            // 
+            // txt_Bin2Count_AutoTab
+            // 
+            this.txt_Bin2Count_AutoTab.Location = new System.Drawing.Point(295, 548);
+            this.txt_Bin2Count_AutoTab.Name = "txt_Bin2Count_AutoTab";
+            this.txt_Bin2Count_AutoTab.Size = new System.Drawing.Size(64, 20);
+            this.txt_Bin2Count_AutoTab.TabIndex = 160;
+            this.txt_Bin2Count_AutoTab.Text = "0";
+            // 
+            // txt_Bin1Count_AutoTab
+            // 
+            this.txt_Bin1Count_AutoTab.Location = new System.Drawing.Point(170, 548);
+            this.txt_Bin1Count_AutoTab.Name = "txt_Bin1Count_AutoTab";
+            this.txt_Bin1Count_AutoTab.Size = new System.Drawing.Size(64, 20);
+            this.txt_Bin1Count_AutoTab.TabIndex = 159;
+            this.txt_Bin1Count_AutoTab.Text = "0";
             // 
             // btn_ReTest_AutoT
             // 
@@ -4215,91 +4300,6 @@
             this.txt_OutputLogInfo.Size = new System.Drawing.Size(283, 599);
             this.txt_OutputLogInfo.TabIndex = 88;
             this.txt_OutputLogInfo.Text = "";
-            // 
-            // txt_Bin1Count_AutoTab
-            // 
-            this.txt_Bin1Count_AutoTab.Location = new System.Drawing.Point(170, 548);
-            this.txt_Bin1Count_AutoTab.Name = "txt_Bin1Count_AutoTab";
-            this.txt_Bin1Count_AutoTab.Size = new System.Drawing.Size(64, 20);
-            this.txt_Bin1Count_AutoTab.TabIndex = 159;
-            this.txt_Bin1Count_AutoTab.Text = "0";
-            // 
-            // txt_Bin2Count_AutoTab
-            // 
-            this.txt_Bin2Count_AutoTab.Location = new System.Drawing.Point(295, 548);
-            this.txt_Bin2Count_AutoTab.Name = "txt_Bin2Count_AutoTab";
-            this.txt_Bin2Count_AutoTab.Size = new System.Drawing.Size(64, 20);
-            this.txt_Bin2Count_AutoTab.TabIndex = 160;
-            this.txt_Bin2Count_AutoTab.Text = "0";
-            // 
-            // txt_BinFailCount_AutoTab
-            // 
-            this.txt_BinFailCount_AutoTab.Location = new System.Drawing.Point(430, 548);
-            this.txt_BinFailCount_AutoTab.Name = "txt_BinFailCount_AutoTab";
-            this.txt_BinFailCount_AutoTab.Size = new System.Drawing.Size(64, 20);
-            this.txt_BinFailCount_AutoTab.TabIndex = 161;
-            this.txt_BinFailCount_AutoTab.Text = "0";
-            // 
-            // txt_BinRecycleCount_AutoTab
-            // 
-            this.txt_BinRecycleCount_AutoTab.Location = new System.Drawing.Point(588, 548);
-            this.txt_BinRecycleCount_AutoTab.Name = "txt_BinRecycleCount_AutoTab";
-            this.txt_BinRecycleCount_AutoTab.Size = new System.Drawing.Size(64, 20);
-            this.txt_BinRecycleCount_AutoTab.TabIndex = 162;
-            this.txt_BinRecycleCount_AutoTab.Text = "0";
-            // 
-            // txt_BinTotalCount_AutoTab
-            // 
-            this.txt_BinTotalCount_AutoTab.Location = new System.Drawing.Point(45, 548);
-            this.txt_BinTotalCount_AutoTab.Name = "txt_BinTotalCount_AutoTab";
-            this.txt_BinTotalCount_AutoTab.Size = new System.Drawing.Size(64, 20);
-            this.txt_BinTotalCount_AutoTab.TabIndex = 163;
-            this.txt_BinTotalCount_AutoTab.Text = "0";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(8, 552);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(34, 13);
-            this.label47.TabIndex = 164;
-            this.label47.Text = "Total:";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(136, 552);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(31, 13);
-            this.label50.TabIndex = 165;
-            this.label50.Text = "Bin1:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(261, 552);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(31, 13);
-            this.label51.TabIndex = 166;
-            this.label51.Text = "Bin2:";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(386, 552);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(41, 13);
-            this.label52.TabIndex = 167;
-            this.label52.Text = "BinFail:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(521, 552);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(64, 13);
-            this.label57.TabIndex = 168;
-            this.label57.Text = "BinRecycle:";
             // 
             // CurrentSensorConsole
             // 

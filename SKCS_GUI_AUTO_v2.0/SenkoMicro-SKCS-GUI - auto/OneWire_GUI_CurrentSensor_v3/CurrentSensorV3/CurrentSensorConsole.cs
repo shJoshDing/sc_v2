@@ -2341,11 +2341,13 @@ namespace CurrentSensorV3
             {
                 this.txt_Status_AutoTab.ForeColor = Color.DarkGreen;
                 this.txt_Status_AutoTab.Text = "PASS!";
+                this.txt_Status_AutoTab.Refresh();
             }
             else
             {
                 this.txt_Status_AutoTab.ForeColor = Color.Red;
                 this.txt_Status_AutoTab.Text = "FAIL!";
+                this.txt_Status_AutoTab.Refresh();
             }
         }
 
@@ -2356,31 +2358,37 @@ namespace CurrentSensorV3
                 case 0x0000:
                     this.txt_Status_AutoTab.ForeColor = Color.DarkGreen;
                     this.txt_Status_AutoTab.Text = "PASS!";
+                    this.txt_Status_AutoTab.Refresh();
                     break;
 
                 case 0x0001:
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "S.N.E";
+                    this.txt_Status_AutoTab.Refresh();
                     break;
 
                 case 0x0002:
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "M.R.E";
+                    this.txt_Status_AutoTab.Refresh();
                     break;
 
                 case 0x0003:
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "O.P.E";
+                    this.txt_Status_AutoTab.Refresh();
                     break;
 
                 case 0x0004:
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "M.T.E";
+                    this.txt_Status_AutoTab.Refresh();
                     break;
 
                 case 0x0005:
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
                     this.txt_Status_AutoTab.Text = "FAIL!";
+                    this.txt_Status_AutoTab.Refresh();
                     break;
 
                 default:
@@ -2396,6 +2404,7 @@ namespace CurrentSensorV3
             {
                 this.txt_Status_AutoTab.ForeColor = Color.DarkGreen;
                 this.txt_Status_AutoTab.Text = "PASS!";
+                this.txt_Status_AutoTab.Refresh();
 
                 autoTrimResultIndicator.Clear();
                 autoTrimResultIndicator.AppendText( "PASS!\t\t" + strResult);
@@ -2409,6 +2418,7 @@ namespace CurrentSensorV3
                     case 0x0001:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "S.N.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2419,6 +2429,7 @@ namespace CurrentSensorV3
                     case 0x0002:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "M.R.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2429,6 +2440,7 @@ namespace CurrentSensorV3
                     case 0x0003:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "O.P.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2439,6 +2451,7 @@ namespace CurrentSensorV3
                     case 0x0004:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "M.T.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2449,6 +2462,7 @@ namespace CurrentSensorV3
                     case 0x0005:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "H.W.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2459,6 +2473,7 @@ namespace CurrentSensorV3
                     case 0x0006:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "I2C.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2469,6 +2484,7 @@ namespace CurrentSensorV3
                     case 0x0007:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "O.P.C";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2479,6 +2495,7 @@ namespace CurrentSensorV3
                     case 0x0008:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "T.M.E";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -2489,6 +2506,7 @@ namespace CurrentSensorV3
                     case 0x000F:
                         this.txt_Status_AutoTab.ForeColor = Color.Red;
                         this.txt_Status_AutoTab.Text = "FAIL!";
+                        this.txt_Status_AutoTab.Refresh();
 
                         autoTrimResultIndicator.Clear();
                         autoTrimResultIndicator.SelectionColor = Color.DarkRed;
@@ -8688,6 +8706,7 @@ namespace CurrentSensorV3
             DisplayOperateMes("Start...");
             this.txt_Status_AutoTab.ForeColor = Color.Black;
             this.txt_Status_AutoTab.Text = "START!";
+            this.txt_Status_AutoTab.Refresh();
 
             for (uint i = 0; i < uDutCount; i++)
             {
@@ -9512,6 +9531,19 @@ namespace CurrentSensorV3
             Delay(Delay_Fuse);
             dMultiSiteVout0A[idut] = AverageVout();
             Vout_0A = dMultiSiteVout0A[idut];
+
+            if (Vout_0A > TargetOffset * 1.02 || Vout_0A < TargetOffset * 0.98)
+            {
+                uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_OFFSET_ABN;
+                TrimFinish();
+                sDUT.iErrorCode = uDutTrimResult[idut];
+                PrintDutAttribute(sDUT);
+                this.txt_Status_AutoTab.ForeColor = Color.Red;
+                this.txt_Status_AutoTab.Text = "FAIL!";
+                this.txt_Status_AutoTab.Refresh();
+                setBin(6203);
+                return;
+            }
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////
             bit_op_mask = bit0_Mask | bit1_Mask | bit2_Mask | bit3_Mask | bit4_Mask;
@@ -10562,6 +10594,20 @@ namespace CurrentSensorV3
             dMultiSiteVout0A[idut] = AverageVout();
             Vout_0A = dMultiSiteVout0A[idut];
 
+
+            if (Vout_0A > TargetOffset * 1.02 || Vout_0A < TargetOffset * 0.98)
+            {
+                uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_OFFSET_ABN;
+                TrimFinish();
+                sDUT.iErrorCode = uDutTrimResult[idut];
+                PrintDutAttribute(sDUT);
+                this.txt_Status_AutoTab.ForeColor = Color.Red;
+                this.txt_Status_AutoTab.Text = "FAIL!";
+                this.txt_Status_AutoTab.Refresh();
+                setBin(6203);
+                return;
+            }
+
             ///////////////////////////////////////////////////////////////////////////////////////////////////
             bit_op_mask = bit0_Mask | bit1_Mask | bit2_Mask | bit3_Mask | bit4_Mask;
             uint ix_FineOffsetCode = 0;
@@ -10738,17 +10784,17 @@ namespace CurrentSensorV3
                     this.txt_Status_AutoTab.Refresh();
                     setBin(6202);
                 }
-                else if (TargetOffset * (1 - bin2accuracy / 100d) <= dMultiSiteVout0A[idut] &&
-                    dMultiSiteVout0A[idut] <= TargetOffset * (1 + bin2accuracy / 100d) &&
-                    (dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) <= TargetVoltage_customer * (1 + bin3accuracy / 100d) &&
-                    (dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) >= TargetVoltage_customer * (1 - bin3accuracy / 100d))
-                {
-                    uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_3;
-                    this.txt_Status_AutoTab.ForeColor = Color.Green;
-                    this.txt_Status_AutoTab.Text = "PASS!";
-                    this.txt_Status_AutoTab.Refresh();
-                    setBin(6201);
-                }
+                //else if (TargetOffset * (1 - bin2accuracy / 100d) <= dMultiSiteVout0A[idut] &&
+                //    dMultiSiteVout0A[idut] <= TargetOffset * (1 + bin2accuracy / 100d) &&
+                //    (dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) <= TargetVoltage_customer * (1 + bin3accuracy / 100d) &&
+                //    (dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) >= TargetVoltage_customer * (1 - bin3accuracy / 100d))
+                //{
+                //    uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_3;
+                //    this.txt_Status_AutoTab.ForeColor = Color.Green;
+                //    this.txt_Status_AutoTab.Text = "PASS!";
+                //    this.txt_Status_AutoTab.Refresh();
+                //    setBin(6201);
+                //}
                 else
                 {
                     this.txt_Status_AutoTab.ForeColor = Color.Red;
@@ -13203,7 +13249,9 @@ namespace CurrentSensorV3
                     Delay(Delay_Sync);
                     oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VIN_TO_VOUT);
                     Delay(Delay_Fuse);
-                    dMultiSiteVout0A[idut] = AverageVout();
+                    //dMultiSiteVout0A[idut] = AverageVout();
+                    //Delay(Delay_Fuse);
+                    dMultiSiteVout0A[idut] = GetVout();
                     if (dMultiSiteVout0A[idut] < 4.5 && dMultiSiteVout0A[idut] > 1.5)
                     {
                         DisplayOperateMes("DUT Trimmed!", Color.Red);
@@ -13280,7 +13328,8 @@ namespace CurrentSensorV3
             #endregion
 
             Delay(Delay_Fuse);
-            dMultiSiteVoutIP[idut] = AverageVout();
+            //dMultiSiteVoutIP[idut] = AverageVout();
+            dMultiSiteVoutIP[idut] = GetVout();
             sDUT.dVoutIPNative = dMultiSiteVoutIP[idut];
             DisplayOperateMes("Vout" + " @ IP = " + dMultiSiteVoutIP[idut].ToString("F3"));
 
@@ -13339,6 +13388,7 @@ namespace CurrentSensorV3
             //###########################################################################
 
             dMultiSiteVout0A[idut] = GetVout();
+            //dMultiSiteVout0A[idut] = GetVref();
 
             sDUT.dVout0ANative = dMultiSiteVout0A[idut];
             DisplayOperateMes("Vout" + " @ 0A = " + dMultiSiteVout0A[idut].ToString("F3"));
@@ -13393,98 +13443,6 @@ namespace CurrentSensorV3
             }
 
             #endregion  Get Vout@0A
-
-            #region No need Trim case
-            if ((TargetOffset - 0.001) <= dMultiSiteVout0A[idut] && dMultiSiteVout0A[idut] <= (TargetOffset + 0.001)
-                && (dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) <= (TargetVoltage_customer + 0.001)
-                && (dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) >= (TargetVoltage_customer - 0.001))
-            {
-                oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VDD_FROM_EXT);
-                Delay(Delay_Sync);
-                RePower();
-                //Delay(Delay_Sync);
-                EnterTestMode();
-
-                RegisterWrite(4, new uint[8] { 0x80, MultiSiteReg0[idut], 0x81, MultiSiteReg1[idut], 0x82, MultiSiteReg2[idut], 0x83, MultiSiteReg3[idut] });
-                Delay(Delay_Sync);
-                RegisterWrite(4, new uint[8] { 0x84, MultiSiteReg4[idut], 0x85, MultiSiteReg5[idut], 0x86, MultiSiteReg6[idut], 0x87, MultiSiteReg7[idut] });
-                Delay(Delay_Sync);
-
-
-                BurstRead(0x80, 5, tempReadback);
-                /* fuse */
-                FuseClockOn(DeviceAddress, (double)num_UD_pulsewidth_ow_EngT.Value, (double)numUD_pulsedurationtime_ow_EngT.Value);
-                DisplayOperateMes("Processing...");
-                //Delay(Delay_Fuse);             
-
-                //capture Vout
-                oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VDD_FROM_5V);
-                RePower();
-                oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VIN_TO_VOUT);
-                Delay(Delay_Sync);
-                oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VOUT_WITH_CAP);
-
-                Delay(Delay_Sync);
-                dMultiSiteVout0A[idut] = AverageVout();
-                sDUT.dVout0ATrimmed = dMultiSiteVout0A[idut];
-                DisplayOperateMes("Vout" + " @ 0A = " + dMultiSiteVout0A[idut].ToString("F3"));
-
-                /* Change Current to IP  */
-                if (ProgramMode == 0)
-                {
-                    //if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(IP)))
-                    if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTON, 0u))
-                        DisplayOperateMes(string.Format("Set Current to {0}A succeeded!", IP));
-                    else
-                    {
-                        DisplayOperateMes(string.Format("Set Current to {0}A failed!", IP));
-                        DisplayOperateMes("AutoTrim Canceled!", Color.Red);
-                        TrimFinish();
-                        return;
-                    }
-                }
-                else if (ProgramMode == 1)
-                {
-                    dr = MessageBox.Show(String.Format("请将电流升至{0}A", IP), "Change Current", MessageBoxButtons.OKCancel);
-                    if (dr == DialogResult.Cancel)
-                    {
-                        DisplayOperateMes("AutoTrim Canceled!", Color.Red);
-                        PowerOff();
-                        RestoreRegValue();
-                        return;
-                    }
-                }
-                else if (ProgramMode == 2)
-                {
-                    MultiSiteSocketSelect(1);       //set epio1 and epio3 to high
-                    Delay(Delay_Sync);
-                    MultiSiteSocketSelect(0);       //set epio1 = high; epio3 = low
-                }
-
-                Delay(Delay_Fuse);
-                dMultiSiteVoutIP[idut] = AverageVout();
-                sDUT.dVoutIPTrimmed = dMultiSiteVoutIP[idut];
-                DisplayOperateMes("Vout" + " @ IP = " + dMultiSiteVoutIP[idut].ToString("F3"));
-                //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VDD_FROM_5V);
-
-                DisplayOperateMes("DUT" + idut.ToString() + "Pass! Bin Normal");
-                //uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_NORMAL;
-                uDutTrimResult[idut] = (uint)PRGMRSULT.DUT_BIN_1;
-                sDUT.iErrorCode = uDutTrimResult[idut];
-                this.txt_Status_AutoTab.ForeColor = Color.Green;
-                this.txt_Status_AutoTab.Text = "PASS!";
-                DisplayOperateMes("Bin" + " = " + uDutTrimResult[idut].ToString());
-                DisplayOperateMes("Marginal Read ->" + bMarginal.ToString());
-                DisplayOperateMes("Safety REad ->" + bSafety.ToString());
-                MultiSiteDisplayResult(uDutTrimResult);
-                TrimFinish();
-                PrintDutAttribute(sDUT);
-                return;
-
-            }
-
-
-            #endregion No need Trim case
 
             #region Adapting algorithm
 
@@ -13549,6 +13507,71 @@ namespace CurrentSensorV3
             //RegisterWrite(4, new uint[8] { 0x80, MultiSiteReg0[idut], 0x81, MultiSiteReg1[idut], 0x82, MultiSiteReg2[idut], 0x83, MultiSiteReg3[idut] });
             EnterNomalMode();
 
+            Delay(Delay_Power);
+
+
+            if (bAutoTrimTest)
+                DisplayOperateMes("***new approach end***");
+
+
+            //###########################################################################
+            //this.TargetOffset = GetVref();
+            dMultiSiteVout0A[idut] = GetVref();
+            //###########################################################################
+            //dMultiSiteVout0A[idut] = GetVout();
+
+            dVout_0A_Temp = dMultiSiteVout0A[idut];
+            //if (bAutoTrimTest)
+            DisplayOperateMes("DUT" + " TargetOffset = " + TargetOffset.ToString("F3"));
+            DisplayOperateMes("DUT" + " Vref @ 0A = " + dMultiSiteVout0A[idut].ToString("F3"));
+
+
+            /* Offset trim code calculate */
+            Vout_0A = dMultiSiteVout0A[idut];
+
+            if (TargetOffset == 0.5)
+            {
+                if (Vout_0A < 0.455 || Vout_0A > 0.555)
+                {
+                    DisplayOperateMes("###Caution### Offset NOT trimmable!", Color.DarkRed);
+                    return;
+                }
+            }
+
+            bit_op_mask = bit0_Mask | bit1_Mask | bit2_Mask | bit3_Mask | bit4_Mask;
+            uint ix_CoarseOffsetCode = 0;
+            if (Vout_0A > TargetOffset)
+            {
+                ix_CoarseOffsetCode = Convert.ToUInt32(Math.Round(1000d * (1.0d - TargetOffset / Vout_0A) / 5));
+                if (ix_CoarseOffsetCode > 15)
+                    ix_CoarseOffsetCode = 15;
+            }
+            else if (Vout_0A < TargetOffset)
+            {
+                ix_CoarseOffsetCode = 32 - Convert.ToUInt32(Math.Round(1000d * (TargetOffset / Vout_0A - 1.0d) / 5));
+                if (ix_CoarseOffsetCode == 32)
+                    ix_CoarseOffsetCode = 0;
+                else if (ix_CoarseOffsetCode < 16)
+                    ix_CoarseOffsetCode = 16;
+            }
+
+            MultiSiteReg6[idut] &= ~bit_op_mask;
+            MultiSiteReg6[idut] |= ix_CoarseOffsetCode;
+
+            DisplayOperateMes("Vref = " + Vout_0A.ToString("F3"));
+            DisplayOperateMes("ix_CoarseOffsetCode = " + ix_CoarseOffsetCode.ToString());
+
+            RePower();
+            EnterTestMode();
+
+            RegisterWrite(4, new uint[8] { 0x80, MultiSiteReg0[idut], 0x81, MultiSiteReg1[idut], 0x82, MultiSiteReg2[idut], 0x83, MultiSiteReg3[idut] });
+            Delay(Delay_Sync);
+            RegisterWrite(4, new uint[8] { 0x84, MultiSiteReg4[idut], 0x85, MultiSiteReg5[idut], 0x86, MultiSiteReg6[idut], 0x87, MultiSiteReg7[idut] });
+            Delay(Delay_Sync);
+
+            //normal mode
+            EnterNomalMode();
+
             /* Change Current to IP  */
             if (ProgramMode == 0)
             {
@@ -13579,7 +13602,8 @@ namespace CurrentSensorV3
             }
 
             Delay(Delay_Fuse);
-            dMultiSiteVoutIP[idut] = AverageVout();
+            //dMultiSiteVoutIP[idut] = AverageVout();
+            dMultiSiteVoutIP[idut] = GetVout();
             DisplayOperateMes("Vout" + " @ IP = " + dMultiSiteVoutIP[idut].ToString("F3"));
 
             /* Change Current to 0A */
@@ -13614,7 +13638,9 @@ namespace CurrentSensorV3
             /*  power on */
             Delay(Delay_Fuse);
             //this.txt_Status_AutoTab.Text = "Processing!";
-            dMultiSiteVout0A[idut] = AverageVout();
+            //dMultiSiteVout0A[idut] = AverageVout();
+            //dMultiSiteVoutIP[idut] = GetVout();
+            dMultiSiteVoutIP[idut] = GetVref();
             DisplayOperateMes("DUT" + " Vout @ 0A = " + dMultiSiteVout0A[idut].ToString("F3"));
 
             if (((dMultiSiteVoutIP[idut] - dMultiSiteVout0A[idut]) * 1000 - TargetGain_customer * IP) > 4
@@ -13684,57 +13710,7 @@ namespace CurrentSensorV3
                 return;
             }
 
-
-            if (bAutoTrimTest)
-                DisplayOperateMes("***new approach end***");
-
-
             //###########################################################################
-            this.TargetOffset = GetVref();
-            //###########################################################################
-            dMultiSiteVout0A[idut] = GetVout();
-
-            dVout_0A_Temp = dMultiSiteVout0A[idut];
-            //if (bAutoTrimTest)
-            DisplayOperateMes("DUT" + " Vref = " + TargetOffset.ToString("F3"));
-            DisplayOperateMes("DUT" + " Vout @ 0A = " + dMultiSiteVout0A[idut].ToString("F3"));
-
-
-            /* Offset trim code calculate */
-            Vout_0A = dMultiSiteVout0A[idut];
-
-            if (TargetOffset == 0.5)
-            {
-                if (Vout_0A < 0.455 || Vout_0A > 0.555)
-                {
-                    DisplayOperateMes("###Caution### Offset NOT trimmable!", Color.DarkRed);
-                    return;
-                }
-            }
-
-            bit_op_mask = bit0_Mask | bit1_Mask | bit2_Mask | bit3_Mask | bit4_Mask;
-            uint ix_CoarseOffsetCode = 0;
-            if (Vout_0A > TargetOffset)
-            {
-                ix_CoarseOffsetCode = Convert.ToUInt32(Math.Round(1000d * (1.0d - TargetOffset / Vout_0A) / 5));
-                if (ix_CoarseOffsetCode > 15)
-                    ix_CoarseOffsetCode = 15;
-            }
-            else if (Vout_0A < TargetOffset)
-            {
-                ix_CoarseOffsetCode = 32 - Convert.ToUInt32(Math.Round(1000d * (TargetOffset / Vout_0A - 1.0d) / 5));
-                if (ix_CoarseOffsetCode == 32)
-                    ix_CoarseOffsetCode = 0;
-                else if (ix_CoarseOffsetCode < 16)
-                    ix_CoarseOffsetCode = 16;
-            }
-
-            MultiSiteReg6[idut] &= ~bit_op_mask;
-            MultiSiteReg6[idut] |= ix_CoarseOffsetCode;
-
-            DisplayOperateMes("Vout_0A = " + Vout_0A.ToString("F3"));
-            DisplayOperateMes("ix_CoarseOffsetCode = " + ix_CoarseOffsetCode.ToString());
-
             RePower();
             EnterTestMode();
 
@@ -13745,14 +13721,12 @@ namespace CurrentSensorV3
 
             //normal mode
             EnterNomalMode();
-            Delay(Delay_Fuse);
-            //###########################################################################
+            Delay(Delay_Power);
             this.TargetOffset = GetVref();
-            //###########################################################################
+            Delay(Delay_Power);
             dMultiSiteVout0A[idut] = GetVout();
             //dMultiSiteVout0A[idut] = AverageVout();
             Vout_0A = dMultiSiteVout0A[idut];
-
             //***************************************************
             bit_op_mask = bit0_Mask | bit1_Mask | bit2_Mask | bit3_Mask | bit4_Mask;
             uint ix_FineOffsetCode = 0;
@@ -13768,8 +13742,51 @@ namespace CurrentSensorV3
             DisplayOperateMes("DUT" + " Vref = " + TargetOffset.ToString("F3"));
             DisplayOperateMes("Vout_0A = " + Vout_0A.ToString("F3"));
             DisplayOperateMes("ix_FineOffsetCode = " + ix_FineOffsetCode.ToString());
+            //###########################################################################
+
             DisplayOperateMes("\r\nProcessing...");
 
+            //###########################################################################
+            RePower();
+            EnterTestMode();
+
+            RegisterWrite(4, new uint[8] { 0x80, MultiSiteReg0[idut], 0x81, MultiSiteReg1[idut], 0x82, MultiSiteReg2[idut], 0x83, MultiSiteReg3[idut] });
+            Delay(Delay_Sync);
+            RegisterWrite(4, new uint[8] { 0x84, MultiSiteReg4[idut], 0x85, MultiSiteReg5[idut], 0x86, MultiSiteReg6[idut], 0x87, MultiSiteReg7[idut] });
+            Delay(Delay_Sync);
+
+            //normal mode
+            EnterNomalMode();
+            Delay(Delay_Power);
+            this.TargetOffset = GetVref();
+            Delay(Delay_Power);
+            dMultiSiteVout0A[idut] = GetVout();
+            //dMultiSiteVout0A[idut] = AverageVout();
+            DisplayOperateMes("DUT" + " Vref = " + TargetOffset.ToString("F3"));
+            DisplayOperateMes("Vout_0A = " + dMultiSiteVout0A[idut].ToString("F3"));
+
+            Vout_0A = dMultiSiteVout0A[idut];
+
+            if (Vout_0A > TargetOffset + 0.001)
+            {
+                if (ix_FineOffsetCode == 15)
+                    ix_FineOffsetCode = 15;
+                else if(ix_FineOffsetCode == 31)
+                    ix_FineOffsetCode = 0;
+                else
+                    ix_FineOffsetCode++;
+            }
+            else if (Vout_0A < TargetOffset - 0.001)
+            {
+                if (ix_FineOffsetCode == 0)
+                    ix_FineOffsetCode = 31;
+                else if (ix_FineOffsetCode == 16)
+                    ix_FineOffsetCode = 16;
+                else
+                    ix_FineOffsetCode--;
+            }
+            DisplayOperateMes("ix_FineOffsetCode = " + ix_FineOffsetCode.ToString());
+            //###########################################################################
 
             DisplayOperateMes("Processing...");
 
@@ -13777,7 +13794,7 @@ namespace CurrentSensorV3
 
             #region Fuse
             //Fuse
-            oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VDD_FROM_EXT);
+            //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VDD_FROM_EXT);
             RePower();
             EnterTestMode();
 
@@ -13853,9 +13870,12 @@ namespace CurrentSensorV3
                 }
 
                 Delay(Delay_Fuse);
-                dMultiSiteVoutIP[idut] = AverageVout();
+                //dMultiSiteVoutIP[idut] = AverageVout();
+                dMultiSiteVoutIP[idut] = GetVout();
                 sDUT.dVoutIPTrimmed = dMultiSiteVoutIP[idut];
                 DisplayOperateMes("Vout" + " @ IP = " + dMultiSiteVoutIP[idut].ToString("F3"));
+                DisplayOperateMes("DUT" + " Vref = " + TargetOffset.ToString("F3"));
+                DisplayOperateMes("Vout" + " @ 0A = " + dMultiSiteVout0A[idut].ToString("F3"));
 
                 /* bin1,2,3 */
                 if (TargetOffset * (1 - 0.002) <= dMultiSiteVout0A[idut] && dMultiSiteVout0A[idut] <= TargetOffset * (1 + 0.002) &&
@@ -19788,13 +19808,26 @@ namespace CurrentSensorV3
         {
             DialogResult dr;
             double uVout = 0;
+            double uVref = 0;
 
             uint idut = 0;
 
             IP = Convert.ToDouble(this.txt_IP_AutoT.Text);
+            Delay_Fuse = Convert.ToInt32(this.txt_IpDelay_AutoT.Text);
 
             RePower();
 
+            //for ( int i = 0; i < 8; i++)
+            //{
+            //    DisplayOperateMes(MultiSiteReg0[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg1[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg2[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg3[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg4[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg5[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg6[idut].ToString("X2"));
+            //    DisplayOperateMes(MultiSiteReg7[idut].ToString("X2"));
+            //}
             
             //for (idut = 0; idut < uDutCount; idut++)
             {
@@ -19844,7 +19877,7 @@ namespace CurrentSensorV3
                 Delay(Delay_Fuse);
 
                 //Delay(300);
-                uVout = AverageVout();
+                uVout = GetVout();
                 DisplayOperateMes("VoutIP = " + uVout.ToString("F3") + "V");
 
                 #region Change Current to 0A */
@@ -19878,9 +19911,10 @@ namespace CurrentSensorV3
                 #endregion
 
                 Delay(Delay_Fuse);
-
-                //Delay(300);
-                uVout = AverageVout();
+                uVref = GetVref();
+                Delay(100);
+                uVout = GetVout();
+                DisplayOperateMes("Vref0A = " + uVref.ToString("F3") + "V");
                 DisplayOperateMes("Vout0A = " + uVout.ToString("F3") + "V");
             }
         }
@@ -20106,6 +20140,13 @@ namespace CurrentSensorV3
             this.txt_BinFailCount_AutoTab.Refresh();
             this.txt_BinRecycleCount_AutoTab.Refresh();
             this.txt_BinTotalCount_AutoTab.Refresh();
+        }
+
+        private void updateProcessIndicator(string str, Color clr)
+        {
+            this.txt_Status_AutoTab.ForeColor = clr;
+            this.txt_Status_AutoTab.Text = str;
+            this.txt_Status_AutoTab.Refresh();
         }
 
     }
