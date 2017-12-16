@@ -45,6 +45,14 @@ namespace CurrentSensorV3
             public double StopPoint;
         }
 
+        public enum BIN
+        {
+            bin1 = 6201,
+            bin2 = 6202,
+            binFail = 6203,
+            binRecycle = 6204
+        }
+
         public struct ProdcutAttribute
         {
             public uint uProductID;
@@ -639,7 +647,9 @@ namespace CurrentSensorV3
             this.cmb_PreTrim_SensorDirection.SelectedIndex = 0;
 
             this.cb_AutoTab_Retest.SelectedIndex = 0;
+            this.cb_FtRoutines_AutoTab.SelectedIndex = 0;
             //this.cb_ProductSeries_AutoTab.SelectedIndex = 2;
+            this.cmb_Test_TunningTab.SelectedIndex = 0;
 
             this.cb_SelectedDut_AutoTab.SelectedIndex = 0;
             this.cb_V0AOption_AutoTab.SelectedIndex = 0;
@@ -2264,6 +2274,8 @@ namespace CurrentSensorV3
             txt_OutputLogInfo.Select(txt_OutputLogInfo.Text.Length, 0);//.SelectedText = "";
             txt_OutputLogInfo.ScrollToCaret();
             txt_OutputLogInfo.Refresh();
+
+            updateProcessIndicator();
         }
 
         public void DisplayOperateMesClear( )
@@ -16409,6 +16421,18 @@ namespace CurrentSensorV3
             DisplayOperateMes("IQ = " + this.txt_ModuleCurrent_PreT.Text + "mA");
         }
 
+        private double getIQ()
+        {
+            if (!oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VIN_TO_VCS))
+                DisplayOperateMes("Set ADC VIN to VCS failed", Color.Red);
+
+            if (!oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_SET_CURRENT_SENCE))
+                DisplayOperateMes("Set ADC current sensor failed", Color.Red);
+
+            return GetModuleCurrent();
+
+        }
+
         private void txt_sampleNum_EngT_TextChanged(object sender, EventArgs e)
         {
             string temp;
@@ -18052,49 +18076,33 @@ namespace CurrentSensorV3
             {
                 this.toolStripStatusLabel_Connection.BackColor = Color.IndianRed;
                 this.toolStripStatusLabel_Connection.Text = "Disconnected";
+                return;
             }
             //#endregion
 
             //UART Initialization
-            if (oneWrie_device.UARTInitilize(9600, 1))
-                DisplayOperateMes("UART Initilize succeeded!");
-            else
+            if ( !oneWrie_device.UARTInitilize(9600, 1))
                 DisplayOperateMes("UART Initilize failed!");
             //ding hao
             Delay(Delay_Power);
             //DisplayAutoTrimOperateMes("Delay 300ms");
 
             //1. Current Remote CTL
-            if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_REMOTE, 0))
-                DisplayOperateMes("Set Current Remote succeeded!");
-            else
+            if ( !oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_REMOTE, 0))
                 DisplayOperateMes("Set Current Remote failed!");
 
-            //Delay 300ms
-            //Thread.Sleep(300);
-            Delay(Delay_Power);
-            //DisplayAutoTrimOperateMes("Delay 300ms");
 
-            //2. Current On
-            //if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTON, 0))
-            if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(IP)))
-                DisplayOperateMes("Set Current to IP succeeded!");
-            else
+            Delay(Delay_Power);
+
+            //2. Set Current
+            if ( !oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(IP)))
                 DisplayOperateMes("Set Current to IP failed!");
 
-            //Delay 300ms
             Delay(Delay_Power);
-            //DisplayOperateMes("Delay 300ms");
 
             //3. Set Voltage
-            if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 20u))
-                DisplayOperateMes(string.Format("Set Voltage to {0}V succeeded!", 20));
-            else
+            if ( !oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 20u))
                 DisplayOperateMes(string.Format("Set Voltage to {0}V failed!", 20));
-
-            //numUD_pilotwidth_ow_ValueChanged(null,null);
-            //numUD_pilotwidth_ow_ValueChanged(null,null);
-            //num_UD_pulsewidth_ow_ValueChanged
         }
 
         private void btn_EngTab_Ipoff_Click(object sender, EventArgs e)
@@ -19312,16 +19320,6 @@ namespace CurrentSensorV3
             }
         }
 
-        private bool IPON(uint powerModule)
-        {
-            return true;
-        }
-
-        private bool IPOFF(uint powerModule)
-        {
-            return true;
-        }
-
         private bool EnterTestMode(uint pID)
         {
             return true;
@@ -19737,28 +19735,21 @@ namespace CurrentSensorV3
         private void btn_Ft_AutoT_Click(object sender, EventArgs e)
         {
             uint i = 0;
-
             resetFtCount();
-
-            //while (!oneWrie_device.SDPSingalPathReadSot())
+  
             while (true)
             {
-                //i++;
-                //Delay(100);
                 if (!oneWrie_device.SDPSingalPathReadSot())
                 {
                     i = 0;
                     DisplayOperateMes("SOT is assert! --- ");
-                    //Delay(1000);
-                    //setBin(6201);
-                    //AutoTrim_SL620_SingleEnd_HalfVDD();
-                    btn_NewAutomaticaTrim_Click(null, null);
-                    //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_EOT); //EPIO9
-                    //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_FAIL); //EPIO8
-                    //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_ONE); //EPIO10
-                    //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_TWO); //EPIO11
-                    //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_FAIL); //EPIO8
-                    //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_RECYCLE); //EPIO12
+
+                    if (this.cb_FtRoutines_AutoTab.SelectedIndex == 0)
+                        btn_NewAutomaticaTrim_Click(null, null);
+                    else if (this.cb_FtRoutines_AutoTab.SelectedIndex == 1)
+                        btn_Vout_AutoT_Click(null, null);
+                    else if (this.cb_FtRoutines_AutoTab.SelectedIndex == 2)
+                        sw3230A_Char();
                 }
                 else
                 {
@@ -19766,23 +19757,27 @@ namespace CurrentSensorV3
                     Delay(10);
                     if (i % 50 == 1)
                         DisplayOperateMes("No SOT! --- " + i.ToString());
-                    else if (i == 500)        //1000 * 0.01s = 10s
+                    else if (i == 5000)        //1000 * 0.01s = 10s
                     {
                         DisplayOperateMes("Return!");
                         return;
                     }
                 }
             }
-           //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_EOT); //EPIO9
-
         }
 
         private void setBin( uint bin )
         {
             if (bin == 6201)
+            {
+                DisplayOperateMes("Bin 1!");
                 oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_ONE); //EPIO10
+            }
             else if (bin == 6202)
-                oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_ONE); //EPIO11
+            {
+                DisplayOperateMes("Bin 2!");
+                oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_WRITE_BIN_TWO); //EPIO11
+            }
             else if (bin == 6203)
             {
                 DisplayOperateMes("Fail bin!");
@@ -20021,41 +20016,46 @@ namespace CurrentSensorV3
             DisplayOperateMes("Trimming...");
         }
 
-        private void btn_TestVout_AutoT_Click(object sender, EventArgs e)
-        {
+        //private void btn_TestVout_AutoT_Click(object sender, EventArgs e)
+        //{
             
 
 
 
-        }
+        //}
 
         private void btn_Test_TunningTab_Click(object sender, EventArgs e)
         {
             if (this.cmb_Test_TunningTab.SelectedIndex == 0)
-            {
                 setBin(6201);
-                DisplayOperateMes("Bin 1");
-            }
             else if (this.cmb_Test_TunningTab.SelectedIndex == 1)
-            {
-                setBin(6201);
-                DisplayOperateMes("Bin 2");
-            }
+                setBin(6202);
             else if (this.cmb_Test_TunningTab.SelectedIndex == 2)
-            {
                 setBin(6203);
-                DisplayOperateMes("Bin Fail");
-            }
             else if (this.cmb_Test_TunningTab.SelectedIndex == 3)
-            {
                 setBin(6204);
-                DisplayOperateMes("Bin Recycle");
-            }
             else if (this.cmb_Test_TunningTab.SelectedIndex == 4)
-            {
                 setBin(6205);
-                DisplayOperateMes("EOT");
+
+            else if (this.cmb_Test_TunningTab.SelectedIndex == 5)
+            {
+                SetIpDirection(true);
+                //DisplayOperateMes("GPIO10 = 0");
+                //oneWrie_device.SDPSignalPathGroupSel(OneWireInterface.SPControlCommand.SP_MULTISITTE_GROUP_A);
             }
+            else if (this.cmb_Test_TunningTab.SelectedIndex == 6)
+            {
+                SetIpDirection(false);
+                //DisplayOperateMes("GPIO10 = 1");
+                //oneWrie_device.SDPSignalPathGroupSel(OneWireInterface.SPControlCommand.SP_MULTISITTE_GROUP_B);
+            }
+
+            else if (this.cmb_Test_TunningTab.SelectedIndex == 7)
+            {
+                DisplayOperateMes("SW3230A-Char");
+                sw3230A_Char();
+            }
+
             else
                 DisplayOperateMes("No Such Bin");
         }
@@ -20083,7 +20083,7 @@ namespace CurrentSensorV3
                     Delay(10);
                     if (i % 50 == 1)
                         DisplayOperateMes("No SOT! --- " + i.ToString());
-                    else if (i == 500)        //1000 * 0.01s = 10s
+                    else if (i == 5000)        //1000 * 0.01s = 10s
                     {
                         DisplayOperateMes("Return!");
                         return;
@@ -20103,43 +20103,60 @@ namespace CurrentSensorV3
             FtBinREcycleNumber = 0;
             FtTotalNumber = 0;
 
-            this.txt_BinTotalCount_AutoTab.Text = FtBin1Number.ToString();
-            this.txt_Bin1Count_AutoTab.Text = FtBin2Number.ToString();
+            this.txt_Bin1Count_AutoTab.Text = FtBin1Number.ToString();
+            this.txt_Bin2Count_AutoTab.Text = FtBin2Number.ToString();
             this.txt_BinFailCount_AutoTab.Text = FtBinFailNumber.ToString();
             this.txt_BinRecycleCount_AutoTab.Text = FtBinREcycleNumber.ToString();
             this.txt_BinTotalCount_AutoTab.Text = FtTotalNumber.ToString();
+            this.txt_Yeild_AutoTab.Text = "0";
 
             this.txt_BinTotalCount_AutoTab.Refresh();
             this.txt_Bin1Count_AutoTab.Refresh();
             this.txt_BinFailCount_AutoTab.Refresh();
             this.txt_BinRecycleCount_AutoTab.Refresh();
             this.txt_BinTotalCount_AutoTab.Refresh();
+            this.txt_Yeild_AutoTab.Refresh();
         }
 
         private void updatedFtStatistic(uint binID)
         {
             if (binID == 6201)
+            {
                 FtBin1Number++;
+                updateProcessIndicator("Pass.Bin1", Color.YellowGreen);
+            }
             else if (binID == 6202)
+            {
                 FtBin2Number++;
+                updateProcessIndicator("Pass.Bin2", Color.YellowGreen);
+            }
             else if (binID == 6203)
+            {
                 FtBinFailNumber++;
+                updateProcessIndicator("Fail.Bin3", Color.Red);
+            }
             else if (binID == 6204)
+            {
                 FtBinREcycleNumber++;
+                updateProcessIndicator("Recycle", Color.LightCyan);
+            }
 
             FtTotalNumber++;
 
-            this.txt_BinTotalCount_AutoTab.Text = FtBin1Number.ToString();
-            this.txt_Bin1Count_AutoTab.Text = FtBin2Number.ToString();
+            this.txt_Bin1Count_AutoTab.Text = FtBin1Number.ToString();
+            this.txt_Bin2Count_AutoTab.Text = FtBin2Number.ToString();
             this.txt_BinFailCount_AutoTab.Text = FtBinFailNumber.ToString();
             this.txt_BinRecycleCount_AutoTab.Text = FtBinREcycleNumber.ToString();
             this.txt_BinTotalCount_AutoTab.Text = FtTotalNumber.ToString();
+            this.txt_Yeild_AutoTab.Text = ((FtBin1Number + FtBin2Number) / FtTotalNumber * 100d).ToString("F2");
 
             this.txt_BinTotalCount_AutoTab.Refresh();
             this.txt_Bin1Count_AutoTab.Refresh();
+            this.txt_Bin2Count_AutoTab.Refresh();
             this.txt_BinFailCount_AutoTab.Refresh();
             this.txt_BinRecycleCount_AutoTab.Refresh();
             this.txt_BinTotalCount_AutoTab.Refresh();
+            this.txt_Yeild_AutoTab.Refresh();
         }
 
         private void updateProcessIndicator(string str, Color clr)
@@ -20148,6 +20165,379 @@ namespace CurrentSensorV3
             this.txt_Status_AutoTab.Text = str;
             this.txt_Status_AutoTab.Refresh();
         }
+
+        private void updateProcessIndicator( )
+        {
+            //this.txt_Status_AutoTab.ForeColor = clr;
+            //this.txt_Status_AutoTab.Text = str;
+            this.txt_Status_AutoTab.Refresh();
+        }
+
+        private void sw3230A_Char()
+        {
+            #region test init
+            string sResult = "";       
+            double threshold = 2.5;
+            double spm = 0;
+            double spm0 = 0;
+            int bin = 1;
+            //double s3 = 0;
+            //double s4 = 0;
+
+            double tempIp = 0;
+            double ipMax = 200;
+
+            double iq = 0;
+            double brp = 0;
+            double bop = 0;
+            double sn0 = 0;
+            double sp0 = 0;
+            double sn = 0;
+            double sp = 0;
+
+            DisplayOperateMesClear();
+
+            IP = Convert.ToDouble(this.txt_IP_AutoT.Text);
+            TargetOffset = Convert.ToDouble(this.txt_VoutOffset_AutoT.Text);
+            TargetGain_customer = Convert.ToDouble(this.txt_TargetGain_AutoT.Text);
+            TargetVoltage_customer = Convert.ToDouble(this.txt_TargertVoltage_AutoT.Text);
+
+            Delay_Power = 50;
+            Delay_Fuse = Convert.ToInt32(this.txt_IpDelay_AutoT.Text);
+            AdcOffset = Convert.ToDouble(this.txt_AdcOffset_AutoT.Text);
+
+            bin2accuracy = Convert.ToDouble(this.txt_BinError_AutoT.Text);
+            bin3accuracy = Convert.ToDouble(this.txt_BinError_AutoT.Text);
+
+            ReTestCounter++;
+
+            //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VOUT_WITH_CAP);
+            //Delay(Delay_Sync);
+            //oneWrie_device.SDPSignalPathSet(OneWireInterface.SPControlCommand.SP_VIN_TO_VOUT);
+            //Delay(Delay_Power);
+            SetIpDirection(true);
+            Delay(Delay_Power);
+            #endregion
+
+            #region Get iQ
+            PowerOn();
+            //RePower();
+            Delay(Delay_Fuse);
+            iq = getIQ();
+            Delay(Delay_Power);
+            iq = getIQ();
+
+            if (iq > 50)
+            {
+                bin = 3;
+                setBin(6203);
+                sResult = string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", ReTestCounter.ToString(), iq.ToString("F3"),
+                    bin.ToString(), spm.ToString("F3"), spm0.ToString("F3"), sn0.ToString("F3"), sp0.ToString("F3"), brp.ToString(), bop.ToString());
+                saveLog(sResult);
+                //DisplayOperateMes(sResult);
+                return;
+            }
+            #endregion
+
+            #region init IP, set 3230 out to LOW
+            btn_EngTab_Connect_Click(null, null);
+            Delay(Delay_Power);
+            //IP on
+            IpOn();
+            Delay(Delay_Fuse);
+
+            spm = GetVout();
+            spm = GetVout();
+            if (spm < threshold)
+            {
+                bin = 3;
+                setBin(6203);
+                sResult = string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", ReTestCounter.ToString(), iq.ToString("F3"),
+                    bin.ToString(), spm.ToString("F3"), spm0.ToString("F3"), sn0.ToString("F3"), sp0.ToString("F3"), brp.ToString(), bop.ToString());
+                saveLog(sResult);
+                //DisplayOperateMes(sResult);
+                IpOff();
+                return;
+            }
+            #endregion 
+
+            #region for brp > 0 case
+            IpOff();
+            Delay(Delay_Fuse);
+            spm0 = GetVout();
+                 
+            if (spm0 < threshold)
+            {
+                tempIp = 50;
+                SetIPmA(400);
+                Delay(Delay_Power);
+                IpOn();
+
+                while (spm0 > threshold && tempIp > 0)
+                {                  
+                    SetIPmA(tempIp);
+                    Delay(Delay_Fuse);
+
+                    spm0 = GetVout();
+                    tempIp -= 10;
+                }
+
+                brp = tempIp;
+
+                while (spm0 < threshold && tempIp < 400)
+                {
+                    SetIPmA(tempIp);
+                    Delay(Delay_Fuse);
+
+                    spm0 = GetVout();
+                    tempIp += 10;
+                }
+
+                bop = tempIp;
+
+                bin = 4;
+                setBin(6204);
+                sResult = string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", ReTestCounter.ToString(), iq.ToString("F3"),
+                    bin.ToString(), spm.ToString("F3"), spm0.ToString("F3"), sn0.ToString("F3"), sp0.ToString("F3"), brp.ToString(), bop.ToString());
+                saveLog(sResult);
+                //DisplayOperateMes(sResult);
+                IpOff();
+                return;
+            }
+            #endregion
+
+            #region nomarl case
+            Delay(Delay_Power);
+            SetIpDirection(false);
+            Delay(Delay_Power);
+
+            //Nagetive IP
+            tempIp = 0;
+            SetIPmA(tempIp);
+            Delay(Delay_Power);
+            IpOn();
+            Delay(Delay_Fuse);
+            sn0 = GetVout();
+            sn = sn0;
+
+            while (sn > threshold && tempIp < 60)
+            {
+                SetIPmA(tempIp);
+                Delay(Delay_Fuse - 100);
+
+                sn = GetVout();
+                tempIp += 5;
+            }
+
+            if (tempIp == 60)
+            {
+                bin = 2;
+                setBin(6202);
+                sResult = string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", ReTestCounter.ToString(), iq.ToString("F3"),
+                    bin.ToString(), spm.ToString("F3"), spm0.ToString("F3"), sn0.ToString("F3"), sp0.ToString("F3"), brp.ToString(), bop.ToString());
+                saveLog(sResult);
+                //DisplayOperateMes(sResult);
+                IpOff();
+                return;
+            }
+
+            brp = tempIp;
+
+            Delay(Delay_Power);
+            SetIpDirection(true);
+            Delay(Delay_Power);
+
+            //Posstive IP
+            tempIp = 0;
+            SetIPmA(tempIp);
+            Delay(Delay_Power);
+            IpOn();
+            Delay(Delay_Fuse);
+            sp0 = GetVout();
+
+            tempIp = 80;
+            SetIPmA(tempIp);
+            Delay(Delay_Power);
+            sp = GetVout();
+
+            while (sp < threshold && tempIp < ipMax)
+            {
+                SetIPmA(tempIp);
+                Delay(Delay_Fuse - 100);
+
+                sp = GetVout();
+                tempIp += 10;
+            }
+
+            if (tempIp == ipMax)
+            {
+                bin = 2;
+                setBin(6202);
+                sResult = string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", ReTestCounter.ToString(), iq.ToString("F3"),
+                    bin.ToString(), spm.ToString("F3"), spm0.ToString("F3"), sn0.ToString("F3"), sp0.ToString("F3"), brp.ToString(), bop.ToString());
+                saveLog(sResult);
+                //DisplayOperateMes(sResult);
+                IpOff();
+                return;
+            }
+
+            bop = tempIp;
+
+            bin = 1;
+            setBin(6201);
+            sResult = string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", ReTestCounter.ToString(), iq.ToString("F3"),
+                    bin.ToString(), spm.ToString("F3"), spm0.ToString("F3"), sn0.ToString("F3"), sp0.ToString("F3"), brp.ToString(), bop.ToString());
+            saveLog(sResult);
+            //DisplayOperateMes(sResult);
+            IpOff();
+            return;
+
+            #endregion
+        }
+
+        private void saveLog(string str)
+        {
+            //open file for prodcution record
+            string filename = System.Windows.Forms.Application.StartupPath; ;
+            filename += @"\SW3230Test.dat";
+
+            int iFileLine = 0;
+
+            StreamReader sr = new StreamReader(filename);
+            while (sr.ReadLine() != null)
+            {
+                iFileLine++;
+            }
+            sr.Close();
+
+            StreamWriter sw;
+            if (iFileLine < 65535)
+                sw = new StreamWriter(filename, true);
+            else
+                sw = new StreamWriter(filename, false);
+
+            
+            sw.WriteLine(str);
+
+            sw.Close();
+        }
+
+        private void SetIpDirection(bool direc)
+        {
+            if (direc)
+            {
+                IpOff();
+                Delay(Delay_Power);
+                DisplayOperateMes("Positive IP , GPIO10 = 0");
+                oneWrie_device.SDPSignalPathGroupSel(OneWireInterface.SPControlCommand.SP_MULTISITTE_GROUP_A);
+                //oneWrie_device.SDPSignalPathGroupSel(OneWireInterface.SPControlCommand.SP_MULTISITTE_GROUP_A);
+            }
+            else
+            {
+                IpOff();
+                Delay(Delay_Power);
+                DisplayOperateMes("Nagetive IP , GPIO10 = 1");
+                oneWrie_device.SDPSignalPathGroupSel(OneWireInterface.SPControlCommand.SP_MULTISITTE_GROUP_B);
+            }
+        }
+
+        private void DelayMs(uint milliSeconds)
+        {
+            int start = Environment.TickCount;
+            while ((Environment.TickCount - start) < milliSeconds)
+            {
+                Application.DoEvents();
+            }
+            
+        }
+
+        private void SetIPmA(double ipmA)
+        {
+            //ip * 100 means ip mA
+            if ( !oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(ipmA * 100)))
+                DisplayOperateMes("Set Current to IP failed!");
+        }
+
+        private void SetIPA(double ipA)
+        {
+            //ip * 100 means ip mA
+            if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(ipA)))
+                DisplayOperateMes("Set Current to IP failed!");
+        }
+
+        private void IpOn()
+        {
+            DialogResult dr;
+
+            #region /* Change Current to IP  */
+            if (ProgramMode == 0)
+            {
+                if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTON, 0u))
+                    DisplayOperateMes(string.Format("Set Current to {0}A succeeded!", IP));
+                else
+                {
+                    DisplayOperateMes(string.Format("Set Current to {0}A failed!", IP));
+                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                    TrimFinish();
+                    return;
+                }
+            }
+            else if (ProgramMode == 1)
+            {
+                dr = MessageBox.Show(String.Format("请将电流升至{0}A", IP), "Change Current", MessageBoxButtons.OKCancel);
+                if (dr == DialogResult.Cancel)
+                {
+                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                    PowerOff();
+                    RestoreRegValue();
+                    return;
+                }
+            }
+            //else if (ProgramMode == 2)
+            //{
+            //    MultiSiteSocketSelect(1);       //set epio1 and epio3 to high
+            //    Delay(Delay_Sync);
+            //    MultiSiteSocketSelect(0);       //set epio1 = high; epio3 = low
+            //}
+            #endregion        
+        }
+
+        private void IpOff()
+        {
+            DialogResult dr;
+
+            #region Change Current to 0A */
+            if (ProgramMode == 0)
+            {
+                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTOFF, 0u))
+                {
+                    DisplayOperateMes(string.Format("Set Current to {0}A failed!", 0u));
+                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                    TrimFinish();
+                    return;
+                }
+            }
+            else if (ProgramMode == 1)
+            {
+                dr = MessageBox.Show(String.Format("请将电流降至0A"), "Change Current", MessageBoxButtons.OKCancel);
+                if (dr == DialogResult.Cancel)
+                {
+                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                    PowerOff();
+                    RestoreRegValue();
+                    return;
+                }
+            }
+            //else if (ProgramMode == 2)
+            //{
+            //    MultiSiteSocketSelect(1);       //set epio1 and epio3 to high
+            //    Delay(Delay_Sync);
+            //    MultiSiteSocketSelect(9);       //set epio1 = low; epio3 = high
+            //}
+            #endregion
+        }
+
+
 
     }
 
