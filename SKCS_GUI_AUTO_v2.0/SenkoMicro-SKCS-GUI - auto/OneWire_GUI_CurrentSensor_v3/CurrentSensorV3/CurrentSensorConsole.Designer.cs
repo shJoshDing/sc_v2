@@ -585,7 +585,8 @@
             this.cb_FtRoutines_AutoTab.Items.AddRange(new object[] {
             "SL620 Final Test",
             "SL620 Re-Test",
-            "SW3230 Char"});
+            "SW3230 Char",
+            "SL620 RawData"});
             this.cb_FtRoutines_AutoTab.Location = new System.Drawing.Point(10, 536);
             this.cb_FtRoutines_AutoTab.Name = "cb_FtRoutines_AutoTab";
             this.cb_FtRoutines_AutoTab.Size = new System.Drawing.Size(132, 25);
