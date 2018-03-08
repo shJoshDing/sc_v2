@@ -1,0 +1,142 @@
+;///////////////////////////////////////////////////////////////////////////////
+;//
+;//		Copyright (c) 2003-2009 - Analog Devices Inc. - All rights reserved.
+;//
+;//		File:			bulkadi.inf
+;//		Description: Device installation file for the bulkadi driver
+;//
+;///////////////////////////////////////////////////////////////////////////////
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Version Section 
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%ProviderName%
+Class="ADI Development Tools"
+ClassGUID={89982A59-5EEA-45aa-AF97-52EC351018C2}
+DriverVer=10/17/2008,06.00.6000.16386
+CatalogFile=bulkadi.cat
+
+;///////////////////////////////////////////////////////////////////////////////
+;// ClassInstall/ClassInstall32 Section
+
+; Windows-95/98 installation
+[ClassInstall]
+Addreg=Class_AddReg
+
+; Windows-NT/2000 installation
+[ClassInstall32]
+Addreg=Class_AddReg
+
+[Class_AddReg]
+HKR,,,,%DeviceClassName%
+HKR,,Icon,,"-5"
+
+;///////////////////////////////////////////////////////////////////////////////
+;// DestinationDirs Section 
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\Drivers
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Manufacturer and Models Sections 
+
+[Manufacturer]
+%MfgName%=AnalogDevices, NTamd64
+
+[SourceDisksNames]
+222=%DiskId1%,"",222
+
+[SourceDisksFiles]
+bulkadi.sys=222
+bulkadi64.sys=222
+
+[AnalogDevices]
+%DeviceDesc0187%=DriverInstall, USB\VID_064B&PID_0187
+%DeviceDesc1187%=DriverInstall, USB\VID_064B&PID_1187
+%DeviceDesc3187%=DriverInstall, USB\VID_064B&PID_3187
+%DeviceDesc1206%=DriverInstall, USB\VID_064B&PID_1206
+%DeviceDesc1208%=DriverInstall, USB\VID_064B&PID_1208
+%DeviceDesc1212%=DriverInstall, USB\VID_064B&PID_1212
+%DeviceDesc0224%=DriverInstall, USB\VID_064B&PID_0224
+
+[AnalogDevices.NTamd64]
+%DeviceDesc0187%=DriverInstallNTamd64, USB\VID_064B&PID_0187
+%DeviceDesc1187%=DriverInstallNTamd64, USB\VID_064B&PID_1187
+%DeviceDesc3187%=DriverInstallNTamd64, USB\VID_064B&PID_3187
+%DeviceDesc1206%=DriverInstallNTamd64, USB\VID_064B&PID_1206
+%DeviceDesc1208%=DriverInstallNTamd64, USB\VID_064B&PID_1208
+%DeviceDesc1212%=DriverInstallNTamd64, USB\VID_064B&PID_1212
+%DeviceDesc0224%=DriverInstallNTamd64, USB\VID_064B&PID_0224
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Windows 95/98 Installation 
+
+[DriverInstall]
+CopyFiles=DriverInstall_Files
+AddReg=DriverInstall.AddReg
+
+[DriverInstall.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,bulkadi.sys
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Windows NT/2000 Installation 
+
+[DriverInstall.NT]
+CopyFiles=DriverInstall_Files
+
+[DriverInstall.NT.Services]
+Addservice = bulkadi, 0x00000002, DriverInstall_AddService
+
+[DriverInstall_AddService]
+DisplayName    = %SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\bulkadi.sys
+LoadOrderGroup = Base
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Windows 64 bit Installation 
+
+[DriverInstallNTamd64.NTamd64]
+CopyFiles=DriverInstall_64Files
+
+[DriverInstallNTamd64.NTamd64.Services]
+Addservice = bulkadi64, 0x00000002, DriverInstall_AddService64
+
+[DriverInstall_AddService64]
+DisplayName    = %SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\bulkadi64.sys
+LoadOrderGroup = Base
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Files (common) - Note, filenames must be 8.3 format for Win9x
+
+[DriverInstall_Files]
+bulkadi.sys
+
+[DriverInstall_64Files]
+bulkadi64.sys
+
+;///////////////////////////////////////////////////////////////////////////////
+;// Strings Section 
+
+[Strings]
+DiskId1="Installation Disk"
+ProviderName="Analog Devices, Inc."
+MfgName="Analog Devices, Inc."
+DeviceDesc0187="Blackfin USB-LAN EZ-EXTENDER USB device powered by the ADSP-BF537"
+DeviceDesc1187="Blackfin USB-LAN EZ-EXTENDER USB device powered by the ADSP-BF533"
+DeviceDesc3187="Blackfin USB-LAN EZ-EXTENDER USB device powered by the ADSP-BF561"
+DeviceDesc1206="Blackfin BF548 USB Device"
+DeviceDesc1212="Blackfin BF524 USB Device"
+DeviceDesc1208="Blackfin BF527 USB Device"
+DeviceDesc0224="Blackfin USB EZ-EXTENDER USB device powered by the ADSP-BF518"
+DeviceClassName="ADI Development Tools"
+SvcDesc="Blackfin bulkadi"
