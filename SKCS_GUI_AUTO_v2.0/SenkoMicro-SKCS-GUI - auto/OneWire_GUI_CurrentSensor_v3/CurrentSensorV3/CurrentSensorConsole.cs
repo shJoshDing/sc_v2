@@ -3679,6 +3679,9 @@ namespace CurrentSensorV3
             Delay(Delay_Sync);
             //set pilot firstly
             numUD_pilotwidth_ow_ValueChanged(null, null);
+            Delay(50);
+
+            oneWrie_device.SetPilotWidth((uint)this.numUD_pilotwidth_ow_EngT.Value);
 
             if (bAutoTrimTest)
                 str = "R(Hex)--> ";
@@ -5956,6 +5959,11 @@ namespace CurrentSensorV3
                         DisplayOperateMes("2.5V Single End B");
                         AutoTrim_SL620B_SingleEnd();
                     }
+                    else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 2)   //AEM
+                    {
+                        DisplayOperateMes("2.5V Single End AEM");
+                        AutoTrim_SL620B_SingleEnd();
+                    }
                 }
                 else if (this.cb_V0AOption_AutoTab.SelectedIndex == 2)          //1.65V V0A
                 {
@@ -5966,7 +5974,12 @@ namespace CurrentSensorV3
                     }
                     else if(this.cb_ProductSeries_AutoTab.SelectedIndex == 1)   //silicon B
                     {
-                        DisplayOperateMes("1.65V Single End A");
+                        DisplayOperateMes("1.65V Single End B");
+                        AutoTrim_SL620B_1V65();
+                    }
+                    else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 1)   //AEM
+                    {
+                        DisplayOperateMes("1.65V Single End AEM");
                         AutoTrim_SL620B_1V65();
                     }
                 }
@@ -20936,57 +20949,17 @@ namespace CurrentSensorV3
 
         private void btn_BrakeTab_InitializeUart_Click(object sender, EventArgs e)
         {
-            #region UART Initialize
-            //if (ProgramMode == 0)
+            if (!openComPort())
             {
-
-                //UART Initialization
-                if (oneWrie_device.UARTInitilize(9600, 1))
-                    DisplayOperateMes("UART Initilize succeeded!");
-                else
-                    DisplayOperateMes("UART Initilize failed!");
-                //ding hao
-                Delay(Delay_Sync);
-                //DisplayAutoTrimOperateMes("Delay 300ms");
-
-                //1. Current Remote CTL
-                //if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_REMOTE, 0))
-                //    DisplayOperateMes("Set Current Remote succeeded!");
-                //else
-                //    DisplayOperateMes("Set Current Remote failed!");
-
-                //Delay 300ms
-                //Thread.Sleep(300);
-                Delay(Delay_Sync);
-                //DisplayAutoTrimOperateMes("Delay 300ms");
-
-                //2. Current On
-                if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTON, 0))
-                    DisplayOperateMes("Set Current On succeeded!");
-                else
-                    DisplayOperateMes("Set Current On failed!");
-
-                //Delay 300ms
-                Delay(Delay_Sync);
-                //DisplayOperateMes("Delay 300ms");
-
-                //3. Set Voltage
-                if (oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 6u))
-                    DisplayOperateMes(string.Format("Set Voltage to {0}V succeeded!", 6));
-                else
-                    DisplayOperateMes(string.Format("Set Voltage to {0}V failed!", 6));
-
-
-                //Delay 300ms
-                Delay(Delay_Sync);
-                //DisplayOperateMes("Delay 300ms");
-
-
+                DisplayOperateMes("Open Com Port Fail!", Color.Red);
+                //PowerOff();
+                //RestoreRegValue();
+                return;
             }
-            #endregion UART Initialize
 
+            ProgramMode = 3;
 
-
+            IpOn();
 
 
         }
@@ -21937,18 +21910,18 @@ namespace CurrentSensorV3
                 if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_REMOTE, 0))
                     DisplayOperateMes("Set Current Remote failed!");
 
-                Delay(Delay_Power);
+                Delay(200);
 
                 if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(IP)))
                     DisplayOperateMes("Set Current to IP failed!");
 
-                Delay(Delay_Power);
+                Delay(200);
 
                 //3. Set Voltage
-                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 6u))
-                    DisplayOperateMes(string.Format("Set Voltage to {0}V failed!", 6));
+                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 20u))
+                    DisplayOperateMes(string.Format("Set Voltage to {0}V failed!", 20));
 
-                Delay(Delay_Power);
+                Delay(200);
 
             }
             else if (ProgramMode == 2)
@@ -23361,8 +23334,8 @@ namespace CurrentSensorV3
             else if (ProgramMode == 3)
             {
                 int wait = Convert.ToInt32( this.txt_BinError_AutoT.Text);
-                if (wait < 40)
-                    wait = 40;
+                if (wait < 400)
+                    wait = 400;
 
                 for (uint i = 0; i < 10; i++)
                 {
@@ -23406,8 +23379,8 @@ namespace CurrentSensorV3
             else if (ProgramMode == 3)
             {
                 int wait = Convert.ToInt32(this.txt_BinError_AutoT.Text);
-                if (wait < 40)
-                    wait = 40;
+                if (wait < 400)
+                    wait = 400;
 
                 for (uint i = 0; i < 10; i++)
                 {
@@ -23692,6 +23665,27 @@ namespace CurrentSensorV3
             {
                 this.ck_Bank1_AutoT.Checked = false;
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ProgramMode = 3;
+            IpOff();
+        }
+
+        private void txt_RegData_AutoTab_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sensitivity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Vout0A_Click(object sender, EventArgs e)
+        {
+
         }
 
 

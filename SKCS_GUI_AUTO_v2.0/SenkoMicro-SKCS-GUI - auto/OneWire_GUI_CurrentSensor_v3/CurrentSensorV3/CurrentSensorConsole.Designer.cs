@@ -322,6 +322,7 @@
             this.btn_PowerOff_PreT = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.TuningTab = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.btn_BrakeTab_InitializeUart = new System.Windows.Forms.Button();
             this.btn_Fuse_BrakeT = new System.Windows.Forms.Button();
             this.btn_StopPoint_BrakeT = new System.Windows.Forms.Button();
@@ -1016,6 +1017,7 @@
             this.txt_RegData_AutoTab.Text = "00-00-00-00-00-00-00-00-00";
             this.txt_RegData_AutoTab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_RegData_AutoTab.Visible = false;
+            this.txt_RegData_AutoTab.TextChanged += new System.EventHandler(this.txt_RegData_AutoTab_TextChanged);
             // 
             // ck_Bank2_AutoT
             // 
@@ -1127,6 +1129,7 @@
             this.Vout0A.TabIndex = 155;
             this.Vout0A.Text = "Vout0A";
             this.Vout0A.Visible = false;
+            this.Vout0A.Click += new System.EventHandler(this.Vout0A_Click);
             // 
             // txt_BinError_AutoT
             // 
@@ -1149,6 +1152,7 @@
             this.Sensitivity.TabIndex = 154;
             this.Sensitivity.Text = "Gain";
             this.Sensitivity.Visible = false;
+            this.Sensitivity.Click += new System.EventHandler(this.Sensitivity_Click);
             // 
             // eee
             // 
@@ -4037,6 +4041,7 @@
             // 
             // TuningTab
             // 
+            this.TuningTab.Controls.Add(this.button2);
             this.TuningTab.Controls.Add(this.btn_BrakeTab_InitializeUart);
             this.TuningTab.Controls.Add(this.btn_Fuse_BrakeT);
             this.TuningTab.Controls.Add(this.btn_StopPoint_BrakeT);
@@ -4052,15 +4057,24 @@
             this.TuningTab.UseVisualStyleBackColor = true;
             this.TuningTab.Click += new System.EventHandler(this.BrakeTab_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(463, 541);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(57, 19);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "IP Off";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // btn_BrakeTab_InitializeUart
             // 
-            this.btn_BrakeTab_InitializeUart.Location = new System.Drawing.Point(506, 542);
+            this.btn_BrakeTab_InitializeUart.Location = new System.Drawing.Point(391, 541);
             this.btn_BrakeTab_InitializeUart.Name = "btn_BrakeTab_InitializeUart";
             this.btn_BrakeTab_InitializeUart.Size = new System.Drawing.Size(57, 19);
             this.btn_BrakeTab_InitializeUart.TabIndex = 3;
-            this.btn_BrakeTab_InitializeUart.Text = "Initialize";
+            this.btn_BrakeTab_InitializeUart.Text = "IP On";
             this.btn_BrakeTab_InitializeUart.UseVisualStyleBackColor = true;
-            this.btn_BrakeTab_InitializeUart.Visible = false;
             this.btn_BrakeTab_InitializeUart.Click += new System.EventHandler(this.btn_BrakeTab_InitializeUart_Click);
             // 
             // btn_Fuse_BrakeT
@@ -4581,7 +4595,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CurrentSensorConsole";
-            this.Text = "Senko Console v2.2.2 - CopyRight of SenkoMicro, Inc";
+            this.Text = "Senko Console v2.2.4 - CopyRight of SenkoMicro, Inc";
             this.Load += new System.EventHandler(this.CurrentSensorConsole_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -4988,5 +5002,6 @@
         private System.Windows.Forms.CheckBox cb_IpCoils_AutoTab;
         private System.Windows.Forms.TextBox txt_CoilIp_AutoT;
         private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Button button2;
     }
 }
