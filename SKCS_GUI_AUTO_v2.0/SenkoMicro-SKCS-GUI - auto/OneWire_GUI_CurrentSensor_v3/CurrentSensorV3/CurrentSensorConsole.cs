@@ -116,6 +116,12 @@ namespace CurrentSensorV3
         uint ixFineGain = 0;
         uint ixFineV0A = 0;
 
+
+        uint uCalibFullScale = 400;
+        uint uCalibOutputIP = 400;
+        uint uCalibDelay = 500;
+  
+
         /// <summary>
         /// Delay Define
         /// </summary>
@@ -3707,14 +3713,17 @@ namespace CurrentSensorV3
         private void TrimFinish()
         {
             //DisplayOperateMes("AutoTrim Canceled!", Color.Red);
-            if(ProgramMode == 0)
-                oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTOFF, 0u);
-            else if (ProgramMode == 2)
-            {
-                MultiSiteSocketSelect(1);       //set epio1 and epio3 to high
-                Delay(Delay_Sync);
-                MultiSiteSocketSelect(9);       //set epio1 = low; epio3 = high
-            }
+            //if(ProgramMode == 0)
+            //    oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTOFF, 0u);
+            //else if (ProgramMode == 2)
+            //{
+            //    MultiSiteSocketSelect(1);       //set epio1 and epio3 to high
+            //    Delay(Delay_Sync);
+            //    MultiSiteSocketSelect(9);       //set epio1 = low; epio3 = high
+            //}
+
+            IpOff();
+
             Delay(Delay_Sync);
             PowerOff();
             RestoreRegValue();
@@ -14344,6 +14353,8 @@ namespace CurrentSensorV3
                     dMultiSiteVoutIP[idut] = AverageVout();
                     sDUT.dVoutIPNative = dMultiSiteVoutIP[idut];
                     DisplayOperateMes("Vout" + " @ IP = " + dMultiSiteVoutIP[idut].ToString("F3"));
+
+                    IpOff();
                 }
                 else
                 {
@@ -19619,6 +19630,29 @@ namespace CurrentSensorV3
                 msg = sr.ReadLine().Split("|".ToArray());
                 this.cb_8xHalls_AutoTab.Checked = bool.Parse(msg[1]);
 
+                //Big Cap
+                msg = sr.ReadLine().Split("|".ToArray());
+                this.cb_BigCap_AutoTab.Checked = bool.Parse(msg[1]);
+
+                //Fast Start Up
+                msg = sr.ReadLine().Split("|".ToArray());
+                this.cb_FastStart_AutoTab.Checked = bool.Parse(msg[1]);
+
+                //full scale
+                msg = sr.ReadLine().Split("|".ToArray());
+                this.uCalibFullScale = uint.Parse(msg[1]);
+                DisplayOperateMes(string.Format("Calibrator Full scale = {0}A", this.uCalibFullScale));
+
+                //Calibrator IP
+                msg = sr.ReadLine().Split("|".ToArray());
+                this.uCalibOutputIP = uint.Parse(msg[1]);
+                DisplayOperateMes(string.Format("Calibrator Output IP = {0}A", this.uCalibOutputIP));
+
+                //Calibrator IP Delay
+                msg = sr.ReadLine().Split("|".ToArray());
+                this.uCalibDelay = uint.Parse(msg[1]);
+                DisplayOperateMes(string.Format("Calibrator Setting Delay = {0}ms", this.uCalibDelay));
+
                 sr.Close();
 
                 //Backup value for autotrim
@@ -20001,6 +20035,18 @@ namespace CurrentSensorV3
 
                 //Fast Start up
                 msg = string.Format("Fast Start up|{0}", this.cb_FastStart_AutoTab.Checked);
+                sw.WriteLine(msg);
+
+                //dCalibFullScale
+                msg = string.Format("Calibrator Full Scale|{0}", this.uCalibFullScale.ToString());
+                sw.WriteLine(msg);
+
+                //dCalibFullIP
+                msg = string.Format("Calibrator IP|{0}", this.uCalibOutputIP.ToString());
+                sw.WriteLine(msg);
+
+                //dCalibDelay
+                msg = string.Format("Calibrator Delay|{0}", this.uCalibDelay.ToString());
                 sw.WriteLine(msg);
 
                 sw.Close();
@@ -20952,8 +20998,6 @@ namespace CurrentSensorV3
             if (!openComPort())
             {
                 DisplayOperateMes("Open Com Port Fail!", Color.Red);
-                //PowerOff();
-                //RestoreRegValue();
                 return;
             }
 
@@ -21878,12 +21922,22 @@ namespace CurrentSensorV3
             #region Var Definetion
             DialogResult dr;
             DisplayOperateMesClear();
-            IP = Convert.ToDouble(this.txt_IP_AutoT.Text);
-            TargetOffset = Convert.ToDouble(this.txt_VoutOffset_AutoT.Text);
-            TargetGain_customer = Convert.ToDouble(this.txt_TargertVoltage_AutoT.Text);
+
             double V0A_Pretrim = 0;
             double Vip_Pretrim = 0;
-            double coarse_PretrimGain = 0;
+
+            IP = Convert.ToDouble(this.txt_IP_AutoT.Text);
+            TargetOffset = Convert.ToDouble(this.txt_VoutOffset_AutoT.Text);
+            TargetGain_customer = Convert.ToDouble(this.txt_TargetGain_AutoT.Text);
+            TargetVoltage_customer = Convert.ToDouble(this.txt_TargertVoltage_AutoT.Text);
+
+            Delay_Fuse = Convert.ToInt32(this.txt_IpDelay_AutoT.Text);
+            AdcOffset = Convert.ToDouble(this.txt_AdcOffset_AutoT.Text);
+
+            bin2accuracy = Convert.ToDouble(this.txt_BinError_AutoT.Text);
+            bin3accuracy = Convert.ToDouble(this.txt_BinError_AutoT.Text);
+
+
             #endregion
 
             #region Check HW connection
@@ -21895,200 +21949,292 @@ namespace CurrentSensorV3
             #endregion
 
             #region IP Initialize
-            if (ProgramMode == 0)
+            if (!bIpInitialized)
             {
-                //if (ProgramMode == 0 && bUartInit == false)
-                //{
 
-                //UART Initialization
-                if (!oneWrie_device.UARTInitilize(9600, 1))
-                    DisplayOperateMes("UART Initilize failed!");
-                //ding hao
-                Delay(Delay_Power);
-
-                //1. Current Remote CTL
-                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_REMOTE, 0))
-                    DisplayOperateMes("Set Current Remote failed!");
-
-                Delay(200);
-
-                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(IP)))
-                    DisplayOperateMes("Set Current to IP failed!");
-
-                Delay(200);
-
-                //3. Set Voltage
-                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 20u))
-                    DisplayOperateMes(string.Format("Set Voltage to {0}V failed!", 20));
-
-                Delay(200);
-
-            }
-            else if (ProgramMode == 2)
-            {
-                MultiSiteSocketSelect(1);   //epio1,3 = high
-
-                if (!bDualRelayIpOn)
+                if (ProgramMode == 0)
                 {
-                    bDualRelayIpOn = true;
-                    dr = MessageBox.Show(String.Format("请将电流升至{0}A", IP), "Change Current", MessageBoxButtons.OKCancel);
-                    if (dr == DialogResult.Cancel)
+                    //if (ProgramMode == 0 && bUartInit == false)
+                    //{
+
+                    //UART Initialization
+                    if (!oneWrie_device.UARTInitilize(9600, 1))
+                        DisplayOperateMes("UART Initilize failed!");
+                    //ding hao
+                    Delay(100);
+
+                    //1. Current Remote CTL
+                    if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_REMOTE, 0))
+                        DisplayOperateMes("Set Current Remote failed!");
+
+                    Delay(100);
+
+                    if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETCURR, Convert.ToUInt32(IP)))
+                        DisplayOperateMes("Set Current to IP failed!");
+
+                    Delay(100);
+
+                    //3. Set Voltage
+                    if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_SETVOLT, 6u))
+                        DisplayOperateMes(string.Format("Set Voltage to {0}V failed!", 6));
+
+                    Delay(100);
+
+                }
+                else if (ProgramMode == 2)
+                {
+                    MultiSiteSocketSelect(1);   //epio1,3 = high
+
+                    if (!bDualRelayIpOn)
                     {
-                        DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                        bDualRelayIpOn = true;
+                        dr = MessageBox.Show(String.Format("请将电流升至{0}A", IP), "Change Current", MessageBoxButtons.OKCancel);
+                        if (dr == DialogResult.Cancel)
+                        {
+                            DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                            PowerOff();
+                            RestoreRegValue();
+                            return;
+                        }
+                    }
+                }
+                else if (ProgramMode == 3)
+                {
+                    if (!openComPort())
+                    {
+                        DisplayOperateMes("Open Com Port Fail!", Color.Red);
                         PowerOff();
                         RestoreRegValue();
                         return;
                     }
                 }
-            }
-            #endregion IP Initialize          
 
-            RePower();
-            Delay(Delay_Sync);
-            RegisterWrite(4, new uint[8] { 0x80, Reg80Value, 0x81, Reg81Value, 0x82, Reg82Value, 0x83, Reg83Value });
-            Delay(Delay_Sync);
-            BurstRead(0x80, 5, tempReadback);
-            EnterNomalMode();
-            Delay(Delay_Fuse);
-            V0A_Pretrim = AverageVout();
+                bIpInitialized = true;
 
-            #region /* Change Current to IP  */
-            if (ProgramMode == 0)
-            {
-                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTON, 0u))
-                {
-                    DisplayOperateMes(string.Format("Set Current to {0}A failed!", IP));
-                    TrimFinish();
-                    return;
-                }
             }
-            else if (ProgramMode == 1)
+            #endregion IP Initialize
+
+            #region Reg Value
+            Reg80Value = 0x00;
+            Reg81Value = 0x03 + preSetCoareseGainCode * 16;     //TCTH = 2'b11
+            Reg82Value = 0x00;
+            Reg83Value = 0x30;      //multi-driven mode
+            Reg84Value = 0x00;
+            Reg85Value = 0x00;
+            Reg86Value = 0x00;
+            Reg87Value = 0x00;
+            #endregion
+
+            #region Vout0A Option
+            if (this.cb_V0AOption_AutoTab.SelectedIndex == 0)
             {
-                dr = MessageBox.Show(String.Format("请将电流升至{0}A", IP), "Change Current", MessageBoxButtons.OKCancel);
-                if (dr == DialogResult.Cancel)
-                {
-                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
-                    PowerOff();
-                    RestoreRegValue();
-                    return;
-                }
+                Reg80Value &= 0xFC;
+                Reg80Value |= 0x00;
             }
-            else if (ProgramMode == 2)
+            else if (this.cb_V0AOption_AutoTab.SelectedIndex == 1)
             {
-                MultiSiteSocketSelect(1);   //epio1,3 = high
-                Delay(Delay_Sync);
-                MultiSiteSocketSelect(0);   //set epio1 = high; epio3 = low
+                Reg80Value &= 0xFC;
+                Reg80Value |= 0x01;
+            }
+            else if (this.cb_V0AOption_AutoTab.SelectedIndex == 2)
+            {
+                Reg80Value &= 0xFC;
+                Reg80Value |= 0x02;
+            }
+            else if (this.cb_V0AOption_AutoTab.SelectedIndex == 3)
+            {
+                Reg80Value &= 0xFC;
+                Reg80Value |= 0x03;
             }
             #endregion
 
+            #region iHall option
+            if (this.cb_iHallOption_AutoTab.SelectedIndex == 0)
+            {
+                Reg80Value &= 0x3F;
+                Reg80Value |= 0x00;
+            }
+            else if (this.cb_iHallOption_AutoTab.SelectedIndex == 1)
+            {
+                Reg80Value &= 0x3F;
+                Reg80Value |= 0x40;
+            }
+            else if (this.cb_iHallOption_AutoTab.SelectedIndex == 2)
+            {
+                Reg80Value &= 0x3F;
+                Reg80Value |= 0x80;
+            }
+            else if (this.cb_iHallOption_AutoTab.SelectedIndex == 3)
+            {
+                Reg80Value &= 0x3F;
+                Reg80Value |= 0xC0;
+            }
+            #endregion
+
+            #region Gain option
+            //gain * 2
+            if (this.cb_s2double_AutoTab.Checked)
+                Reg83Value |= 0x04;
+            else
+                Reg83Value &= 0xFB;
+
+            //gain * 1.25
+            if (this.cb_s3drv_autoTab.Checked)
+                Reg83Value |= 0x02;
+            else
+                Reg83Value &= 0xFD;
+
+            //gain / 2
+            if (this.cb_ChopCkDis_AutoTab.Checked)
+                Reg83Value |= 0x08;
+            else
+                Reg83Value &= 0xF7;
+            #endregion
+
+            #region Sensing direction
+            if (this.cb_InvertSens_AutoTab.Checked)
+            {
+                Reg80Value &= 0xF3;
+                Reg80Value |= 0x04;
+            }
+            else
+            {
+                Reg80Value &= 0xF3;
+            }
+            #endregion
+
+            #region BigCap
+            if (this.cb_BigCap_AutoTab.Checked)
+            {
+                Reg83Value &= 0xFE;
+                Reg83Value |= 0x01;
+            }
+            else
+            {
+                Reg83Value &= 0xFE;
+            }
+
+            #endregion
+
+            #region Fast Start Up
+            if (this.cb_FastStart_AutoTab.Checked)
+            {
+                Reg83Value &= 0x3F;
+                Reg83Value |= 0xC0;
+            }
+            else
+            {
+                Reg83Value &= 0x3F;
+            }
+            #endregion
+
+            #region cust TC
+            if (this.cb_CustTc_AutoTab.Checked)
+                Reg82Value = Convert.ToUInt32(this.txt_SL620TC_AutoTab.Text, 16);
+            else
+                Reg82Value = 0x00;
+            #endregion cust TC
+
+            #region anti ext magenatic
+            if (this.cb_ProductSeries_AutoTab.SelectedIndex == 2)
+            {
+                if (this.cb_8xHalls_AutoTab.Checked)            //8x halls, M4 - L2 - R2
+                {
+                    Reg80Value &= 0xCF;
+                    Reg80Value |= 0x20;
+                }
+                else                                            //4 halls, M2 - L2
+                {
+                    Reg80Value &= 0xCF;
+                    Reg80Value |= 0x10;
+                }
+            }
+            #endregion
+
+            #region Program mode
+            // diff mode
+            if (this.cb_ProductSeries_AutoTab.SelectedIndex == 3)
+            {
+                this.cb_V0AOption_AutoTab.SelectedIndex = 1;
+
+                Reg80Value &= 0xFC;
+                Reg80Value |= 0x00;
+            }
+            #endregion
+         
+            V0A_Pretrim = WriteAndReadVout();
+
+            IpOn();
+
             Delay(Delay_Fuse);
             Vip_Pretrim = AverageVout();
+            DisplayOperateMes("Preset Gain = " + preSetCoareseGainCode.ToString());
             DisplayOperateMes("Vout@0A = " + V0A_Pretrim.ToString("F3"));
-            DisplayOperateMes("Vout@IP_1 = " + Vip_Pretrim.ToString("F3"));
+            DisplayOperateMes("Vout@IP = " + Vip_Pretrim.ToString("F3"));
 
 
-            if (Vip_Pretrim - V0A_Pretrim < 0)
+            if (Vip_Pretrim - V0A_Pretrim < -0.01d)
             {
-                DisplayOperateMes("请确认IP方向！");
-                TrimFinish();
-                return;
+                if (this.cb_InvertSens_AutoTab.Checked)
+                {
+                    this.cb_InvertSens_AutoTab.Checked = false;
+                    Reg80Value &= 0xF3;
+                }
+                else
+                {
+                    this.cb_InvertSens_AutoTab.Checked = true;
+                    Reg80Value &= 0xF3;
+                    Reg80Value |= 0x04;
+                }
+
+                Vip_Pretrim = WriteAndReadVout();
             }
-            else if (Vip_Pretrim - V0A_Pretrim < 0.005d)
+            else if (Vip_Pretrim - V0A_Pretrim < 0.01d)
             {
                 DisplayOperateMes("请确认IP是否ON！");
                 TrimFinish();
                 return;
             }
 
-            if (Vip_Pretrim > 4.8)
-            {
-
-                DisplayOperateMes("编程电流过大，输出饱和！");
-                TrimFinish();
-                return;
-
-            }
-
-            //coarse_PretrimGain = 2.0d * 12.7d / (Vip_Pretrim - V0A_Pretrim);
-            coarse_PretrimGain = TargetVoltage_customer * 12.7d / (Vip_Pretrim - V0A_Pretrim);
-            DisplayOperateMes("coarse_PretrimGain = " + coarse_PretrimGain.ToString("F3"));
-
-
-            if (coarse_PretrimGain >= 200)
-            {
-                DisplayOperateMes("产品灵敏度要求过高！");
-                TrimFinish();
-                return;
-            }
-            else if (coarse_PretrimGain < 11)
-            {
-                DisplayOperateMes("产品灵敏度要求过低！");
-                TrimFinish();
-                return;
-            }
-
-
-
-            RePower();
-            Delay(Delay_Sync);
-            RegisterWrite(4, new uint[8] { 0x80, Reg80Value, 0x81, Reg81Value, 0x82, Reg82Value, 0x83, Reg83Value });
-            Delay(Delay_Sync);
-            BurstRead(0x80, 5, tempReadback);
-            EnterNomalMode();
-            Delay(Delay_Fuse);
-            Vip_Pretrim = AverageVout();
-            DisplayOperateMes("Vout@IP_2 = " + Vip_Pretrim.ToString("F3"));
-            if (Vip_Pretrim < 4.5)
-            {
-                if (preSetCoareseGainCode > 0)
-                    preSetCoareseGainCode--;
-                Reg81Value = 0x03 + preSetCoareseGainCode * 16;
-            }
-            else if (Vip_Pretrim > 4.9)
+            //uint loopIndex = preSetCoareseGainCode;
+            while (Vip_Pretrim > 4.8 )
             {
                 if (preSetCoareseGainCode == 15)
                 {
-                    DisplayOperateMes("Saturation!", Color.Red);
+                    DisplayOperateMes("产品灵敏度太低，需要调整增益选项！");
                     TrimFinish();
                     return;
                 }
                 else
                 {
                     preSetCoareseGainCode++;
-                    Reg81Value = 0x03 + preSetCoareseGainCode * 16;
+                    Reg81Value = 0x03 + preSetCoareseGainCode * 16; 
+                    Vip_Pretrim = WriteAndReadVout();
+                    DisplayOperateMes("Preset Gain = " + preSetCoareseGainCode.ToString());
+                    DisplayOperateMes("Vout@IP = " + Vip_Pretrim.ToString("F3"));
                 }
             }
 
-            #region /* Change Current to 0A */
-            if (ProgramMode == 0)
+
+            while ( (Vip_Pretrim - V0A_Pretrim) < TargetVoltage_customer)
             {
-                if (!oneWrie_device.UARTWrite(OneWireInterface.UARTControlCommand.ADI_SDP_CMD_UART_OUTPUTOFF, 0u))
+                if (preSetCoareseGainCode == 0)
                 {
-                    DisplayOperateMes(string.Format("Set Current to {0}A failed!", 0u));
-                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
+                    DisplayOperateMes("产品灵敏度太高，需要调整增益选项！");
                     TrimFinish();
                     return;
                 }
-            }
-            else if (ProgramMode == 1)
-            {
-                dr = MessageBox.Show(String.Format("请将IP降至0A!"), "Try Again", MessageBoxButtons.OKCancel);
-                if (dr == DialogResult.Cancel)
+                else
                 {
-                    DisplayOperateMes("AutoTrim Canceled!", Color.Red);
-                    PowerOff();
-                    RestoreRegValue();
-                    return;
+                    preSetCoareseGainCode--;
+                    Reg81Value = 0x03 + preSetCoareseGainCode * 16;
+                    Vip_Pretrim = WriteAndReadVout();
+                    DisplayOperateMes("Preset Gain = " + preSetCoareseGainCode.ToString());
+                    DisplayOperateMes("Vout@IP = " + Vip_Pretrim.ToString("F3"));
                 }
             }
-            else if (ProgramMode == 2)
-            {
-                //set epio1 and epio3 to low
-                MultiSiteSocketSelect(1);       //set epio1 and epio3 to high
-                Delay(Delay_Sync);
-                MultiSiteSocketSelect(9);       //set epio1 = low; epio3 = high
-            }
-            #endregion
+
+            IpOff();
 
             Delay(Delay_Fuse);
             V0A_Pretrim = AverageVout();
@@ -23333,15 +23479,34 @@ namespace CurrentSensorV3
             }
             else if (ProgramMode == 3)
             {
-                int wait = Convert.ToInt32( this.txt_BinError_AutoT.Text);
+                uint tenPercentCount = 0;
+                uint onePercentCount = 0;
+                int wait = Convert.ToInt32(this.uCalibDelay);
                 if (wait < 400)
                     wait = 400;
 
-                for (uint i = 0; i < 10; i++)
+                tenPercentCount = uCalibOutputIP * 10 / uCalibFullScale;
+                onePercentCount = (uCalibOutputIP * 10 % uCalibFullScale) * 10 / uCalibFullScale;
+
+                if ((uCalibOutputIP * 10 % uCalibFullScale) * 10 % uCalibFullScale != 0)
+                {
+                    DisplayOperateMes(string.Format("设置电流最小步进是{0}A", (uCalibFullScale / 100) ), Color.Red);
+                    return;
+                }
+
+                for (uint i = 0; i < tenPercentCount; i++)
                 {
                     serialPort.WriteLine("A");
                     Delay(wait);
                 }
+                DisplayOperateMes("+10%: " + tenPercentCount.ToString() + "times");
+
+                for (uint i = 0; i < onePercentCount; i++)
+                {
+                    serialPort.WriteLine("B");
+                    Delay(wait);
+                }
+                DisplayOperateMes("+1%: " + onePercentCount.ToString() + "times");
             }
         }
 
@@ -23378,15 +23543,28 @@ namespace CurrentSensorV3
             }
             else if (ProgramMode == 3)
             {
-                int wait = Convert.ToInt32(this.txt_BinError_AutoT.Text);
+                uint tenPercentCount = 0;
+                uint onePercentCount = 0;
+                int wait = Convert.ToInt32(this.uCalibDelay);
                 if (wait < 400)
                     wait = 400;
 
-                for (uint i = 0; i < 10; i++)
+                tenPercentCount = uCalibOutputIP * 10 / uCalibFullScale;
+                onePercentCount = (uCalibOutputIP * 10 % uCalibFullScale) * 10 / uCalibFullScale;
+
+                for (uint i = 0; i < tenPercentCount; i++)
                 {
                     serialPort.WriteLine("E");
                     Delay(wait);
                 }
+                DisplayOperateMes("-1%: " + tenPercentCount.ToString() + "times");
+
+                for (uint i = 0; i < onePercentCount; i++)
+                {
+                    serialPort.WriteLine("F");
+                    Delay(wait);
+                }
+                DisplayOperateMes("-1%: " + onePercentCount.ToString() + "times");
             }
         }
 
@@ -23686,6 +23864,18 @@ namespace CurrentSensorV3
         private void Vout0A_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private double WriteAndReadVout( )
+        {
+            RePower();
+            Delay(Delay_Sync);
+            RegisterWrite(4, new uint[8] { 0x80, Reg80Value, 0x81, Reg81Value, 0x82, Reg82Value, 0x83, Reg83Value });
+            Delay(Delay_Sync);
+            BurstRead(0x80, 5, tempReadback);
+            EnterNomalMode();
+            Delay(Delay_Fuse);
+            return AverageVout();
         }
 
 
