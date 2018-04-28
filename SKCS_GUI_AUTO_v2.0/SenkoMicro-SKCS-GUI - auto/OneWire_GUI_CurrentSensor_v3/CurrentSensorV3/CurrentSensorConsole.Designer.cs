@@ -1209,7 +1209,6 @@
             this.btn_Ft_AutoT.TabIndex = 152;
             this.btn_Ft_AutoT.Text = "Auto Final Test";
             this.btn_Ft_AutoT.UseVisualStyleBackColor = false;
-            this.btn_Ft_AutoT.Visible = false;
             this.btn_Ft_AutoT.Click += new System.EventHandler(this.btn_Ft_AutoT_Click);
             // 
             // btn_ReTest_AutoT

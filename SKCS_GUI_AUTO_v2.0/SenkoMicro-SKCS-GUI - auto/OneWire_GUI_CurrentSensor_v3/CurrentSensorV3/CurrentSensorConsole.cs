@@ -5986,7 +5986,7 @@ namespace CurrentSensorV3
                         DisplayOperateMes("1.65V Single End B");
                         AutoTrim_SL620B_1V65();
                     }
-                    else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 1)   //AEM
+                    else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 2)   //AEM
                     {
                         DisplayOperateMes("1.65V Single End AEM");
                         AutoTrim_SL620B_1V65();
@@ -6280,6 +6280,11 @@ namespace CurrentSensorV3
                         DisplayOperateMes("2.5V Single End B");
                         FT_SL620B_SingleEnd();
                     }
+                    else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 2)   //AEM
+                    {
+                        DisplayOperateMes("2.5V Single End AEM");
+                        FT_SL620B_SingleEnd();
+                    }
                 }
                 else if (this.cb_V0AOption_AutoTab.SelectedIndex == 2)          //1.65V V0A
                 {
@@ -6291,6 +6296,11 @@ namespace CurrentSensorV3
                     else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 1)   //silicon B
                     {
                         DisplayOperateMes("1.65V Single End B");
+                        Ft_SL620B_1V65();
+                    }
+                    else if (this.cb_ProductSeries_AutoTab.SelectedIndex == 2)   //AEM
+                    {
+                        DisplayOperateMes("2.5V Single End AEM");
                         Ft_SL620B_1V65();
                     }
                 }
@@ -19638,20 +19648,20 @@ namespace CurrentSensorV3
                 msg = sr.ReadLine().Split("|".ToArray());
                 this.cb_FastStart_AutoTab.Checked = bool.Parse(msg[1]);
 
-                //full scale
-                msg = sr.ReadLine().Split("|".ToArray());
-                this.uCalibFullScale = uint.Parse(msg[1]);
-                DisplayOperateMes(string.Format("Calibrator Full scale = {0}A", this.uCalibFullScale));
+                ////full scale
+                //msg = sr.ReadLine().Split("|".ToArray());
+                //this.uCalibFullScale = uint.Parse(msg[1]);
+                //DisplayOperateMes(string.Format("Calibrator Full scale = {0}A", this.uCalibFullScale));
 
-                //Calibrator IP
-                msg = sr.ReadLine().Split("|".ToArray());
-                this.uCalibOutputIP = uint.Parse(msg[1]);
-                DisplayOperateMes(string.Format("Calibrator Output IP = {0}A", this.uCalibOutputIP));
+                ////Calibrator IP
+                //msg = sr.ReadLine().Split("|".ToArray());
+                //this.uCalibOutputIP = uint.Parse(msg[1]);
+                //DisplayOperateMes(string.Format("Calibrator Output IP = {0}A", this.uCalibOutputIP));
 
-                //Calibrator IP Delay
-                msg = sr.ReadLine().Split("|".ToArray());
-                this.uCalibDelay = uint.Parse(msg[1]);
-                DisplayOperateMes(string.Format("Calibrator Setting Delay = {0}ms", this.uCalibDelay));
+                ////Calibrator IP Delay
+                //msg = sr.ReadLine().Split("|".ToArray());
+                //this.uCalibDelay = uint.Parse(msg[1]);
+                //DisplayOperateMes(string.Format("Calibrator Setting Delay = {0}ms", this.uCalibDelay));
 
                 sr.Close();
 
