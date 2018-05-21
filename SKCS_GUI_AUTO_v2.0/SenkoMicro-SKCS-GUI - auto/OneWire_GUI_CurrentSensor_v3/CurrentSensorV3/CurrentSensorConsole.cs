@@ -5943,7 +5943,7 @@ namespace CurrentSensorV3
                 this.cb_V0AOption_AutoTab.SelectedIndex = 1;
             
                 Reg80Value &= 0xFC;
-                Reg80Value |= 0x00;
+                Reg80Value |= 0x01;
             
                 DisplayOperateMes("SL622 Diff Mode");
                 AutoTrim_SL620_DiffMode();
@@ -19519,7 +19519,7 @@ namespace CurrentSensorV3
                 // Preset Gain
                 msg = sr.ReadLine().Split("|".ToCharArray());
                 preSetCoareseGainCode = uint.Parse(msg[1]);
-                //preSetCoareseGainCode = uint.Parse(msg[1]);
+                this.txt_PreGain_AutoT.Text =  preSetCoareseGainCode.ToString();
 
                 // Target Voltage
                 msg = sr.ReadLine().Split("|".ToCharArray());
@@ -19929,6 +19929,7 @@ namespace CurrentSensorV3
                 sw.WriteLine(msg);
 
                 // Chosen Gain
+                this.preSetCoareseGainCode = uint.Parse(this.txt_PreGain_AutoT.Text);
                 msg = string.Format("Preset Gain|{0}", this.preSetCoareseGainCode.ToString());
                 sw.WriteLine(msg);
 
@@ -20940,21 +20941,26 @@ namespace CurrentSensorV3
 
                 this.ck_Bank1_AutoT.Visible = true;
                 this.ck_Bank2_AutoT.Visible = true;
+                this.cb_IpCoils_AutoTab.Visible = true;
                 this.btn_ReadReg_AutoT.Visible = true;
+                this.btn_FastStartUp_AutoT.Visible = true;
+
+                this.txt_CoilIp_AutoT.Visible = true;
+                this.label76.Visible = true;
             }
             if(Control.ModifierKeys == Keys.Control)
             {
                 DisplayOperateMes("Hide Key Pass! ");
                 //this.cb_InvertSens_AutoTab.Enabled = false;
-                this.cb_ChopCkDis_AutoTab.Enabled = false;
-                this.cb_s2double_AutoTab.Enabled = false;
-                this.cb_s3drv_autoTab.Enabled = false;
+                //this.cb_ChopCkDis_AutoTab.Enabled = false;
+                //this.cb_s2double_AutoTab.Enabled = false;
+                //this.cb_s3drv_autoTab.Enabled = false;
                 //this.cb_MeasureiQ_AutoTab.Enabled = false;
                 //this.cb_CustTc_AutoTab.Enabled = false;
                 //this.cb_BypFuse_AutoTab.Enabled = false;
                 this.cb_8xHalls_AutoTab.Enabled = false;
                 this.cb_BigCap_AutoTab.Enabled = false;
-                this.cb_FastStart_AutoTab.Enabled = false;
+                //this.cb_FastStart_AutoTab.Enabled = false;
 
                 this.btn_Ft_AutoT.Visible = false;
                 this.btn_WandT_AutoT.Visible = false;
@@ -20973,7 +20979,12 @@ namespace CurrentSensorV3
 
                 this.ck_Bank1_AutoT.Visible = false;
                 this.ck_Bank2_AutoT.Visible = false;
+                this.cb_IpCoils_AutoTab.Visible = false;
                 this.btn_ReadReg_AutoT.Visible = false;
+                this.btn_FastStartUp_AutoT.Visible = false;
+
+                this.txt_CoilIp_AutoT.Visible = false;
+                this.label76.Visible = false;
             }
             if(Control.ModifierKeys == Keys.Alt)
             {
@@ -23817,9 +23828,9 @@ namespace CurrentSensorV3
             uint idut = 0;
 
             RePower();
-            Delay(Delay_Sync);
+            Delay(100);
             EnterTestMode();
-            Delay(Delay_Sync);
+            Delay(100);
             BurstRead(0x80, 5, tempReadback);
             Delay(Delay_Sync);
             MultiSiteReg0[idut] = tempReadback[0];
@@ -23886,6 +23897,68 @@ namespace CurrentSensorV3
             EnterNomalMode();
             Delay(Delay_Fuse);
             return AverageVout();
+        }
+
+        private void btn_FastStartUp_AutoT_Click(object sender, EventArgs e)
+        {
+            int idut = 0;
+
+            RePower();
+            Delay(Delay_Power);
+            EnterTestMode();
+
+            button2_Click(null,null);
+
+            Delay(Delay_Power);
+            EnterTestMode();
+            RegisterWrite(4, new uint[8] { 0x80, MultiSiteReg0[idut], 0x81, MultiSiteReg1[idut], 0x82, MultiSiteReg2[idut], 0x83, MultiSiteReg3[idut] + 0xC0 });
+            Delay(Delay_Sync);
+
+            Delay(100);
+            BurstRead(0x80, 5, tempReadback);
+            Delay(Delay_Sync);
+            MultiSiteReg0[idut] = tempReadback[0];
+            MultiSiteReg1[idut] = tempReadback[1];
+            MultiSiteReg2[idut] = tempReadback[2];
+            MultiSiteReg3[idut] = tempReadback[3];
+
+            this.txt_RegData_AutoTab.Text = string.Format("{0}-{1}-{2}-{3}-{4}-{5}-{6}-{7}", MultiSiteReg0[idut].ToString("X2"),
+                MultiSiteReg1[idut].ToString("X2"), MultiSiteReg2[idut].ToString("X2"), MultiSiteReg3[idut].ToString("X2"), MultiSiteReg4[idut].ToString("X2"),
+                MultiSiteReg5[idut].ToString("X2"), MultiSiteReg6[idut].ToString("X2"), MultiSiteReg7[idut].ToString("X2"));
+
+            //else if (this.ck_Bank2_AutoT.Checked)
+            //{
+            //    MultiSiteReg4[idut] = MultiSiteReg6[idut];
+            //    MultiSiteReg5[idut] = MultiSiteReg7[idut];
+
+            //    RegisterWrite(4, new uint[8] { 0x80, MultiSiteReg0[idut], 0x81, MultiSiteReg1[idut], 0x82, MultiSiteReg2[idut], 0x83, MultiSiteReg3[idut] });
+            //    Delay(Delay_Sync);
+            //    RegisterWrite(4, new uint[8] { 0x84, MultiSiteReg4[idut], 0x85, MultiSiteReg5[idut], 0x86, MultiSiteReg6[idut], 0x87, MultiSiteReg7[idut] });
+            //    Delay(Delay_Sync);
+            //    RegisterWrite(1, new uint[2] { 0x88, 0x03 });
+            //}
+
+            FuseClockOn(DeviceAddress, (double)num_UD_pulsewidth_ow_EngT.Value, (double)numUD_pulsedurationtime_ow_EngT.Value);
+            DisplayOperateMes("Trimming... Done");
+
+            GetVout();
+            Delay(Delay_Sync);
+        }
+
+        private void txt_PreGain_AutoT_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToUInt32(this.txt_PreGain_AutoT.Text) < 16 && Convert.ToUInt32(this.txt_PreGain_AutoT.Text) >= 0)
+                    this.preSetCoareseGainCode = Convert.ToUInt32(this.txt_PreGain_AutoT.Text);
+                else
+                    DisplayOperateMes("Please enter 0 - 15", Color.Red);
+            }
+            catch
+            {
+                DisplayOperateMes("Please enter 0 - 15", Color.Red);
+            }
+
         }
 
 
