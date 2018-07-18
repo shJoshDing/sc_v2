@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMY2", "DM2Y2\DMY2.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrentSensorV3", "CurrentSensorV3\CurrentSensorV3.csproj", "{38723D47-A38D-41C9-9E41-91519CFDFF87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMDongle", "..\..\..\..\SGM4711_Eva\DMDongle\DMDongle.csproj", "{5426FF81-F369-4709-8C8E-A4A87D7F3C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N8731A", "..\..\..\..\New folder\ConsoleApplication1\ConsoleApplication1\N8731A.csproj", "{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,28 @@ Global
 		{38723D47-A38D-41C9-9E41-91519CFDFF87}.Release|Mixed Platforms.Build.0 = Release|x86
 		{38723D47-A38D-41C9-9E41-91519CFDFF87}.Release|x86.ActiveCfg = Release|x86
 		{38723D47-A38D-41C9-9E41-91519CFDFF87}.Release|x86.Build.0 = Release|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Debug|x86.ActiveCfg = Debug|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Debug|x86.Build.0 = Debug|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Release|x86.ActiveCfg = Release|x86
+		{5426FF81-F369-4709-8C8E-A4A87D7F3C51}.Release|x86.Build.0 = Release|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Debug|x86.ActiveCfg = Debug|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Debug|x86.Build.0 = Debug|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Release|Any CPU.ActiveCfg = Release|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Release|x86.ActiveCfg = Release|x86
+		{D0C4153C-349D-4DB0-93FE-DF7F796CC0C9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

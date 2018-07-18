@@ -127,3 +127,6 @@ C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - au
 C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Release\Senko_Console v2.2.x.pdb
 C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Release\Senko_Console v2.2.x.exe
 C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\obj\x86\Release\Senko_Console v2.2.x.pdb
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Release\DMDongle.dll
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Release\DMDongle.pdb
+C:\Users\Work\Documents\Github\sc_v2\SKCS_GUI_AUTO_v2.0\SenkoMicro-SKCS-GUI - auto\OneWire_GUI_CurrentSensor_v3\CurrentSensorV3\bin\Release\Senko_Console v2.2.x.exe.config
